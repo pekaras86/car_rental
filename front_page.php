@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Thessaloniki Car Rentals</title>
+    <title>Rent A Car</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">

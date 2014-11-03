@@ -41,12 +41,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Thessaloniki Car Rentals</a>
+            <a class="navbar-brand" href="front_page.php">Thessaloniki Car Rentals</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
+              <li><a href="#">Home</a></li>
               <li><a href="#">Link</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

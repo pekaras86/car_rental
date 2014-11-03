@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap-3.3.0/css/myCSS.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="navbar-fixed-top.css" rel="stylesheet">
@@ -66,6 +67,22 @@
       </div>
 
     </div> <!-- /container -->
+	
+	
+	<div class="container">
+    <div class="row colored">
+        <div id="contentdiv" class="contcustom">
+            <span class="fa fa-spinner bigicon"></span>
+            <h2>Login</h2>
+            <div>
+                <input id="username" type="text" placeholder="username" onkeypress="check_values();">
+                <input id="password" type="password" placeholder="password" onkeypress="check_values();">
+                <button id="button1" class="btn btn-default wide hidden"><span class="fa fa-check med"></span></button>
+                <span id="lock1" class="fa fa-lock medhidden redborder"></span>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <!-- Bootstrap core JavaScript

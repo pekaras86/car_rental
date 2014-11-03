@@ -50,8 +50,7 @@
               <li><a href="#">Link</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="./">Default</a></li>
-              <li><a href="../navbar-static-top/">Log in</a></li>
+              <li><a href="log_in_form.php">Log in</a></li>
               <li class="active"><a href="sign_up_form.php">Sign up</a></li>
             </ul>
           </div><!--/.nav-collapse -->

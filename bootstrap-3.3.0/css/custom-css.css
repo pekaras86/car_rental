@@ -6,12 +6,12 @@
 
 /* custom style for sign_up_form.php */
 #container1 {
-    background-color: #e2dada;
+    background-color: #eee;
 }
 
 .centered-form {
-    margin-top: 120px;
-    margin-bottom: 120px;
+    margin-top: 28px;
+    margin-bottom: 28px;
 }
 
 .centered-form .panel {

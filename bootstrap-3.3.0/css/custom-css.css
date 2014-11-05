@@ -23,6 +23,17 @@
 }
 
 
+/* custom style for lockation-date picker module */
+.pickdrop_date .form-control {
+	width: 20%;
+}
+
+.pickdrop_lock .form-control {
+	width: 30%;
+}
+
+
+
 
 /* custom style for log_in_form.php */
 .login-card {

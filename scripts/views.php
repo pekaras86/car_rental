@@ -39,20 +39,22 @@ EOD;
 
 
 // Requires the footer (JS declarations) part of the page 
-function display_footer() {
+function display_footer($jqScripts = NULL) {
 
 echo <<<EOD
 		    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+	<link href="http://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	{$jqScripts}
   </body>
 </html>
 		
-
 EOD;
 }
 

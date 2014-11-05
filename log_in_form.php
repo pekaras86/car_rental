@@ -27,6 +27,11 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="front_page.php">Home</a></li>
+			  <li><a href="about_us.php">About Us</a></li>
+			  <li><a href="car_types.php">Car Types</a></li>
+			  <li><a href="car_stations.php">Car Stations</a></li>
+			  <li><a href="terms_conditions.php">Terms & Conditions</a></li>
+			  <li><a href="contuct_us.php">Contuct Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="log_in_form.php">Log in</a></li>

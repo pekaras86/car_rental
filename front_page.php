@@ -41,22 +41,92 @@
         </div><!--/.container-fluid -->
       </nav>
 
-      <!-- Main component for a primary marketing message or call to action -->
+      
+	  
+	  <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
-      </div>
-     
+       
+	   
+	   
+	   <div class="calendar-module">  
+		<form role="form">
+		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
+		     <label>Pickup Location</label>
+             <select class="form-control" id="pickup_location">
+               <option value="">ATHENS AIRPORT</option>
+               <option value="">THESSALONIKI AIRPORT</option>
+               <option value="">VOLOS</option>
+               <option value="">ALEKSANDROUPOLI</option>
+			   <option value="">CHANIA</option>
+             </select>
+		    </div> <!--end pickup location-->
+		  <div class="form-group pickdrop_date">  <!--start pickup date-->
+		    <label>Pickup Date</label>
+            <input type="date" class="form-control" id="datepicker1">
+		  </div> <!--end pickup date-->
+		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
+            <label>Pickup Time</label>		  
+			<input type="time" class="form-control" id="timepicker1">
+		  </div> <!--end pickup time-->
+		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
+		     <label>Drop Off Location</label>
+             <select class="form-control" id="dropoff_location">
+               <option value="">ATHENS AIRPORT</option>
+               <option value="">THESSALONIKI AIRPORT</option>
+               <option value="">VOLOS</option>
+               <option value="">ALEKSANDROUPOLI</option>
+			   <option value="">CHANIA</option>
+             </select>
+		    </div> <!--end dropoff location-->
+			<div class="form-group pickdrop_date">  <!--start dropoff date-->
+		    <label>Drop Off Date</label>
+            <input type="date" class="form-control" id="datepicker2">
+		  </div> <!--end dropoff date-->
+		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
+            <label>Drop Off Time</label>		  
+			<input type="time" class="form-control" id="timepicker2">
+		  </div> <!--end dropoff time-->
+		  <div class="form-group">        
+            <button type="submit" class="btn btn-default btn-info search-module">SEARCH</button>
+          </div>
+		</form>
+		
+		
+		
+		
+		
+          
+		 
+		 
+		  
+			
+
+		 
+		 
+		 
+		 
+		 
+      </div> <!-- / jumbotron-->
+
     </div> <!-- /container -->
-    
-	
+
 
 <?php
   
+  $jqScript = <<<EOD
+  <script>
+   $(function() {
+    $( "#datepicker1, #datepicker2" ).datepicker();
+    });
+  </script>
+  <script>
+  $('#timepicker1, #timepicker2').timepicker();
+  </script>
+  
+
+EOD;
+   
   // Requires the footer (JS declarations) part of the page 
-  display_footer();
+  display_footer($jqScript);
 
 ?>

@@ -24,15 +24,23 @@
 
 
 /* custom style for lockation-date picker module */
-.pickdrop_date .form-control {
+.pickdrop_date {
 	width: 20%;
+	display:inline-block;
 }
 
-.pickdrop_lock .form-control {
+.pickdrop_lock {
 	width: 30%;
 }
 
+.pickdrop_time {
+	width: 10%;
+	display:inline-block;
+}
 
+.search-module {
+	width: 30%;
+}
 
 
 /* custom style for log_in_form.php */

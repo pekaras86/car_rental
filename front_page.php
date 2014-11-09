@@ -95,9 +95,17 @@
 		
 		
 		
-		   <div class="front-page-cars">
-	       <img src="images/Audi_R8.png" alt="" height="" width="500" id="active">		   
-          <div>
+		   <div class="front-page-cars" id="front-slideshow">
+		     <div>
+	           <img src="images/Audi_R8.png" alt="" height="" width="500">
+             </div>
+             <div>
+	           <img src="images/Honda-V6.png" alt="" height="" width="500">
+             </div>
+             <div>
+	           <img src="images/montero.png" alt="" height="" width="500">
+             </div>			 
+          </div>
 		 
 		 
 		    
@@ -121,8 +129,22 @@
     $( "#datepicker1, #datepicker2" ).datepicker();
     });
   </script>
-  <script>
+ 
+ <script>
   $('#timepicker1, #timepicker2').timepicker();
+  </script>
+  
+  <script>
+  $("#front-slideshow > div:gt(0)").hide();
+
+  setInterval(function() { 
+    $('#front-slideshow > div:first')
+      .fadeOut(1000)
+      .next()
+      .fadeIn(1000)
+      .end()
+      .appendTo('#front-slideshow');
+  },  3000);
   </script>
   
   

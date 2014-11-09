@@ -48,12 +48,18 @@
 }
 
 
-/* custom style for log_in_form.php */
+/* custom style for front page cars */
 .front-page-cars {
 	display:inline-block;
 	float:right;
 	margin-top:36px;
 	margin-right:90px;
+}
+
+
+#front-slideshow > div { 
+    position: absolute; 
+	margin-left:-500px;
 }
 
 
@@ -152,7 +158,6 @@
   text-align: center;
   font-size: 12px;
 }
-
 
 
 

@@ -25,21 +25,35 @@
 
 /* custom style for lockation-date picker module */
 .pickdrop_date {
-	width: 20%;
+	width: 65%;
 	display:inline-block;
 }
 
 .pickdrop_lock {
-	width: 30%;
+	width: 100%;
 }
 
 .pickdrop_time {
-	width: 10%;
+	width: 33%;
 	display:inline-block;
 }
 
 .search-module {
-	width: 30%;
+	width: 100%;
+}
+
+
+.calendar-module {
+  display:inline-block;
+}
+
+
+/* custom style for log_in_form.php */
+.front-page-cars {
+	display:inline-block;
+	float:right;
+	margin-top:36px;
+	margin-right:90px;
 }
 
 
@@ -138,3 +152,8 @@
   text-align: center;
   font-size: 12px;
 }
+
+
+
+
+

@@ -40,15 +40,16 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
-      
+    </div> <!-- /container -->
 	  
-	  <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
+	  
+	 
+	 <!-- Main component for a primary marketing message or call to action -->
+	 <div class="container"> 
+	  
+	  <div class="jumbotron">
        
-	   
-	   
-	   <div class="calendar-module">  
+	  <div class="calendar-module">  
 		<form role="form">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
@@ -86,19 +87,20 @@
             <label>Drop Off Time</label>		  
 			<input type="time" class="form-control" id="timepicker2">
 		  </div> <!--end dropoff time-->
-		  <div class="form-group">        
+		  <div class="form-group search_mod_button">        
             <button type="submit" class="btn btn-default btn-info search-module">SEARCH</button>
           </div>
 		</form>
+	  </div>
 		
 		
 		
-		
-		
-          
+		   <div class="front-page-cars">
+	       <img src="images/Audi_R8.png" alt="" height="" width="500" id="active">		   
+          <div>
 		 
 		 
-		  
+		    
 			
 
 		 
@@ -114,7 +116,7 @@
 <?php
   
   $jqScript = <<<EOD
-  <script>
+  <script>  
    $(function() {
     $( "#datepicker1, #datepicker2" ).datepicker();
     });
@@ -123,7 +125,7 @@
   $('#timepicker1, #timepicker2').timepicker();
   </script>
   
-
+  
 EOD;
    
   // Requires the footer (JS declarations) part of the page 

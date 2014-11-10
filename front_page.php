@@ -134,7 +134,7 @@
   $('#timepicker1, #timepicker2').timepicker();
   </script>
   
-  <script>
+  <script> 
   $("#front-slideshow > div:gt(0)").hide();
 
   setInterval(function() { 

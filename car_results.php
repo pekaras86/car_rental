@@ -58,7 +58,7 @@
 			    <td align="left" width="130px" valign="top"> <!--car icon and price-->
 				  <img class="imgresult" src="images/cars/honda-accord-v6.jpg" alt="" height="" width="">
 				  <div class="car-result-price-div">
-				    <span class="vrcstartfrom">Total Price</span>
+				    <span class="vrcstartfrom">Price/Day</span>
 					<span class="car_cost">€ 104.00</span>
 				  </div>
 				</td> <!--end car icon and price-->
@@ -109,7 +109,7 @@
 					  </tr>
 					  <tr>
 					    <td>
-						  <button type="button" class="btn btn-primary btn-lg">Search</button>
+						  <button type="button" class="btn btn-default btn-lg">Search</button>
 						</td>
 					  </tr>
 					</tbody>

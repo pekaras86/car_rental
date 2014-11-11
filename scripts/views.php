@@ -51,7 +51,8 @@ echo <<<EOD
     <script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.0/js/jquery.timepicker.js"></script>  <!--time_picker-->
-    
+    <script src="bootstrap-3.3.0/js/modernizr.custom.52675.js"></script>
+	
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 	{$jqScripts}

@@ -23,11 +23,11 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="front_page.php">Thessaloniki Car Rentals</a>
+            <a class="navbar-brand" href="index.php">Thessaloniki Car Rentals</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="front_page.php">Home</a></li>
+              <li><a href="index.php">Home</a></li>
 			  <li><a href="about_us.php">About Us</a></li>
 			  <li><a href="car_types.php">Car Types</a></li>
 			  <li><a href="car_stations.php">Car Stations</a></li>

@@ -226,3 +226,22 @@
 .char-img {
     width:35px;
 }
+
+/* css for responsive google map */
+#map-container {
+    display: inline-block;
+    position: relative;
+    width: 75%;
+}
+#dummy {
+    padding-top: 75%; /* 4:3 aspect ratio */
+}
+#map-element {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: silver /* show me! */
+}
+/* css for responsive google map (ends here) */

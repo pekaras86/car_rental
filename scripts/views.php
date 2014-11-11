@@ -63,6 +63,80 @@ EOD;
 }
 
 
+// Requires the navbar
+function display_navbar($tag = NULL) {
 
+$home = NULL;
+$about = NULL;
+$carTypes = NULL;
+$carStations = NULL;
+$terms = NULL;
+$contactUs = NULL;
+$logIn = NULL;
+$signUp = NULL;
+
+switch($tag) {
+  case "home":
+    $home = "active";
+	break;
+  case "about":
+    $about = "active";
+	break;
+  case "carTypes":
+    $carTypes = "active";
+	break;
+  case "carStations":
+    $carStations = "active";
+	break;
+  case "terms":
+    $terms = "active";
+	break;
+  case "contactUs":
+    $contactUs = "active";
+	break;
+  case "logIn":
+    $logIn = "active";
+	break;
+  case "signUp":
+    $signUp = "active";
+	break;
+}
+
+echo <<<EOD
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">Thessaloniki Car Rentals</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="<?php {$home} ?>"><a href="index.php">Home</a></li>
+			  <li class="<?php {$about} ?>"><a href="about_us.php">About Us</a></li>
+			  <li class="<?php {$carTypes} ?>"><a href="car_types.php">Car Types</a></li>
+			  <li class="<?php {$carStations} ?>"><a href="car_stations.php">Car Stations</a></li>
+			  <li class="<?php {$terms} ?>"><a href="terms_conditions.php">Terms & Conditions</a></li>
+			  <li class="<?php {$contactUs} ?>"><a href="contact_us.php">Contact Us</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="<?php {$logIn} ?>"><a href="log_in_form.php">Log in</a></li>
+              <li class="<?php {$signUp} ?>"><a href="sign_up_form.php">Sign up</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+		
+EOD;
+}
 
 ?>

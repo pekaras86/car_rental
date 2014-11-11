@@ -82,11 +82,16 @@
 							  <span>A/C</span>
 							</div>
 							<div class="char-icon">
-							  <img class="char-img" src="images/char-icons/ac.png">
+							  <img class="char-img" src="images/char-icons/engine.png">
 							  <span>1000cc</span>
 							</div>
-							<div class="char-icon"></div>
-							<div class="char-icon"></div>
+							<div class="char-icon">
+							  <img class="char-img" src="images/char-icons/abs.png">
+							</div>
+							<div class="char-icon">
+							  <img class="char-img" src="images/char-icons/airbag.png">
+							  <span>x2</span>
+							</div>
 							<div class="char-icon"></div>
 							<div class="char-icon"></div>
 							<div class="char-icon"></div>

@@ -214,14 +214,15 @@
 
 .characteristics {
 	display: inline-block;
-	width:100%;
+    width: 100%;
 }
 
-.char-icon {
+.characteristics .char-icon {
 	display: inline-block;
     margin: 0 8px 5px 0;
+	
 }
 
 .char-img {
-    width:10%;
+    width:35px;
 }

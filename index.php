@@ -87,6 +87,15 @@
             <label>Drop Off Time</label>		  
 			<input type="text" class="form-control" id="timepicker2">
 		  </div> <!--end dropoff time-->
+		  <div class="form-group car-category"> <!--start drop-off location-->
+		     <label>Category</label>
+             <select class="form-control" id="car-category">
+               <option value="">ANY</option>
+               <option value="">CITY CAR</option>
+               <option value="">STATION WAGON</option>
+               <option value="">SUV</option>
+             </select>
+		    </div> <!--end dropoff location-->
 		  <div class="form-group search_mod_button">        
             <button type="submit" class="btn btn-default btn-info search-module">SEARCH</button>
           </div>

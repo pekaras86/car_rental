@@ -135,7 +135,7 @@ echo <<<EOD
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-		
+	</div> <!-- /container -->	
 EOD;
 }
 

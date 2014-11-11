@@ -92,9 +92,18 @@
 							  <img class="char-img" src="images/char-icons/airbag.png">
 							  <span>x2</span>
 							</div>
-							<div class="char-icon"></div>
-							<div class="char-icon"></div>
-							<div class="char-icon"></div>
+							<div class="char-icon">
+							  <img class="char-img" src="images/char-icons/body.png">
+							  <span>x4</span>
+							</div>
+							<div class="char-icon">
+							  <img class="char-img" src="images/char-icons/door.png">
+							  <span>x4</span>
+							</div>
+							<div class="char-icon">
+							  <img class="char-img" src="images/char-icons/radio.png">
+							  <span>Radio CD</span>
+							</div>
 							<div class="char-icon"></div>
 						  </div>
 						</td>

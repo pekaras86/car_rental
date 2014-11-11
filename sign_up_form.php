@@ -31,7 +31,7 @@
 			  <li><a href="car_types.php">Car Types</a></li>
 			  <li><a href="car_stations.php">Car Stations</a></li>
 			  <li><a href="terms_conditions.php">Terms & Conditions</a></li>
-			  <li><a href="contuct_us.php">Contuct Us</a></li>
+			  <li><a href="contact_us.php">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="log_in_form.php">Log in</a></li>

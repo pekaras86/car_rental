@@ -104,8 +104,12 @@
 							  <img class="char-img" src="images/char-icons/radio.png">
 							  <span>Radio CD</span>
 							</div>
-							<div class="char-icon"></div>
 						  </div>
+						</td>
+					  </tr>
+					  <tr>
+					    <td>
+						  <button type="button" class="btn btn-primary btn-lg">Search</button>
 						</td>
 					  </tr>
 					</tbody>

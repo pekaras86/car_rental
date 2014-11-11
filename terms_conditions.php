@@ -32,7 +32,7 @@
 			  <li><a href="car_types.php">Car Types</a></li>
 			  <li><a href="car_stations.php">Car Stations</a></li>
 	      <li class="active"><a href="terms_conditions.php">Terms & Conditions</a></li>
-			  <li><a href="contuct_us.php">Contuct Us</a></li>
+			  <li><a href="contact_us.php">Contact Us</a></li>
 			  <li><a href="" style="padding-right:5px;padding-left:5px;"><img src="images\langs\gr.jpg" alt="ελληνικά" title="ελληνικά" /></a></li>
 			  <li><a href="" style="padding-right:5px;padding-left:5px;"><img src="images\langs\uk.jpg" alt="english" title="english" /></a></li>
 

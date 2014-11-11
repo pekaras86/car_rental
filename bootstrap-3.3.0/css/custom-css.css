@@ -160,5 +160,68 @@
 }
 
 
+/* car_results.php && car_result */
+.car_result {
+    background-color: #EDE4E8;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    overflow: hidden;
+    padding: 8px;
+    width: 98%;
+}
 
+.car_result_table {
+    font-family: "Century Gothic","Lucida Grande","Lucida Sans Unicode",sans-serif;
+    font-size: 13px;
+    line-height: 1.6em;
+}
 
+.imgresult {
+	margin: 0 10px 10px 0;
+    max-height: 300px !important;
+    max-width: 250px !important;
+	border: 1px solid #ddd;
+    padding: 1px;
+}
+
+.car-result-price-div {
+	padding: 5px 10px !important;
+    width: 250px;
+	display: block;
+    font-size: 11px !important;
+	background: none repeat scroll 0 0 #999;
+    clear: both;
+    color: #fff !important;
+    float: left;
+}
+
+.car_cost {
+    color: #00647e;
+    font-size: 28px;
+    font-weight: bold;
+	display: block;
+	color: #fff !important;
+}
+
+.vrcrowcname {
+    font-size: 20px !important;
+    font-weight: normal !important;
+}
+
+.vrcrowdescr p {
+	font-size : 15px;
+}
+
+.characteristics {
+	display: inline-block;
+	width:100%;
+}
+
+.char-icon {
+	display: inline-block;
+    margin: 0 8px 5px 0;
+}
+
+.char-img {
+    width:10%;
+}

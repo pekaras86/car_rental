@@ -109,7 +109,7 @@
 					  </tr>
 					  <tr>
 					    <td>
-						  <button type="button" class="btn btn-default btn-lg">Search</button>
+						  <button type="button" class="btn btn-default btn-sm">Search</button>
 						</td>
 					  </tr>
 					</tbody>

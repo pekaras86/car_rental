@@ -66,9 +66,13 @@
             <li><b>child seat:</b> the extra charge is 4€ per day. Maximum charge is 28€. Available upon request.</li>
             <li><b>roof rack:</b> the extra charge is 5€ per day. Maximum charge is 35€. Available upon request.</li>
         </ul>
+        <li>Petrol policy:</li>
+        Cars will be delivered with a full tank and are to be returned empty. No refunds will be issued for vehicles returned with fuel. Petrol costs will be paid by the renter.
+        <li> Highway Code violations:</li>
+        Fines issued due to highway code violations during the rental period are at the expense of the renter.
+        <li>Accident:</li>
+        In case of an accident the renter is obliged to inform the company as well as the police.
       </ol>
-
-
     </div>
 
 

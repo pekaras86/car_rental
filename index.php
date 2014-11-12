@@ -16,8 +16,8 @@
 	 <!-- Main component for a primary marketing message or call to action -->
 	 <div class="container"> 
 	  
-	  <div class="jumbotron">
-       
+	   <div class="jumbotron">
+      
 	  <div class="calendar-module">  
 		<form role="form" action="car_results.php">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
@@ -70,18 +70,19 @@
           </div>
 		</form>
 	  </div>
+	  
 		
 		
 		
 		   <div class="front-page-cars" id="front-slideshow">
 		     <div>
-	           <img src="images/Audi_R8.png" alt="" height="" width="500">
+	           <img class="img-responsive" src="images/Audi_R8.png" alt="Responsive image" height="" width="500">
              </div>
              <div>
-	           <img src="images/Honda-V6.png" alt="" height="" width="500">
+	           <img class="img-responsive" src="images/Honda-V6.png" alt="Responsive image" height="" width="500">
              </div>
              <div>
-	           <img src="images/montero.png" alt="" height="" width="500">
+	           <img class="img-responsive" src="images/montero.png" alt="Responsive image" height="" width="500">
              </div>			 
           </div>
 		 
@@ -92,10 +93,10 @@
 		 
 		 
 		 
-		 
+		
 		 
       </div> <!-- / jumbotron-->
-
+     
     </div> <!-- /container -->
 
 

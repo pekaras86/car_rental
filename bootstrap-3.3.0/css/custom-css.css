@@ -245,4 +245,7 @@
     right: 0;
     background-color: silver /* show me! */
 }
+#c-input {
+    padding-bottom:12px;
+}
 /* css for responsive google map (ends here) */

@@ -264,9 +264,21 @@
 
 .book-submit {
  float :left;
- margin-top:103px;
- margin-left:80px;
+ margin-top:22px;
+ margin-left:62px;
  width:313px;
+}
+
+
+.car_prices {
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    float: left;
+    font-size: 13px;
+    min-width: 44.6%;
+    overflow: hidden;
+    padding: 15px;
+	margin-top:12px;
 }
 
 /* css for responsive google map */
@@ -296,3 +308,24 @@
 }
 /* css for responsive google map (ends here) */
 >>>>>>> origin/master
+
+
+
+/* confirm-order.php */
+
+
+.contsite {
+    width: 97%;
+	background: none repeat scroll 0 0 #fff;
+    box-shadow: 0 0 2px 0 #000000;
+    display: inline-block;
+    margin: 0 0 8px;
+    padding: 20px 15px;
+}
+
+
+
+
+
+
+

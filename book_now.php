@@ -16,7 +16,7 @@
 	  
 	 <div class="jumbotron">
        
-	    <form method="get" action="">
+	    <form method="get" action="confirm_order.php">
         <div class="car_result">
 	    
 		  <table class="car_result_table">
@@ -77,8 +77,38 @@
 			  </tr>
 			</tbody>
 		  </table>
-		  <div class="book-submit">
-		  <button type="submit" class="btn btn-primary btn-lg btn-block">Book Now</button>
+		  <div class="car_prices">
+		    <span class="vrhword">Total Price:</span>
+			<table>
+			  <tbody>
+			    <tr>
+				  <td>
+				    <label for="pid1">
+                      <strong>Standard Insurance:</strong>
+                      <strong>€ 100.00</strong>
+                      <br>
+                      Km inlcuded: 200
+                    </label>
+				  </td>
+				  <td style="float:right; margin-left:150px;">
+					<input id="pid1" type="radio" checked="checked" value="1" name="priceid">
+				  </td>
+				</tr>
+				<tr>
+				  <td>
+				    <label for="pid1">
+                      <strong>Full Insurance:</strong>
+                      <strong>€ 150.00</strong>
+                      <br>
+                      Km inlcuded: Unlimited
+                    </label>
+				  </td>
+				  <td style="float:right; margin-left:150px;">
+					<input id="pid1" type="radio" checked="checked" value="1" name="priceid">
+				  </td>
+				</tr>
+			  </tbody>
+			</table>
 		  </div>
 		  <div class="car_options">
 	      <span class="vrhword">Options:</span>
@@ -107,7 +137,9 @@
 			</tbody>
 		   </table>
 	      </div> <!--end car option-->
-		
+		  <div class="book-submit">
+		  <button type="submit" class="btn btn-primary btn-lg btn-block">Book Now</button>
+		  </div>
 	   </div>
 	  </form>
 	  

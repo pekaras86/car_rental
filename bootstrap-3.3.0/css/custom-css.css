@@ -262,7 +262,12 @@
 	margin:4px;
 }
 
-
+.book-submit {
+ float :left;
+ margin-top:103px;
+ margin-left:80px;
+ width:313px;
+}
 
 /* css for responsive google map */
 #map-container {

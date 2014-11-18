@@ -77,6 +77,9 @@
 			  </tr>
 			</tbody>
 		  </table>
+		  <div class="book-submit">
+		  <button type="submit" class="btn btn-primary btn-lg btn-block">Book Now</button>
+		  </div>
 		  <div class="car_options">
 	      <span class="vrhword">Options:</span>
 		    <table cellspacing="0" cellpadding="0" width="90%">

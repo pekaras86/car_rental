@@ -16,9 +16,9 @@
 	  
 	 <div class="jumbotron">
        
-	  
-        <div class="car_result">
 	    <form method="get" action="">
+        <div class="car_result">
+	    
 		  <table class="car_result_table">
 		    <tbody>
 			  <tr>
@@ -53,9 +53,6 @@
 							  <span>1000cc</span>
 							</div>
 							<div class="char-icon">
-							  <img class="char-img" src="images/char-icons/abs.png">
-							</div>
-							<div class="char-icon">
 							  <img class="char-img" src="images/char-icons/airbag.png">
 							  <span>x2</span>
 							</div>
@@ -80,8 +77,39 @@
 			  </tr>
 			</tbody>
 		  </table>
-		</form>
-	  </div>
+		  <div class="car_options">
+	      <span class="vrhword">Options:</span>
+		    <table cellspacing="0" cellpadding="0" width="90%">
+		     <tbody>
+		       <tr height="30px"> <!--row-->
+			    <td><img class="maxthirty" src="images/char-icons/abs.png"><span style="padding:2px;">GPS</span></td>
+			    <td><strong>€ 30</strong></td>
+			    <td align="center"><input type="checkbox" value="1" name="optid3"></td>
+			  </tr> <!--row-->
+	           <tr height="30px">
+				<td><img class="maxthirty" src="images/char-icons/child_seat.png"><span style="padding:2px;">Child Seat</span></td>
+				<td><strong>€ 26</strong></td>
+				<td align="center"><input type="checkbox" value="1" name="optid3"></td>
+			  </tr>
+              <tr height="30px">
+				<td><img class="maxthirty" src="images/char-icons/snow_chains.jpg"><span style="padding:2px;">Snow Chains</span></td>
+				<td><strong>€ 12</strong></td>
+				<td align="center"><input type="checkbox" value="1" name="optid3"></td>
+			  </tr>	
+              <tr height="30px">
+				<td><img class="maxthirty" src="images/char-icons/Car_Roof_Rack.jpg"><span style="padding:2px;">Roof Rack</span></td>
+				<td><strong>€ 21</strong></td>
+				<td align="center"><input type="checkbox" value="1" name="optid3"></td>
+			  </tr>				  
+			</tbody>
+		   </table>
+	      </div> <!--end car option-->
+		
+	   </div>
+	  </form>
+	  
+	  
+	  
 	    
 		
 		

@@ -160,7 +160,7 @@
 }
 
 
-/* car_results.php && car_result */
+/* car_results.php */
 .car_result {
     background-color: #EDE4E8;
     border: 1px solid #cccccc;
@@ -227,6 +227,42 @@
 .char-img {
     width:35px;
 }
+
+/* css for book_now.php */
+
+.car_options {
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    float: right;
+    font-size: 13px;
+    min-width: 44%;
+    overflow: hidden;
+    padding: 15px;
+	margin-top:10px;
+	margin-right:20px;
+
+}
+
+
+.car_options .vrhword {
+    margin: 0 0 10px;
+}
+
+.vrhword {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+	
+}
+
+.maxthirty {
+    cursor: pointer;
+    max-height: 30px;
+    max-width: 30px;
+	margin:4px;
+}
+
+
 
 /* css for responsive google map */
 #map-container {

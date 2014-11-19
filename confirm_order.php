@@ -94,7 +94,8 @@
 			  </tr>
 			</tbody>
 		  </table>
-		  <form method="post" action="">
+		  <form method="post" action="" role="form">
+		  <div class="form-group">
 		    <table class="cnorderflds">
 			  <tbody>
 			    <tr>
@@ -181,7 +182,26 @@
 				</tr> 
 			  </tbody>
 			</table>
-		  </form>
+			<br>
+			<p class="paymethod">Payment Method</p>
+			 <ul style="list-style-type: none;">
+			  <li>
+				<input id="gpay1" type="radio" checked="checked" value="1" name="gpayid">
+				<label for="gpay1">Bank Transfer</label>
+			  </li>
+              <li>
+				<input id="gpay2" type="radio" value="2" name="gpayid">
+				<label for="gpay2">PayPal</label>
+              </li>
+              <li>
+				<input id="gpay5" type="radio" value="5" name="gpayid">
+				<label for="gpay5">Stripe - Credit Card</label>
+              </li>
+            </ul>
+			<br>
+			<input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">
+		 </div>
+		 </form>
 		  
 		</div>
 	    

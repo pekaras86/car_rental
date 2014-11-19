@@ -53,7 +53,7 @@
 			  </tr>
 			  <tr>
 			    <td align="left">
-			      Toyota IQ
+			      Honda Accord V6
                   <br>
                   Standard Insurance
                   <br>
@@ -94,6 +94,94 @@
 			  </tr>
 			</tbody>
 		  </table>
+		  <form method="post" action="">
+		    <table class="cnorderflds">
+			  <tbody>
+			    <tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>Name</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>Last Name</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>e-mail</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Phone</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Address</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Zip Code</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>City</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Date of Birth</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                  </td>
+				</tr>
+				<tr>
+				<td align="right" valign="top">
+				  <span>Notes</span>
+				</td>
+				<td align="right">
+				  <textarea class="form-control" name="message" rows="5" cols="40" style="box-shadow: 0 0 2px #cccccc inset;">
+				 </textarea>
+				 </td>
+				</tr> 
+			  </tbody>
+			</table>
+		  </form>
 		  
 		</div>
 	    

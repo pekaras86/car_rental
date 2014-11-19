@@ -160,6 +160,107 @@
 }
 
 
+/* confirm_order.php */
+
+.vrcrentalfor {
+    margin: 0 0 10px;
+    padding: 0;
+    width: 280px;
+}
+
+
+.vrcrentalfor .vrcrentalforone {
+    display: block;
+    font-size: 14px;
+}
+
+
+.vrcrentalfortwo {
+    color: #668;
+    /*display: block;*/
+    display:inline-block;
+    font-size: 12px;
+    padding: 5px 0 0;
+    width: 185px;
+}
+
+
+.vrcrentalfordate {
+    color: #000;
+    font-size: 15px;
+    padding: 0 2px;
+}
+
+
+.vrclocsboxsum {
+  display:inline-block;
+  float:right;
+}
+
+
+.vrcpickuploc {
+    background: none repeat scroll 0 0 #fbfbfb;
+    border: 1px solid #c9e9fc;
+    border-radius: 4px;
+    color: #666666;
+    float: left;
+    font-size: 16px;
+    margin: 0 15px 20px 0;
+    padding: 10px;
+}
+
+
+.vrcpickuploc .vrcpickuplocname, .vrcdropoffloc .vrcdropofflocname {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 0 0;
+}
+
+.vrcdropoffloc {
+    background: none repeat scroll 0 0 #fbfbfb;
+    border: 1px solid #c9e9fc;
+    border-radius: 4px;
+    color: #666;
+    float: left;
+    font-size: 16px;
+    margin: 0 0 20px;
+    padding: 10px;
+}
+
+
+
+.vrcpickuploc .vrcpickuplocname, .vrcdropoffloc .vrcdropofflocname {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 0 0;
+}
+/**/
+.vrctableorder {
+    line-height: 1.6em;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+
+.vrctableorder .vrctableorderfrow td {
+    background: none repeat scroll 0 0 #c9e9fc;
+    padding: 3px 8px;
+}
+
+
+.vrctableorder .vrcordrowtotal {
+    font-size: 13px;
+}
+
+
+.vrctableorder .vrcordrowtotal td {
+    background: none repeat scroll 0 0 #c9e9fc;
+    padding: 3px 8px;
+}
+
+
 /* car_results.php */
 .car_result {
     background-color: #EDE4E8;
@@ -243,7 +344,6 @@
 
 }
 
-
 .car_options .vrhword {
     margin: 0 0 10px;
 }
@@ -311,17 +411,11 @@
 
 
 
-/* confirm-order.php */
 
 
-.contsite {
-    width: 97%;
-	background: none repeat scroll 0 0 #fff;
-    box-shadow: 0 0 2px 0 #000000;
-    display: inline-block;
-    margin: 0 0 8px;
-    padding: 20px 15px;
-}
+
+
+
 
 
 

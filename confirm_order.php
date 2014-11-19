@@ -15,19 +15,87 @@
     <div class="container"> 
 	  <div class="jumbotron">
 	  
-	    <div class="contsite">
-	      <span><p>Order Summary:</p></span>
-		  <span>Rental Toyota Aygo (ATH) for 8 Days</span>
-		  <p></p>
-		  <div class="fromto">
-			<span>From <strong>20/11/2014 00:00</strong><br>
-			<span>To <strong> 22/11/2014 00:00</strong></span>
+	    
+		
+		<div class="contsite">
+		  <p>Order Summary:</p>
+		  <div class="vrcrentforlocs">
+		    <p class="vrcrentalfor">
+             <span class="vrcrentalforone">Honda Accord V6</span>
+            </p>
+		    <div class="vrcrentalfortwo">
+			  <p>
+                 <span class="vrcrentalfordate">From <span style="color:green;">11/30/2014 00:00</span></span>
+			  </p>
+			  <p>
+                 <span class="vrcrentalfordate">To <span style="color:green;">15/30/2014 00:00</span></span>
+			  </p>
+			</div>
+			<div class="vrclocsboxsum">
+			  <p class="vrcpickuploc">
+                Pickup Location:
+                <span class="vrcpickuplocname">Athens International Airport</span>
+             </p>
+			 <p class="vrcdropoffloc">
+               Drop Off Location:
+               <span class="vrcdropofflocname">Athens International Airport</span>
+             </p>
+			</div>
 		  </div>
-		  <div class="pikdrod">
-		    
-		  </div>
+		  <table class="vrctableorder">
+		    <tbody>
+			  <tr class="vrctableorderfrow">
+				<td> </td>
+				<td align="center">Days</td>
+				<td align="center">Net Price</td>
+				<td align="center">Tax</td>
+				<td align="center">Total Price</td>
+			  </tr>
+			  <tr>
+			    <td align="left">
+			      Toyota IQ
+                  <br>
+                  Standard Insurance
+                  <br>
+                  Km inlcuded: 200
+                </td>
+				<td align="center">2</td>
+				<td align="center">
+					<span class="vrccurrency">€</span>
+					<span class="vrcprice">82.64</span>
+               </td>
+			   <td align="center">
+                    <span class="vrccurrency">€</span>
+                    <span class="vrcprice">17.36</span>
+               </td>
+			   <td align="center">
+					<span class="vrccurrency">€</span>
+					<span class="vrcprice">100.00</span>
+			   </td>
+			  </tr>
+			  <tr height="20px">
+				<td height="20px" colspan="5"> </td>
+			  </tr>
+			  <tr class="vrcordrowtotal">
+			    <td>Total</td>
+				<td align="center"> </td>
+				<td align="center">
+					<span class="vrccurrency">€</span>
+					<span class="vrcprice">82.64</span>
+				</td>
+				<td align="center">
+					<span class="vrccurrency">€</span>
+					<span class="vrcprice">17.36</span>
+				</td>
+				<td class="vrctotalord" align="center">
+					<span class="vrccurrency">€</span>
+					<span class="vrcprice">100.00</span>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
 		  
-        </div>
+		</div>
 	    
             
 	  

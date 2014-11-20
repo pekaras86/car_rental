@@ -270,6 +270,11 @@
   padding: 5px;
 }
 
+.paymethod + ul li {
+    display: inline;
+	padding:5px;
+}
+
 /* car_results.php */
 .car_result {
     background-color: #EDE4E8;

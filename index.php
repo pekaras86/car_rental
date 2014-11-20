@@ -17,8 +17,8 @@
 	 <div class="container"> 
 	  
 	   <div class="jumbotron">
-      
-	  <div class="calendar-module">  
+      <div class="row">
+	  <div class="calendar-module col-xs-12 col-s-12 col-md-5 col-lg-5">  
 		<form role="form" action="car_results.php">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
@@ -70,11 +70,7 @@
           </div>
 		</form>
 	  </div>
-	  
-		
-		
-		
-		   <div class="front-page-cars" id="front-slideshow">
+	  <div class="front-page-cars hidden-xs hidden-sm " id="front-slideshow">
 		     <div>
 	           <img class="img-responsive" src="images/Audi_R8.png" alt="Responsive image" height="" width="500">
              </div>
@@ -84,12 +80,13 @@
              <div>
 	           <img class="img-responsive" src="images/montero.png" alt="Responsive image" height="" width="500">
              </div>			 
-          </div>
+       </div>
+	  </div>
 		 
 		 
 		    
 			
-
+          
 		 
 		 
 		 

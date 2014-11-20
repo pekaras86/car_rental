@@ -6,7 +6,7 @@
   display_head("Thessaloniki Car Rentals");
   
   // Requires the navbar
-  $tag = "home";
+  $tag = "carTypes";
   display_navbar($tag);
 
 ?>
@@ -18,7 +18,7 @@
        
 	  
         <div class="car_result">
-	    <form method="get" action="book_now.php">
+	    <form method="get" action="car-types-book-now.php">
 		  <table class="car_result_table">
 		    <tbody>
 			  <tr>

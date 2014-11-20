@@ -19,6 +19,7 @@ function display_head($page_title = "") {
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.3.0/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.0/css/jquery.timepicker.css" />  <!--time_picker-->
+	<link href="bootstrap-3.3.0/css/jquery.validate.password.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom styles for this template -->
     <link href="bootstrap-3.3.0/css/custom-css.css" rel="stylesheet">
@@ -48,6 +49,7 @@ echo <<<EOD
     <!-- Placed at the end of the document so the pages load faster -->
 	<link href="http://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="bootstrap-3.3.0/js/jquery.validate.min.js"></script>
     <script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.0/js/jquery.timepicker.js"></script>  <!--time_picker-->

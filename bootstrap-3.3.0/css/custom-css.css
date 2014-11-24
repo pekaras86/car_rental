@@ -411,22 +411,35 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: silver /* show me! */
+    background-color: silver; /* show me! */
 }
 /* css for responsive google map (ends here) */
 
 
 
+/*custom style for rental_details.php (start) */
+.vrcorderof {
+    font-size: 16px !important;
+    padding: 10px 0;
+}
 
+.vrcorderpar {
+  font-size: 16px !important;
+  display:inline;
+  padding:3px;
+  
+}
 
+.status {
+  background-color: white;
+  border-radius:3px;
+}
 
+.statusbutton {
+  margin-top:20px;
+  
+}
 
-
-
-
-
-
-
-
-
-
+.secro {
+  margin-top:10px;
+}

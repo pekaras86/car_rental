@@ -71,83 +71,60 @@
 	  <div class="jumbotron">
         <div class="row"> 
            <div class="table-responsive">
-             <table class="table table-hover table-striped">
-			    <tr>
-				  <th style="text-align:center;" colspan="10">Current Orders</th>
-				</tr>
-				<tr>
-				  <th>ID</th>
-				  <th>Date</th>
-				  <th>Purchaser</th>
-				  <th>Car</th>
-				  <th>Pickup</th>
-				  <th>Drop Off</th>
-				  <th>Days</th>
-				  <th>Total</th>
-				  <th>Status</th>
-				  <th>Delete</th>
-				</tr>
-			    <tr>
-				  <td>1123</td>
-				  <td><a href="rental_details.php">11/24/2014 07:23</a></td>
-				  <td>Name:Giorgos Last Name:Antoniadis email:anto@yahoo.gr</td>
-				  <td>Seat Leon</td>
-				  <td>11/25/2014 13:30</td>
-				  <td>11/27/2014 21:30</td>
-				  <td>2</td>
-				  <td>230</td>
-				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1124</td>
-				  <td>11/24/2014 10:29</td>
-				  <td>Name:Anestis Last Name:Papas email:anpap@hotmail.com</td>
-				  <td>Honda Civic</td>
-				  <td>11/25/2014 17:00</td>
-				  <td>12/2/2014 22:30</td>
-				  <td>7</td>
-				  <td>386</td>
-				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1125</td>
-				  <td>11/24/2014 18:20</td>
-				  <td>Name:Diamantis Last Name:Kalaitzis email:dkala@hotmail.com</td>
-				  <td>Opel Ascona</td>
-				  <td>11/30/2014 17:00</td>
-				  <td>12/3/2014 22:30</td>
-				  <td>4</td>
-				  <td>310</td>
-				  <td style="color:red;">Standby</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1126</td>
-				  <td>11/24/2014 18:20</td>
-				  <td>Name:Aleksis Last Name:Papadospoulos email:alpap@hotmail.com</td>
-				  <td>Scoda Fabia</td>
-				  <td>11/24/2014 17:00</td>
-				  <td>12/1/2014 22:30</td>
-				  <td>7</td>
-				  <td>270</td>
-				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1127</td>
-				  <td>11/23/2014 18:20</td>
-				  <td>Name:Stefanos Last Name:Saleas email:stesal@hotmail.com</td>
-				  <td>Ford Focus</td>
-				  <td>11/25/2014 20:00</td>
-				  <td>12/01/2014 20:00</td>
-				  <td>6</td>
-				  <td>380</td>
-				  <td style="color:green;">Standby</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
-				</tr>
-			 </table>
+		     <form method="post" action="admin.php" name="adminForm">
+               <table class="table adminform">
+			    <tbody>
+				  <tr>
+				    <td>
+					  <p class="vrcorderof">
+						Order Number: <span style="color:green">1205</span> - Order Date: <span style="color:green">11/23/2014 20:46</span>    
+					  </p>
+					  <div class="status">
+					  <p class="vrcorderpar">Status:</p>
+					  <span style="color:green;">Confirmed</span>
+					  </div>
+					  <div class="statusbutton">
+					    <button type="button" class="btn btn-danger">Cancel Reservation</button>
+					  </div>
+					</td>
+				  </tr>
+				  <tr>
+				   <td valign="top">
+				   <br>
+				     <p class="vrcorderpar"><b>Purchaser Info:</b></p>
+					 <div>
+					   <i>eMail Address: </i>anto@yahoo.com <br>
+					   <i>First Name: </i>Giorgos <br>
+					   <i>Last Name: </i>Antoniadis <br>
+					   <i>Date of Birth: </i>1 April 1987 <br>
+					 </div>
+					 <br>
+					 <div>
+					   <b>Car: </b>Seat Leon <br>
+					   <b>Days of Rental: </b>2 <br>
+					   <b>Pickup: </b>11/25/2014 13:30 <br>
+					   <b>Drop Off: </b>11/27/2014 21:30 <br>
+					   <b>Pickup Location: </b>Athens Airport <br>
+					   <b>Drop Off Location: </b>Athens Airport <br>
+					 </div>
+				   </td>
+				   <td>
+				     <p class="vrcorderpar"><b>Fare:</b></p>
+					 <div>
+					   Standard Insurance : EUR 230 <br>
+					   Km inlcuded: 700
+					 </div>
+					 <br>
+					 <p class="vrcorderpar"><b>Options:</b></p>
+					 <div>
+					   ABS <br>
+					   Baby Seat <br>
+					 </div>
+				   </td>
+				  </tr>
+				</tbody>
+			   </table>
+			 </form>  
 		  </div>
         </div>
       </div> <!-- / jumbotron-->

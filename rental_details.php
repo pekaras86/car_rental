@@ -111,7 +111,7 @@
 				   <td>
 				     <p class="vrcorderpar"><b>Fare:</b></p>
 					 <div>
-					   Standard Insurance : EUR 230 <br>
+					   Standard Insurance : EUR 100 <br>
 					   Km inlcuded: 700
 					 </div>
 					 <br>
@@ -120,6 +120,9 @@
 					   ABS <br>
 					   Baby Seat <br>
 					 </div>
+					 <br>
+					 <p class="totaleur"><b>Total: EUR 230</b></p>
+					 
 				   </td>
 				  </tr>
 				</tbody>

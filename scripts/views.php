@@ -129,6 +129,7 @@ echo <<<EOD
 			  <li class="<?php {$carStations} ?>"><a href="car_stations.php">Car Stations</a></li>
 			  <li class="<?php {$terms} ?>"><a href="terms_conditions.php">Terms & Conditions</a></li>
 			  <li class="<?php {$contactUs} ?>"><a href="contact_us.php">Contact Us</a></li>
+			  <li class=""><a href="admin.php">Admin Panel</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="<?php {$logIn} ?>"><a href="log_in_form.php">Log in</a></li>

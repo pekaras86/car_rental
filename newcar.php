@@ -129,6 +129,65 @@
 					  </select>
 				   </td>
 				</tr>
+				<tr>
+				  <td width="200">
+					*
+					<b>Car Characteristics:</b>
+				  </td>
+				  <td>
+				    <img class="char-img" src="images/char-icons/ac.png">
+				    <select name="cars">
+					  <option value="volvo">Yes</option>
+					  <option value="saab">No</option>
+					</select>
+					
+					<img class="char-img" src="images/char-icons/engine.png">
+				    <input type="text" name="cccar" style="width:70px;">
+					
+					<img class="char-img" src="images/char-icons/airbag.png">
+				    <select name="cars">
+					  <option value="volvo">0</option>
+					  <option value="saab">1</option>
+					  <option value="saab">2</option>
+					  <option value="saab">4</option>
+					</select>
+					
+					<img class="char-img" src="images/char-icons/body.png">
+				    <select name="cars">
+					  <option value="volvo">2</option>
+					  <option value="saab">4</option>
+					  <option value="saab">5</option>
+					  <option value="saab">6</option>
+					</select>
+					
+					<img class="char-img" src="images/char-icons/door.png">
+				    <select name="cars">
+					  <option value="volvo">2</option>
+					  <option value="saab">4</option>
+					</select>
+					
+					<img class="char-img" src="images/char-icons/radio.png">
+				    <select name="cars">
+					  <option value="volvo">Yes</option>
+					  <option value="saab">No</option>
+					</select>
+				  </td>
+				</tr>
+				<tr>
+				  <td width="200">
+					*
+					<b>Price/Day:</b>
+				  </td>
+				  <td>
+				    <input type="text" size="4" value="" name="startfrom">
+                      € 
+				  </td>
+				  <tr>
+				   <td>
+				    <input type="submit" value="Submit">
+				   </td>
+				  </tr>
+				</tr>
 			  </tbody>
 			</table>
 		  </form>

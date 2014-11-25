@@ -48,8 +48,8 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class=""><a href="index.php">View Site</a></li>
-			  <li class="active"><a href="admin.php">Dashboard</a></li>
-			  <li class=""><a href=""></a></li>
+			  <li class=""><a href="admin.php">Dashboard</a></li>
+			  <li class="active"><a href="newcar.php">New Car</a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
@@ -70,66 +70,69 @@
 	<div class="container"> 
 	  <div class="jumbotron">
         <div class="row"> 
-           <div class="table-responsive">
-		     <form method="post" action="admin.php" name="adminForm">
-               <table class="table adminform">
-			    <tbody>
-				  <tr>
-				    <td>
-					  <p class="vrcorderof">
-						Order Number: <span style="color:green">1205</span> - Order Date: <span style="color:green">11/23/2014 20:46</span>    
-					  </p>
-					  <div class="status">
-					  <p class="vrcorderpar">Status:</p>
-					  <span style="color:green;">Confirmed</span>
-					  </div>
-					  <div class="statusbutton">
-					    <button type="button" class="btn btn-danger">Cancel Reservation</button>
-					  </div>
-					</td>
-				  </tr>
-				  <tr>
-				   <td valign="top">
-				   <br>
-				     <p class="vrcorderpar"><b>Purchaser Info:</b></p>
-					 <div>
-					   <i>eMail Address: </i>anto@yahoo.com <br>
-					   <i>First Name: </i>Giorgos <br>
-					   <i>Last Name: </i>Antoniadis <br>
-					   <i>Date of Birth: </i>1 April 1987 <br>
-					 </div>
-					 <br>
-					 <div>
-					   <b>Car: </b>Seat Leon <br>
-					   <b>Car ID: </b>021 <br>
-					   <b>Days of Rental: </b>2 <br>
-					   <b>Pickup: </b>11/25/2014 13:30 <br>
-					   <b>Drop Off: </b>11/27/2014 21:30 <br>
-					   <b>Pickup Location: </b>Athens Airport <br>
-					   <b>Drop Off Location: </b>Athens Airport <br>
-					 </div>
+		
+		  <form method="post" action="" name="addcar">
+		    <table class="addcar">
+			  <tbody>
+			    <tr>
+				  <td width="200">
+                     *
+                     <b>Car Name:</b>
+                  </td>
+				  <td>
+					 <input type="text" size="40" value="" name="cname">
+				  </td>
+				</tr>
+				<tr>
+				  <td width="200" valign="top">
+					 *
+				     <b>Car Image:</b>
+				  </td>
+				  <td>
+				    <input type="file" size="35" name="cimg">
+				  </td>
+				</tr>
+				<tr>
+				  <td width="200">
+					*
+					<b>Car Category:</b>
+				  </td>
+				  <td>
+					  <select size="4" multiple="multiple" name="ccat[]">
+						<option value="1">Suv</option>
+						<option value="3">Station Wagon</option>
+						<option value="4">City Car</option>
+					  </select>
 				   </td>
-				   <td>
-				     <p class="vrcorderpar"><b>Fare:</b></p>
-					 <div>
-					   Standard Insurance : EUR 100 <br>
-					   Km inlcuded: 700
-					 </div>
-					 <br>
-					 <p class="vrcorderpar"><b>Options:</b></p>
-					 <div>
-					   ABS <br>
-					   Baby Seat <br>
-					 </div>
-					 <br>
-					 <p class="totaleur"><b>Total: EUR 230</b></p>
-					 <p><a href="admin.php"><img src="images/other/left_arrow.png" alt="" style="width:50px;"></a></p>
+				</tr>
+				<tr>
+				  <td width="200">
+					*
+					<b>Car Description:</b>
+				  </td>
+				  <td>
+				     <textarea rows="4" cols="50"></textarea> 
+				  </td>
+				</tr>
+				<tr>
+				  <td width="200">
+					*
+					<b>Location:</b>
+				  </td>
+				  <td>
+					  <select size="4" multiple="multiple" name="ccat[]">
+						<option value="1">ATHENS AIRPORT</option>
+						<option value="3">THESSALONIKI AIRPORT</option>
+						<option value="4">VOLOS</option>
+						<option value="4">ALEKSANDROUPOLI</option>
+						<option value="4">CHANIA</option>
+					  </select>
 				   </td>
-				  </tr>
-				</tbody>
-			   </table>
-			 </form>  
-		  </div>
+				</tr>
+			  </tbody>
+			</table>
+		  </form>
+           
         </div>
       </div> <!-- / jumbotron-->
     </div> <!-- /container -->

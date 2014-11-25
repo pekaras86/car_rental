@@ -49,7 +49,7 @@
             <ul class="nav navbar-nav">
               <li class=""><a href="index.php">View Site</a></li>
 			  <li class="active"><a href="admin.php">Dashboard</a></li>
-			  <li class=""><a href=""></a></li>
+			  <li class=""><a href="newcar.php">New Car</a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>

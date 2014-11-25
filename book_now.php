@@ -68,6 +68,10 @@
 							  <img class="char-img" src="images/char-icons/radio.png">
 							  <span>Radio CD</span>
 							</div>
+							<div class="char-icon">
+							  <img class="char-img" src="images/char-icons/compas.png">
+							  <span>Athens</span>
+							</div>
 						  </div>
 						</td>
 					  </tr>

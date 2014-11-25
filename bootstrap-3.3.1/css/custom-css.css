@@ -451,3 +451,11 @@
   width:158px;
   border-radius:3px;
 }
+
+
+
+table.addcar td {
+    font-size: 1.091em;
+    padding: 5px;
+    text-align: left;
+}

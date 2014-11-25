@@ -72,6 +72,7 @@
         <div class="row"> 
 		
 		  <form method="post" action="" name="addcar">
+		   <div class="form-group">
 		    <table class="addcar">
 			  <tbody>
 			    <tr>
@@ -80,7 +81,7 @@
                      <b>Car Name:</b>
                   </td>
 				  <td>
-					 <input type="text" size="40" value="" name="cname">
+					 <input type="text" size="40" value="" name="cname" class="form-control" style="width:200px;">
 				  </td>
 				</tr>
 				<tr>
@@ -89,7 +90,7 @@
 				     <b>Car Image:</b>
 				  </td>
 				  <td>
-				    <input type="file" size="35" name="cimg">
+				   <span class="btn btn-default btn-file"><input type="file" size="35" name="cimg"></span>
 				  </td>
 				</tr>
 				<tr>
@@ -98,7 +99,7 @@
 					<b>Car Category:</b>
 				  </td>
 				  <td>
-					  <select size="4" multiple="multiple" name="ccat[]">
+					  <select size="4" multiple="multiple" name="ccat[]" class="form-control" style="width:200px;">
 						<option value="1">Suv</option>
 						<option value="3">Station Wagon</option>
 						<option value="4">City Car</option>
@@ -111,7 +112,7 @@
 					<b>Car Description:</b>
 				  </td>
 				  <td>
-				     <textarea rows="4" cols="50"></textarea> 
+				     <textarea rows="4" cols="50" class="form-control"></textarea> 
 				  </td>
 				</tr>
 				<tr>
@@ -120,12 +121,12 @@
 					<b>Location:</b>
 				  </td>
 				  <td>
-					  <select size="4" multiple="multiple" name="ccat[]">
-						<option value="1">ATHENS AIRPORT</option>
-						<option value="3">THESSALONIKI AIRPORT</option>
-						<option value="4">VOLOS</option>
-						<option value="4">ALEKSANDROUPOLI</option>
-						<option value="4">CHANIA</option>
+					  <select size="4" multiple="multiple" name="" class="form-control" style="width:250px;">
+						<option value="">ATHENS AIRPORT</option>
+						<option value="">THESSALONIKI AIRPORT</option>
+						<option value="">VOLOS</option>
+						<option value="">ALEKSANDROUPOLI</option>
+						<option value="">CHANIA</option>
 					  </select>
 				   </td>
 				</tr>
@@ -179,17 +180,18 @@
 					<b>Price/Day:</b>
 				  </td>
 				  <td>
-				    <input type="text" size="4" value="" name="startfrom">
-                      € 
+				    <input type="text" size="4" value="" name="startfrom" class="form-control" style="width:100px;">
+                      
 				  </td>
 				  <tr>
 				   <td>
-				    <input type="submit" value="Submit">
+				    <input type="submit" value="Submit" class="btn btn-default btn-file">
 				   </td>
 				  </tr>
 				</tr>
 			  </tbody>
 			</table>
+		   </div>
 		  </form>
            
         </div>

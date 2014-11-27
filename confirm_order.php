@@ -94,7 +94,7 @@
 			  </tr>
 			</tbody>
 		  </table>
-		  <form method="post" action="" role="form">
+		  <form method="post" action="" role="form" id="conorform">
 		  <div class="form-group">
 		    <table class="cnorderflds">
 			  <tbody>
@@ -106,7 +106,7 @@
                     <span>Name</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="fname">
                   </td>
 				</tr>
 				<tr>
@@ -117,7 +117,7 @@
                     <span>Last Name</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="lname">
                   </td>
 				</tr>
 				<tr>
@@ -128,7 +128,7 @@
                     <span>e-mail</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="email">
                   </td>
 				</tr>
 				<tr>
@@ -201,7 +201,7 @@
 			<br>
 			<input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">
 		 </div>
-		 </form>
+		</form>
 		  
 		</div>
 	    
@@ -227,8 +227,48 @@
 
 
 <?php
+
+$jqScript = <<<EOD
+   <script>
+     $(function() {
+  
+    // Setup form validation on the #register-form element
+    $("#conorform").validate({
+    
+        // Specify the validation rules
+        rules: {
+            fname: "required",
+            lname: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            
+            agree: "required"
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            firstname: "Please enter your first name",
+            lastname: "Please enter your last name",
+            email: "Please enter a valid email address",
+            agree: ""
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });  
+   </script>
+  
+  
+EOD;
+
+
     
   // Requires the footer (JS declarations) part of the page 
-  display_footer();
+  display_footer($jqScript);
 
 ?>

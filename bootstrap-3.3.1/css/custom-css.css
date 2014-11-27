@@ -1,6 +1,11 @@
 /* custom style for navigation bar */
-.navbar {
+/* .navbar {
 	margin-top: 20px;
+} */
+
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
 }
 
 /* custom style for sign_up_form.php */

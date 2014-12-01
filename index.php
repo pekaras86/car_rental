@@ -19,7 +19,7 @@
 	   <div class="jumbotron">
       <div class="row">
 	  <div class="calendar-module col-xs-12 col-s-12 col-md-5 col-lg-5">  
-		<form role="form" action="car_results.php">
+		<form role="form" action="car_results.php" method="POST">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
              <select class="form-control" id="pickup_location">

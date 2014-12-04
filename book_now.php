@@ -10,6 +10,14 @@
   $tag = "home";
   display_navbar($tag);
   
+  //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi 
+  //anakatefthine ton stin kentriki
+  if (!isset($_REQUEST['car_id']))
+  {
+    header("Location: index.php");
+    exit();
+  }
+  
   //anazitisi amaksiou me to sygekrimeno id 
   $car_id = $_REQUEST['car_id'];
   

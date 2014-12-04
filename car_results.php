@@ -1,5 +1,13 @@
 <?php
   
+  //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi 
+  //anakatefthine ton stin kentriki
+  if (!isset($_REQUEST['category']))
+  {
+    header("Location: index.php");
+    exit();
+  }
+  
   require_once ('scripts/database_connection.php');
   require_once ('scripts/views.php');
   
@@ -18,8 +26,8 @@
 	 <div class="jumbotron">
        
 	  <?php  
-	   
-      // pianei ta stoixeia apo ti forma	   
+	  
+	  // pianei ta stoixeia apo ti forma	   
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
 	  
@@ -138,20 +146,7 @@ EOD;
 	    }
 	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  ?>
+	?>
         
 	    
 		

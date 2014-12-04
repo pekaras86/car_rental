@@ -71,7 +71,7 @@
 	  <div class="jumbotron">
         <div class="row"> 
 		
-		  <form method="post" action="" name="addcar">
+		  <form method="post" action="add_new_car.php" name="addcar" enctype="multipart/form-data">
 		   <div class="form-group">
 		    <table class="addcar">
 			  <tbody>
@@ -81,7 +81,7 @@
                      <b>Car Name:</b>
                   </td>
 				  <td>
-					 <input type="text" size="40" value="" name="cname" class="form-control" style="width:200px;">
+					 <input type="text" size="40" name="cname" class="form-control" style="width:200px;">
 				  </td>
 				</tr>
 				<tr>
@@ -99,10 +99,10 @@
 					<b>Car Category:</b>
 				  </td>
 				  <td>
-					  <select size="4" multiple="multiple" name="ccat[]" class="form-control" style="width:200px;">
-						<option value="1">Suv</option>
-						<option value="3">Station Wagon</option>
-						<option value="4">City Car</option>
+					  <select size="4" multiple="multiple" name="ccat" class="form-control" style="width:200px;">
+						<option name="ccat" value="Suv">Suv</option>
+						<option name="ccat" value="Station Wagon">Station Wagon</option>
+						<option name="ccat" value="City Car">City Car</option>
 					  </select>
 				   </td>
 				</tr>
@@ -112,7 +112,7 @@
 					<b>Car Description:</b>
 				  </td>
 				  <td>
-				     <textarea rows="4" cols="50" class="form-control"></textarea> 
+				     <textarea rows="4" cols="50" name="cdescription" class="form-control"></textarea> 
 				  </td>
 				</tr>
 				<tr>
@@ -121,12 +121,12 @@
 					<b>Location:</b>
 				  </td>
 				  <td>
-					  <select size="4" multiple="multiple" name="" class="form-control" style="width:250px;">
-						<option value="">ATHENS AIRPORT</option>
-						<option value="">THESSALONIKI AIRPORT</option>
-						<option value="">VOLOS</option>
-						<option value="">ALEKSANDROUPOLI</option>
-						<option value="">CHANIA</option>
+					  <select size="4" multiple="multiple" name="clocation" class="form-control" style="width:250px;">
+						<option name="clocation" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+						<option name="clocation" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
+						<option name="clocation" value="VOLOS">VOLOS</option>
+						<option name="clocation" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
+						<option name="clocation" value="CHANIA">CHANIA</option>
 					  </select>
 				   </td>
 				</tr>
@@ -137,40 +137,40 @@
 				  </td>
 				  <td>
 				    <img class="char-img" src="images/char-icons/ac.png">
-				    <select name="cars">
-					  <option value="volvo">Yes</option>
-					  <option value="saab">No</option>
+				    <select name="air_con">
+					  <option name="air_con" value="Yes">Yes</option>
+					  <option name="air_con" value="No">No</option>
 					</select>
 					
 					<img class="char-img" src="images/char-icons/engine.png">
 				    <input type="text" name="cccar" style="width:70px;">
 					
 					<img class="char-img" src="images/char-icons/airbag.png">
-				    <select name="cars">
-					  <option value="volvo">0</option>
-					  <option value="saab">1</option>
-					  <option value="saab">2</option>
-					  <option value="saab">4</option>
+				    <select name="airbags">
+					  <option name="airbags" value="0">0</option>
+					  <option name="airbags" value="1">1</option>
+					  <option name="airbags" value="2">2</option>
+					  <option name="airbags" value="4">4</option>
 					</select>
 					
 					<img class="char-img" src="images/char-icons/body.png">
-				    <select name="cars">
-					  <option value="volvo">2</option>
-					  <option value="saab">4</option>
-					  <option value="saab">5</option>
-					  <option value="saab">6</option>
+				    <select name="passengers">
+					  <option name="passengers" value="2">2</option>
+					  <option name="passengers" value="4">4</option>
+					  <option name="passengers" value="5">5</option>
+					  <option name="passengers" value="6">6</option>
 					</select>
 					
 					<img class="char-img" src="images/char-icons/door.png">
-				    <select name="cars">
-					  <option value="volvo">2</option>
-					  <option value="saab">4</option>
+				    <select name="doors">
+					  <option name="doors" value="2">2</option>
+					  <option name="doors" value="4">4</option>
 					</select>
 					
 					<img class="char-img" src="images/char-icons/radio.png">
-				    <select name="cars">
-					  <option value="volvo">Yes</option>
-					  <option value="saab">No</option>
+				    <select name="radio">
+					  <option name="radio" value="Yes">Yes</option>
+					  <option name="radio" value="No">No</option>
 					</select>
 				  </td>
 				</tr>
@@ -180,7 +180,7 @@
 					<b>Price/Day:</b>
 				  </td>
 				  <td>
-				    <input type="text" size="4" value="" name="startfrom" class="form-control" style="width:100px;">
+				    <input type="text" size="4" value="" name="cprice" class="form-control" style="width:100px;">
                       
 				  </td>
 				  <tr>

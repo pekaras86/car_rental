@@ -22,12 +22,12 @@
 		<form role="form" action="car_results.php" method="POST">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
-             <select class="form-control" id="pickup_location">
-               <option value="">ATHENS AIRPORT</option>
-               <option value="">THESSALONIKI AIRPORT</option>
-               <option value="">VOLOS</option>
-               <option value="">ALEKSANDROUPOLI</option>
-			   <option value="">CHANIA</option>
+             <select class="form-control" id="pickup_location" name="pickup_location">
+               <option name="pickup_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+               <option name="pickup_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
+               <option name="pickup_location" value="VOLOS">VOLOS</option>
+               <option name="pickup_location" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
+			   <option name="pickup_location" value="CHANIA">CHANIA</option>
              </select>
 		    </div> <!--end pickup location-->
 		  <div class="form-group pickdrop_date">  <!--start pickup date-->
@@ -58,11 +58,11 @@
 		  </div> <!--end dropoff time-->
 		  <div class="form-group car-category"> <!--start drop-off location-->
 		     <label>Category</label>
-             <select class="form-control" id="car-category">
-               <option value="">ANY</option>
-               <option value="">CITY CAR</option>
-               <option value="">STATION WAGON</option>
-               <option value="">SUV</option>
+             <select class="form-control" id="car-category" name="category">
+               <option name="category" value="Any">ANY</option>
+               <option name="category" value="City Car">CITY CAR</option>
+               <option name="category" value="Station Wagon">STATION WAGON</option>
+               <option name="category" value="Suv">SUV</option>
              </select>
 		    </div> <!--end dropoff location-->
 		  <div class="form-group search_mod_button">        

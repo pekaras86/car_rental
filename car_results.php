@@ -60,7 +60,7 @@
           
 		  echo <<<EOD
            <div class="car_result">
-	        <form method="get" action="book_now.php?car_id={$car_id}">
+	        <form method="post" action="book_now.php?car_id={$car_id}">
 		      <table class="car_result_table">
 		        <tbody>
 			      <tr>

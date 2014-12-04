@@ -23,12 +23,14 @@
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
 	  
-	  
-	  // kataskevi query
-	  $select_query = "SELECT * FROM cars WHERE car_category ='{$category}' " .
+	  if ($category == 'Any') {
+	    $select_query = "SELECT * FROM cars WHERE car_location = '{$pickup_location}'";
+	  } else {
+	    $select_query = "SELECT * FROM cars WHERE car_category ='{$category}' " .
 	                    "AND car_location = '{$pickup_location}'";  
-	  
-      // run the query	  
+	    }
+     
+	  // run the query	  
 	  $result = mysqli_query($con, $select_query);  
     
 	  

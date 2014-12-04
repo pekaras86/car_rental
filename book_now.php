@@ -1,5 +1,6 @@
 <?php
   
+  require_once ('scripts/database_connection.php');
   require_once ('scripts/views.php');
   
   // Requires the <HEAD></HEAD> part of the page
@@ -8,7 +9,24 @@
   // Requires the navbar
   $tag = "home";
   display_navbar($tag);
+  
+  //anazitisi amaksiou me to sygekrimeno id 
+  $car_id = $_REQUEST['car_id'];
+  
+  $query = "SELECT * FROM cars WHERE car_id = '{$car_id}'";
+  
+  $result = mysqli_query($con, $query);
 
+  $car = mysqli_fetch_array($result);
+
+  $car_id		       = $car['car_id'];
+  $car_name 	       = $car['car_name'];
+  $car_category 	   = $car['car_category'];
+  $car_description     = $car['car_description'];
+  $car_location 	   = $car['car_location'];
+  $car_price 		   = $car['car_price'];
+  $car_pic_path        = $car['car_pic_path'];  
+  
 ?>
 
     <!-- Main component for a primary marketing message or call to action -->
@@ -23,22 +41,21 @@
 		    <tbody>
 			  <tr>
 			    <td align="left" width="130px" valign="top"> <!--car icon and price-->
-				  <img class="imgresult" src="images/cars/honda-accord-v6.jpg" alt="" height="" width="">
+				  <img class="imgresult" src="<?php echo $car_pic_path ?>" alt="" height="" width="">
 				  <div class="car-result-price-div">
 				    <span class="vrcstartfrom">Price/Day</span>
-					<span class="car_cost">€ 104.00</span>
+					<span class="car_cost"><?php echo $car_price ?></span>
 				  </div>
 				</td> <!--end car icon and price-->
 				<td align="left" width="80%" valign="top">
 				  <table>
 				    <tbody>
 					  <tr>
-					    <td class="vrcrowcname"><b>City Car : Honda Accord V6</b></td>
+					    <td class="vrcrowcname"><b><?php echo $car_category . " : " . $car_name ?></b></td>
 					  </tr>
 					  <tr>
 					    <td class="vrcrowdescr">
-						  <p>perigrafi perigrafi perigrafi perigrafi perigrafi perigrafi  
-						  perigrafi perigrafi perigrafi perigrafi perigrafi perigrafi.</p>
+						  <p><?php echo $car_description ?></p>
 						</td>
 					  </tr>
 					  <tr>

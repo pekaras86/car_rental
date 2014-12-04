@@ -45,10 +45,22 @@
 		  $car_location 	   = $car['car_location'];
 		  $car_price 		   = $car['car_price'];
 		  $car_pic_path        = $car['car_pic_path'];
+		  
+		  $char_query = "SELECT * FROM characteristics WHERE car_id = '{$car_id}'";
+		  $char_result = mysqli_query($con, $char_query);
+		  $char = mysqli_fetch_array($char_result);
+		  
+		  $air_con 		= $char['air_con'];
+		  $cccar 		= $char['cccar'];
+		  $airbags 		= $char['airbags'];
+		  $cccar 		= $char['cccar'];
+		  $passengers 	= $char['passengers'];
+		  $doors 		= $char['doors'];
+		  $radio 		= $char['radio'];
           
 		  echo <<<EOD
            <div class="car_result">
-	        <form method="get" action="book_now.php">
+	        <form method="get" action="book_now.php?car_id={$car_id}">
 		      <table class="car_result_table">
 		        <tbody>
 			      <tr>
@@ -79,19 +91,19 @@
 							    </div>
 							    <div class="char-icon">
 							      <img class="char-img" src="images/char-icons/engine.png">
-							      <span>1000cc</span>
+							      <span>{$cccar}</span>
 							    </div>	
 							    <div class="char-icon">
 							      <img class="char-img" src="images/char-icons/airbag.png">
-							      <span>x2</span>
+							      <span>x{$airbags}</span>
 							    </div>
 							    <div class="char-icon">
 							      <img class="char-img" src="images/char-icons/body.png">
-							      <span>x4</span>
+							      <span>x{$passengers}</span>
 							    </div>
 							    <div class="char-icon">
 							      <img class="char-img" src="images/char-icons/door.png">
-							      <span>x4</span>
+							      <span>x{$doors}</span>
 							    </div>
 							    <div class="char-icon">
 							      <img class="char-img" src="images/char-icons/radio.png">

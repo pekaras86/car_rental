@@ -35,6 +35,19 @@
   $car_price 		   = $car['car_price'];
   $car_pic_path        = $car['car_pic_path'];  
   
+  //car characteristics
+  $char_query = "SELECT * FROM characteristics WHERE car_id = '{$car_id}'";
+  $char_result = mysqli_query($con, $char_query);
+  $char = mysqli_fetch_array($char_result);
+		  
+  $air_con 		= $char['air_con'];
+  $cccar 		= $char['cccar'];
+  $airbags 		= $char['airbags'];
+  $cccar 		= $char['cccar'];
+  $passengers 	= $char['passengers'];
+  $doors 		= $char['doors'];
+  $radio 		= $char['radio'];
+  
 ?>
 
     <!-- Main component for a primary marketing message or call to action -->
@@ -42,7 +55,7 @@
 	  
 	 <div class="jumbotron">
        
-	    <form method="get" action="confirm_order.php">
+	    <form method="post" action="confirm_order.php?car_id=<?php echo $car_id ?>">
         <div class="car_result">
 	    
 		  <table class="car_result_table">
@@ -75,19 +88,19 @@
 							</div>
 							<div class="char-icon">
 							  <img class="char-img" src="images/char-icons/engine.png">
-							  <span>1000cc</span>
+							  <span><?php echo $cccar; ?></span>
 							</div>
 							<div class="char-icon">
 							  <img class="char-img" src="images/char-icons/airbag.png">
-							  <span>x2</span>
+							  <span>x<?php echo $airbags; ?></span>
 							</div>
 							<div class="char-icon">
 							  <img class="char-img" src="images/char-icons/body.png">
-							  <span>x4</span>
+							  <span>x<?php echo $passengers; ?></span>
 							</div>
 							<div class="char-icon">
 							  <img class="char-img" src="images/char-icons/door.png">
-							  <span>x4</span>
+							  <span>x<?php echo $doors; ?></span>
 							</div>
 							<div class="char-icon">
 							  <img class="char-img" src="images/char-icons/radio.png">
@@ -120,7 +133,7 @@
                     </label>
 				  </td>
 				  <td style="float:right; margin-left:150px;">
-					<input id="pid1" type="radio" checked="checked" value="1" name="priceid">
+					<input id="pid1" type="radio" checked="checked" value="100" name="priceid">
 				  </td>
 				</tr>
 				<tr>
@@ -133,7 +146,7 @@
                     </label>
 				  </td>
 				  <td style="float:right; margin-left:150px;">
-					<input id="pid1" type="radio" checked="checked" value="1" name="priceid">
+					<input id="pid1" type="radio" checked="checked" value="150" name="priceid">
 				  </td>
 				</tr>
 			  </tbody>

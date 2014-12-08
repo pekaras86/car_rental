@@ -30,7 +30,12 @@
 	  // pianei ta stoixeia apo ti forma	   
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
+	  setcookie('dropoff_location', $_REQUEST['dropoff_location']);
+	  setcookie('pickup_date', $_REQUEST['pickup_date']);
+	  setcookie('dropoff_date', $_REQUEST['dropoff_date']);
 	  
+	  
+	  // dimiourgia query anazitisis sti vasi
 	  if ($category == 'Any') {
 	    $select_query = "SELECT * FROM cars WHERE car_location = '{$pickup_location}'";
 	  } else {
@@ -54,6 +59,7 @@
 		  $car_price 		   = $car['car_price'];
 		  $car_pic_path        = $car['car_pic_path'];
 		  
+		  //car characteristics
 		  $char_query = "SELECT * FROM characteristics WHERE car_id = '{$car_id}'";
 		  $char_result = mysqli_query($con, $char_query);
 		  $char = mysqli_fetch_array($char_result);
@@ -64,7 +70,8 @@
 		  $cccar 		= $char['cccar'];
 		  $passengers 	= $char['passengers'];
 		  $doors 		= $char['doors'];
-		  $radio 		= $char['radio'];
+		  $radio 		= $char['radio'];		  
+		  
           
 		  echo <<<EOD
            <div class="car_result">

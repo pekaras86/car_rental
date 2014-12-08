@@ -32,7 +32,7 @@
 		    </div> <!--end pickup location-->
 		  <div class="form-group pickdrop_date">  <!--start pickup date-->
 		    <label>Pickup Date</label>
-            <input type="text" class="form-control" id="datepicker1">
+            <input type="text" class="form-control" id="datepicker1" name="pickup_date">
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
             <label>Pickup Time</label>		  
@@ -40,17 +40,17 @@
 		  </div> <!--end pickup time-->
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
 		     <label>Drop Off Location</label>
-             <select class="form-control" id="dropoff_location">
-               <option value="">ATHENS AIRPORT</option>
-               <option value="">THESSALONIKI AIRPORT</option>
-               <option value="">VOLOS</option>
-               <option value="">ALEKSANDROUPOLI</option>
-			   <option value="">CHANIA</option>
+             <select class="form-control" id="dropoff_location" name="dropoff_location">
+               <option name="dropoff_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+               <option name="dropoff_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
+               <option name="dropoff_location" value="VOLOS">VOLOS</option>
+               <option name="dropoff_location" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
+			   <option name="dropoff_location" value="CHANIA">CHANIA</option>
              </select>
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->
 		    <label>Drop Off Date</label>
-            <input type="text" class="form-control" id="datepicker2">
+            <input type="text" class="form-control" id="datepicker2" name="dropoff_date">
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
             <label>Drop Off Time</label>		  

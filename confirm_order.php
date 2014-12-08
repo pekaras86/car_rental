@@ -1,5 +1,6 @@
 <?php
   
+  require_once ('scripts/database_connection.php');
   require_once ('scripts/views.php');
   
   // Requires the <HEAD></HEAD> part of the page
@@ -8,6 +9,52 @@
   // Requires the navbar
   $tag = "home";
   display_navbar($tag);
+  
+  //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi 
+  //anakatefthine ton stin kentriki
+  if (!isset($_REQUEST['car_id']))
+  {
+    header("Location: index.php");
+    exit();
+  }
+  
+  
+  //eksagoume ta xaraktiristika tou sygekrienou amaksiou
+  $car_id = $_REQUEST['car_id'];
+  
+  $query = "SELECT * FROM cars WHERE car_id = '{$car_id}'";
+  
+  $result = mysqli_query($con, $query);
+
+  $car = mysqli_fetch_array($result);
+  
+  $car_id		       = $car['car_id'];
+  $car_name 	       = $car['car_name'];
+  $car_category 	   = $car['car_category'];
+  $car_description     = $car['car_description'];
+  $car_location 	   = $car['car_location'];
+  $car_price 		   = $car['car_price'];
+  $car_pic_path        = $car['car_pic_path'];
+  
+  $dropoff_location = $_COOKIE['dropoff_location'];
+  $pickup_date = $_COOKIE['pickup_date'];
+  $dropoff_date = $_COOKIE['dropoff_date'];
+  
+  //car characteristics
+  $char_query = "SELECT * FROM characteristics WHERE car_id = '{$car_id}'";
+  $char_result = mysqli_query($con, $char_query);
+  $char = mysqli_fetch_array($char_result);
+		  
+  $air_con 		= $char['air_con'];
+  $cccar 		= $char['cccar'];
+  $airbags 		= $char['airbags'];
+  $cccar 		= $char['cccar'];
+  $passengers 	= $char['passengers'];
+  $doors 		= $char['doors'];
+  $radio 		= $char['radio'];
+  
+  
+  
 
 ?>
 
@@ -21,24 +68,24 @@
 		  <p>Order Summary:</p>
 		  <div class="vrcrentforlocs">
 		    <p class="vrcrentalfor">
-             <span class="vrcrentalforone">Honda Accord V6</span>
+             <span class="vrcrentalforone"><?php echo $car_name; ?></span>
             </p>
 		    <div class="vrcrentalfortwo">
 			  <p>
-                 <span class="vrcrentalfordate">From <span style="color:green;">11/30/2014 00:00</span></span>
+                 <span class="vrcrentalfordate">From <span style="color:green;"><?php echo $pickup_date; ?> 00:00</span></span>
 			  </p>
 			  <p>
-                 <span class="vrcrentalfordate">To <span style="color:green;">15/30/2014 00:00</span></span>
+                 <span class="vrcrentalfordate">To <span style="color:green;"><?php echo $dropoff_date; ?> 00:00</span></span>
 			  </p>
 			</div>
 			<div class="vrclocsboxsum">
 			  <p class="vrcpickuploc">
                 Pickup Location:
-                <span class="vrcpickuplocname">Athens International Airport</span>
+                <span class="vrcpickuplocname"><?php echo $car_location; ?></span>
              </p>
 			 <p class="vrcdropoffloc">
                Drop Off Location:
-               <span class="vrcdropofflocname">Athens International Airport</span>
+               <span class="vrcdropofflocname"><?php echo $dropoff_location; ?></span>
              </p>
 			</div>
 		  </div>
@@ -53,7 +100,7 @@
 			  </tr>
 			  <tr>
 			    <td align="left">
-			      Honda Accord V6
+			      <?php echo $car_name; ?>
                   <br>
                   Standard Insurance
                   <br>

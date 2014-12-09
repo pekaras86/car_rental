@@ -36,6 +36,7 @@
   $car_price 		   = $car['car_price'];
   $car_pic_path        = $car['car_pic_path'];
   
+  //oi plirofories pou pira me cookies
   $dropoff_location = $_COOKIE['dropoff_location'];
   $pickup_date = $_COOKIE['pickup_date'];
   $dropoff_date = $_COOKIE['dropoff_date'];
@@ -53,7 +54,7 @@
   $doors 		= $char['doors'];
   $radio 		= $char['radio'];
   
-  
+  //oi epipleon ypiresies
   
 
 ?>

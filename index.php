@@ -15,9 +15,10 @@
   
 	 <!-- Main component for a primary marketing message or call to action -->
 	 <div class="container"> 
+	  <div class="jumbotron">
+      
 	  
-	   <div class="jumbotron">
-      <div class="row">
+	  <div class="row">
 	  <div class="calendar-module col-xs-12 col-s-12 col-md-5 col-lg-5">  
 		<form role="form" action="car_results.php" method="POST">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
@@ -84,17 +85,8 @@
 	  </div>
 		 
 		 
-		    
-			
-          
-		 
-		 
-		 
-		
-		 
-      </div> <!-- / jumbotron-->
-     
-    </div> <!-- /container -->
+	 </div> <!-- / jumbotron-->
+   </div> <!-- /container -->
 
 
 <?php
@@ -102,7 +94,7 @@
   $jqScript = <<<EOD
   <script>  
   $(function() {
-    $( "#datepicker1, #datepicker2" ).datepicker();
+    $( "#datepicker1, #datepicker2" ).datepicker({ dateFormat: 'dd-mm-yy' });
   });
   </script>
  

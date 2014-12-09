@@ -33,7 +33,7 @@
 		    </div> <!--end pickup location-->
 		  <div class="form-group pickdrop_date">  <!--start pickup date-->
 		    <label>Pickup Date</label>
-            <input type="text" class="form-control" id="datepicker1" name="pickup_date">
+            <input type="text" class="form-control date" id="datepicker1" name="pickup_date">
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
             <label>Pickup Time</label>		  
@@ -51,7 +51,7 @@
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->
 		    <label>Drop Off Date</label>
-            <input type="text" class="form-control" id="datepicker2" name="dropoff_date">
+            <input type="text" class="form-control date" id="datepicker2" name="dropoff_date">
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
             <label>Drop Off Time</label>		  
@@ -93,9 +93,20 @@
   
   $jqScript = <<<EOD
   <script>  
-  $(function() {
-    $( "#datepicker1, #datepicker2" ).datepicker({ dateFormat: 'dd-mm-yy' });
-  });
+	$(function(){
+  	$('#datepicker1').datepicker({minDate:0, dateFormat: "dd/mm/yy",
+  	
+       onSelect: function() {
+          var date = $(this).datepicker('getDate');
+          if (date){
+            date.setDate(date.getDate() + 1);
+            $( "#datepicker2" ).datepicker( "option", "minDate", date );
+           }
+        }  	
+  	}); 
+
+	$('#datepicker2').datepicker({ dateFormat: "dd/mm/yy"});
+    });
   </script>
  
  <script>

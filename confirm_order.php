@@ -55,6 +55,37 @@
   $radio 		= $char['radio'];
   
   //oi epipleon ypiresies
+  if(isset($_REQUEST['gps'])) {
+    $gps_choice = $_REQUEST['gps'];
+  } else {
+    $gps_choice = 0;
+  }
+  
+  if(isset($_REQUEST['baby_seat'])) {
+    $baby_seat_choice = $_REQUEST['baby_seat'];
+  } else {
+    $baby_seat_choice = 0;
+  }
+  
+  if(isset($_REQUEST['snow_chains'])) {
+    $snow_chains_choice = $_REQUEST['snow_chains'];
+  } else {
+    $snow_chains_choice = 0;
+  }
+  
+  if(isset($_REQUEST['car_roof'])) {
+    $car_roof_choice = $_REQUEST['car_roof'];
+  } else {
+    $car_roof_choice = 0;
+  }
+  
+ //Standard or Full Insurance
+  if(isset($_REQUEST['priceid'])) {
+    $fullOrStan = $_REQUEST['priceid'];
+  } else {
+    $fullOrStan = 0;
+  }
+  
   
 
 ?>
@@ -103,9 +134,21 @@
 			    <td align="left">
 			      <?php echo $car_name; ?>
                   <br>
-                  Standard Insurance
-                  <br>
-                  Km inlcuded: 200
+				  <?php 
+				    if($car_price < $fullOrStan){
+					  echo <<<EOD
+					    Full Insurance
+                        <br>
+                        Km inlcuded: Unlimited
+EOD;
+					} else {
+					  echo <<<EOD
+					    Standard Insurance
+                        <br>
+                        Km inlcuded: 200
+EOD;
+					}
+				  ?>
                 </td>
 				<td align="center">2</td>
 				<td align="center">

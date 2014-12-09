@@ -127,26 +127,26 @@
 				  <td>
 				    <label for="pid1">
                       <strong>Standard Insurance:</strong>
-                      <strong>€ 100.00</strong>
+                      <strong>€ <?php echo $car_price; ?></strong>
                       <br>
                       Km inlcuded: 200
                     </label>
 				  </td>
 				  <td style="float:right; margin-left:150px;">
-					<input id="pid1" type="radio" checked="checked" value="100" name="priceid">
+					<input id="pid1" type="radio" checked="checked" value="<?php echo $car_price; ?>" name="priceid">
 				  </td>
 				</tr>
 				<tr>
 				  <td>
 				    <label for="pid1">
                       <strong>Full Insurance:</strong>
-                      <strong>€ 150.00</strong>
+                      <strong>€ <?php echo $car_price + 20; ?></strong>
                       <br>
                       Km inlcuded: Unlimited
                     </label>
 				  </td>
 				  <td style="float:right; margin-left:150px;">
-					<input id="pid1" type="radio" checked="checked" value="150" name="priceid">
+					<input id="pid1" type="radio" checked="checked" value="<?php echo $car_price + 20; ?>" name="priceid">
 				  </td>
 				</tr>
 			  </tbody>
@@ -159,22 +159,22 @@
 		       <tr height="30px"> <!--row-->
 			    <td><img class="maxthirty" src="images/char-icons/abs.png"><span style="padding:2px;">GPS</span></td>
 			    <td><strong>€ 30</strong></td>
-			    <td align="center"><input type="checkbox" value="1" name="optid3"></td>
+			    <td align="center"><input type="checkbox" value="30" name="gps"></td>
 			  </tr> <!--row-->
 	           <tr height="30px">
 				<td><img class="maxthirty" src="images/char-icons/child_seat.png"><span style="padding:2px;">Child Seat</span></td>
 				<td><strong>€ 26</strong></td>
-				<td align="center"><input type="checkbox" value="1" name="optid3"></td>
+				<td align="center"><input type="checkbox" value="26" name="baby_seat"></td>
 			  </tr>
               <tr height="30px">
 				<td><img class="maxthirty" src="images/char-icons/snow_chains.jpg"><span style="padding:2px;">Snow Chains</span></td>
 				<td><strong>€ 12</strong></td>
-				<td align="center"><input type="checkbox" value="1" name="optid3"></td>
+				<td align="center"><input type="checkbox" value="12" name="snow_chains"></td>
 			  </tr>	
               <tr height="30px">
 				<td><img class="maxthirty" src="images/char-icons/Car_Roof_Rack.jpg"><span style="padding:2px;">Roof Rack</span></td>
 				<td><strong>€ 21</strong></td>
-				<td align="center"><input type="checkbox" value="1" name="optid3"></td>
+				<td align="center"><input type="checkbox" value="21" name="car_roof"></td>
 			  </tr>				  
 			</tbody>
 		   </table>

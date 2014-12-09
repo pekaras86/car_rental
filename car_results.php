@@ -33,7 +33,7 @@
 	  setcookie('dropoff_location', $_REQUEST['dropoff_location']);
 	  setcookie('pickup_date', $_REQUEST['pickup_date']);
 	  setcookie('dropoff_date', $_REQUEST['dropoff_date']);
-	  echo $_COOKIE['dropoff_date'];
+	  
 	  
 	  
 	  // dimiourgia query anazitisis sti vasi

@@ -27,7 +27,7 @@
 
 		<div class="row">
 	  <?php  
-	  
+	 	  
 	  // pianei ta stoixeia apo ti forma	   
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
@@ -47,12 +47,21 @@
      
 	  // run the query	  
 	  $result = mysqli_query($con, $select_query);  
-    
-	  
+    	  
 	  //emfanise ola ta amaksia
-	  if($result) {
-	    while ($car = mysqli_fetch_array($result)) {   //$car['car_category'];
+	  
+	  $num_rows = mysqli_num_rows($result);
+
+	  if($num_rows>0) {
 		
+	    if($num_rows==1) {
+			echo  '<h4 id="reults_count" style="color:blue">Results: 1 car found</h4>';
+		} else {
+			echo  '<h4 id="reults_count" style="color:blue">Results: ' . $num_rows . ' cars found</h4>';
+		}
+		
+	    while ($car = mysqli_fetch_array($result)) {   //$car['car_category'];
+
 		  $car_id		       = $car['car_id'];
 		  $car_name 	       = $car['car_name'];
 		  $car_category 	   = $car['car_category'];
@@ -150,12 +159,12 @@ EOD;
 		 	    
 		} //end while
 	  
-	  } else { 
-	    echo "no result";
-	    }
-	  
-	  
+	  }	 else {
+			echo  '<h4 id="reults_count" style="color:red">No cars found. Please repeat your search.</h4>';
+	  }
 	?>
+
+
 <div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">  
 		<form role="form" action="car_results.php" method="POST">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
@@ -215,7 +224,6 @@ EOD;
 	 </div> <!-- / jumbotron-->
 
     </div> <!-- /container -->
-
 
 <?php
     

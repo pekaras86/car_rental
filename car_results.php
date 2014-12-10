@@ -85,7 +85,7 @@
 		  
           
 		  echo <<<EOD
-           <div class="car_result">
+           <div class="car_result_restricted">
 	        <form method="post" action="book_now.php?car_id={$car_id}">
 		      <table class="car_result_table">
 		        <tbody>
@@ -225,7 +225,32 @@ EOD;
 
     </div> <!-- /container -->
 
-<?php
+ <?php
+  
+  $jqScript = <<<EOD
+  <script>  
+	$(function(){
+  	$('#datepicker1').datepicker({minDate:0, dateFormat: "dd/mm/yy",
+  	
+       onSelect: function() {
+          var date = $(this).datepicker('getDate');
+          if (date){
+            date.setDate(date.getDate() + 1);
+            $( "#datepicker2" ).datepicker( "option", "minDate", date );
+           }
+        }  	
+  	}); 
+
+	$('#datepicker2').datepicker({ dateFormat: "dd/mm/yy"});
+    });
+  </script>
+ 
+ <script>
+  $('#timepicker1, #timepicker2').timepicker();
+  </script>
+  
+  
+EOD;
     
   // Requires the footer (JS declarations) part of the page 
   display_footer();

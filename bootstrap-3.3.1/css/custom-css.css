@@ -282,8 +282,17 @@
     border-radius: 7px;
     overflow: hidden;
     padding: 8px;
-    width: 60%;
     margin-top:10px;
+}
+
+.car_result_restricted {
+    background-color: #EDE4E8;
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+    overflow: hidden;
+    padding: 8px;
+    margin-top:10px;
+    width: 60%;
     float:left;
 }
 

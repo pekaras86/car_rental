@@ -1,6 +1,6 @@
 <?php
 
-require_once 'app_config.php'; 
+require_once ('app_config.php'); 
 
 $con = mysqli_connect(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_NAME);
 if(mysqli_connect_errno($con)){

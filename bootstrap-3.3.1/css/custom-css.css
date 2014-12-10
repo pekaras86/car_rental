@@ -282,8 +282,15 @@
     border-radius: 7px;
     overflow: hidden;
     padding: 8px;
-    width: 98%;
-	margin-top:10px;
+    width: 60%;
+    margin-top:10px;
+    float:left;
+}
+
+.calendar-module-2 {
+  display:inline-block;
+  float:initial;
+  width:40%;
 }
 
 .car_result_table {

@@ -12,8 +12,8 @@ if (DEBUG_MODE) {
 
 // stoixeia gia ti syndesi sti vasi mou
 define("DATABASE_HOST", "");
-define("DATABASE_USERNAME", "root");
-define("DATABASE_PASSWORD", "KaraOglan86");
+define("DATABASE_USERNAME", "user");
+define("DATABASE_PASSWORD", "user");
 define("DATABASE_NAME", "thessaloniki_car_rental");
 
 // to SITE ROOT tis efarmogis

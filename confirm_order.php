@@ -22,19 +22,22 @@
   //eksagoume ta xaraktiristika tou sygekrienou amaksiou
   $car_id = $_REQUEST['car_id'];
   
-  $query = "SELECT * FROM cars WHERE car_id = '{$car_id}'";
+  $query = "SELECT cars.id, cars.name, car_categories.name as car_category, cars.description, car_locations.name as car_location, price, pic_path FROM cars " . 
+						"INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
+						"INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
+						"WHERE cars.id = '{$car_id}'";
   
   $result = mysqli_query($con, $query);
 
   $car = mysqli_fetch_array($result);
   
-  $car_id		       = $car['car_id'];
-  $car_name 	       = $car['car_name'];
+  $car_id		       = $car['id'];
+  $car_name 	       = $car['name'];
   $car_category 	   = $car['car_category'];
-  $car_description     = $car['car_description'];
+  $car_description     = $car['description'];
   $car_location 	   = $car['car_location'];
-  $car_price 		   = $car['car_price'];
-  $car_pic_path        = $car['car_pic_path'];
+  $car_price 		   = $car['price'];
+  $car_pic_path        = $car['pic_path']; 
   
   //oi plirofories pou pira me cookies
   $dropoff_location = $_COOKIE['dropoff_location'];
@@ -42,14 +45,13 @@
   $dropoff_date = $_COOKIE['dropoff_date'];
   
   //car characteristics
-  $char_query = "SELECT * FROM characteristics WHERE car_id = '{$car_id}'";
+  $char_query = "SELECT * FROM car_characteristics WHERE car_id = '{$car_id}'";
   $char_result = mysqli_query($con, $char_query);
   $char = mysqli_fetch_array($char_result);
 		  
   $air_con 		= $char['air_con'];
-  $cccar 		= $char['cccar'];
+  $cccar 		= $char['cc'];
   $airbags 		= $char['airbags'];
-  $cccar 		= $char['cccar'];
   $passengers 	= $char['passengers'];
   $doors 		= $char['doors'];
   $radio 		= $char['radio'];

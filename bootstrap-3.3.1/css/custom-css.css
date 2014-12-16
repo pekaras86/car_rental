@@ -292,14 +292,22 @@
     overflow: hidden;
     padding: 8px;
     margin-top:10px;
-    width: 60%;
-    float:left;
+    width: 67%;
+    float:initial;
 }
 
 .calendar-module-2 {
   display:inline-block;
-  float:initial;
-  width:40%;
+  background-color:lightgrey;
+  padding-top: 15px;
+  margin-right:3%;
+  float:left;
+  width:30%;
+}
+
+.no-side-margins {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .car_result_table {

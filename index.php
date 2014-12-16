@@ -37,7 +37,7 @@
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
             <label>Pickup Time</label>		  
-			<input type="text" class="form-control" id="timepicker1">
+			<input type="text" class="form-control" id="timepicker1" name="pickup_time">
 		  </div> <!--end pickup time-->
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
 		     <label>Drop Off Location</label>
@@ -55,7 +55,7 @@
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
             <label>Drop Off Time</label>		  
-			<input type="text" class="form-control" id="timepicker2">
+			<input type="text" class="form-control" id="timepicker2" name="dropoff_time">
 		  </div> <!--end dropoff time-->
 		  <div class="form-group car-category"> <!--start drop-off location-->
 		     <label>Category</label>

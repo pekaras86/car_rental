@@ -55,7 +55,7 @@
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
             <label>Pickup Time</label>		  
-			<input type="text" class="form-control" id="timepicker1">
+			<input type="text" class="form-control" id="timepicker1" name="pickup_time">
 		  </div> <!--end pickup time-->
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
 		     <label>Drop Off Location</label>
@@ -73,7 +73,7 @@
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
             <label>Drop Off Time</label>		  
-			<input type="text" class="form-control" id="timepicker2">
+			<input type="text" class="form-control" id="timepicker2" name="dropoff_time">
 		  </div> <!--end dropoff time-->
 		  <div class="form-group car-category"> <!--start drop-off location-->
 		     <label>Category</label>
@@ -224,8 +224,9 @@ EOD;
 		echo '</div>';
 	  
 	  }	 else {
+	  		echo '<div class="results-col">';
 			echo '<h4 id="reults_count" style="color:red">No cars found. Please repeat your search.</h4>';
-			echo '<div class="car_result_restricted"> </div>';
+			echo '<div class="car_result_restricted"/></div>';
 	  }
 	?>
 	</div>  <!-- / row -->
@@ -267,3 +268,13 @@ EOD;
   display_footer();
 
 ?>
+
+<script type="text/javascript">
+	document.getElementById('pickup_location').value = "<?php echo $_REQUEST['pickup_location'];?>";
+	document.getElementById('dropoff_location').value = "<?php echo $_REQUEST['dropoff_location'];?>";
+	document.getElementById('car-category').value = "<?php echo $_REQUEST['category'];?>";
+	document.getElementById('datepicker1').value = "<?php echo $_REQUEST['pickup_date'];?>";
+	document.getElementById('datepicker2').value = "<?php echo $_REQUEST['dropoff_date'];?>";
+	document.getElementById('timepicker1').value = "<?php echo $_REQUEST['pickup_time'];?>";
+	document.getElementById('timepicker2').value = "<?php echo $_REQUEST['dropoff_time'];?>";
+</script>

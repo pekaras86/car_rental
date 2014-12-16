@@ -299,6 +299,7 @@
 .calendar-module-2 {
   display:inline-block;
   background-color:lightgrey;
+  border-radius: 7px;
   padding-top: 15px;
   margin-right:3%;
   float:left;

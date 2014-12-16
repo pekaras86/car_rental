@@ -292,16 +292,15 @@
     overflow: hidden;
     padding: 8px;
     margin-top:10px;
-    width: 67%;
-    float:initial;
+    width: 100%;
 }
 
 .calendar-module-2 {
   display:inline-block;
   background-color:lightgrey;
-  border-radius: 7px;
+  border-radius:7px;
   padding-top: 15px;
-  margin-right:3%;
+  margin-right:2%;
   float:left;
   width:30%;
 }
@@ -309,6 +308,12 @@
 .no-side-margins {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.results-col {
+    float:right;
+    width:68%;
+    margin-bottom:10px;
 }
 
 .car_result_table {

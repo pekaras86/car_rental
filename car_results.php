@@ -37,7 +37,7 @@
 	  setcookie('dropoff_date', $_REQUEST['dropoff_date']);
 	 
 	  echo <<<EOD
-	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5"">  
+	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">
 		<form role="form" action="car_results.php" method="POST">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
@@ -119,6 +119,8 @@ EOD;
 		} else {
 			echo  '<h4 id="reults_count" style="color:blue">Results: ' . $num_rows . ' cars found</h4>';
 		}
+
+		echo '<div class="results-col">';
 		
 	    while ($car = mysqli_fetch_array($result)) {   //$car['car_category'];
 
@@ -218,6 +220,8 @@ EOD;
 EOD;
 		 	    
 		} //end while
+
+		echo '</div>';
 	  
 	  }	 else {
 			echo '<h4 id="reults_count" style="color:red">No cars found. Please repeat your search.</h4>';

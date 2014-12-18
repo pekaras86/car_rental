@@ -27,6 +27,8 @@ $passengers = $_REQUEST['passengers'];
 $doors = $_REQUEST['doors'];
 $radio = $_REQUEST['radio'];
 
+$active = 1;
+
 
 // elegxos sfalmatwn gia photo
 ($_FILES[$image_fieldname]['error'] == 0)
@@ -60,25 +62,29 @@ $now = time();
 				  
 			  
 
-		  
+	  
 //upload car query
 $insert_car_query = sprintf("INSERT INTO cars " .
-								"(car_name, car_category, " .
-								"car_description, car_location, car_price, car_pic_path) " .
-							"VALUES ('%s', '%s', '%s', '%s', '%d', '%s');",
+								"(name, car_Category_ID, " .
+								"description, plate_number, location_ID, price, pic_path, active) " .
+							"VALUES ('%s', '%d', '%s', '%d','%d', '%d', '%s', '%d');",
 							mysql_real_escape_string($car_name),
 							mysql_real_escape_string($car_category),
 							mysql_real_escape_string($car_description),
+							mysql_real_escape_string($plate_number),
 							mysql_real_escape_string($car_location),
 							mysql_real_escape_string($car_price),
-							mysql_real_escape_string($upload_filename));
-							
+							mysql_real_escape_string($upload_filename),
+							mysql_real_escape_string($active));						
+
 mysqli_query($con, $insert_car_query); 
 
+
+/*
 //upload car characteristics query
 $insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
 								         "(car_id, air_con, " .
-								         "cccar, airbags, passengers, doors, radio) " .
+								         "cc, airbags, passengers, doors, radio) " .
 							          "VALUES ('%d', '%s', '%d', '%d', '%d', '%d', '%s');",
 									   mysqli_insert_id($con),
 							           mysql_real_escape_string($air_con),
@@ -89,6 +95,7 @@ $insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
 							           mysql_real_escape_string($radio));
 							
 mysqli_query($con, $insert_car_characteristics); 
+*/
 ?>
 
 

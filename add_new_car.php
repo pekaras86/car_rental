@@ -79,12 +79,12 @@ $insert_car_query = sprintf("INSERT INTO cars " .
 mysqli_query($con, $insert_car_query); 
 
 
-/*
+
 //upload car characteristics query
 $insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
 								         "(car_id, air_con, " .
 								         "cc, airbags, passengers, doors, radio) " .
-							          "VALUES ('%d', '%s', '%d', '%d', '%d', '%d', '%s');",
+							          "VALUES ('%d', '%d', '%d', '%d', '%d', '%d', '%d');",
 									   mysqli_insert_id($con),
 							           mysql_real_escape_string($air_con),
 							           mysql_real_escape_string($cccar),
@@ -94,7 +94,7 @@ $insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
 							           mysql_real_escape_string($radio));
 							
 mysqli_query($con, $insert_car_characteristics); 
-*/
+
 ?>
 
 

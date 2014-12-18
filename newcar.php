@@ -138,8 +138,8 @@
 				  <td>
 				    <img class="char-img" src="images/char-icons/ac.png">
 				    <select name="air_con">
-					  <option name="air_con" value="Yes">Yes</option>
-					  <option name="air_con" value="No">No</option>
+					  <option name="air_con" value="1">Yes</option>
+					  <option name="air_con" value="0">No</option>
 					</select>
 					
 					<img class="char-img" src="images/char-icons/engine.png">
@@ -169,8 +169,8 @@
 					
 					<img class="char-img" src="images/char-icons/radio.png">
 				    <select name="radio">
-					  <option name="radio" value="Yes">Yes</option>
-					  <option name="radio" value="No">No</option>
+					  <option name="radio" value="1">Yes</option>
+					  <option name="radio" value="0">No</option>
 					</select>
 				  </td>
 				</tr>

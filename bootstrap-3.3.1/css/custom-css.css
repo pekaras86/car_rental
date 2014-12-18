@@ -300,7 +300,7 @@
   background-color:lightgrey;
   border-radius:7px;
   padding-top: 15px;
-  margin-right:2%;
+  margin-right:1%;
   float:left;
   width:28%;
 }
@@ -312,8 +312,15 @@
 
 .results-col {
     float:right;
-    width:70%;
+    width:71%;
     margin-bottom:10px;
+}
+
+.results-bar {
+    float:right;
+    width:71%;
+    background-color:lightgrey;
+    border-radius:7px;
 }
 
 .car_result_table {

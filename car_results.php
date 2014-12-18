@@ -113,13 +113,31 @@ EOD;
 	  $num_rows = mysqli_num_rows($result);
 
 	  if($num_rows>0) {
-		
-	    if($num_rows==1) {
-			echo  '<h4 id="reults_count" style="color:blue">Results: 1 car found</h4>';
-		} else {
-			echo  '<h4 id="reults_count" style="color:blue">Results: ' . $num_rows . ' cars found</h4>';
-		}
+		echo '<div class="results-bar">';
+		echo '<table>';
+		echo '<tr>';
+		echo '<td align="left" valign="top" style="white-space:nowrap;">';
 
+	    if($num_rows==1) {
+			echo '<h4 id="results_count" style="color:blue;margin-left: 10px;">Results: 1 car found</h4>';
+			echo '</td>';
+		} else {
+			echo '<h4 id="reults_count" style="color:blue;margin-left: 10px;">Results: ' . $num_rows . ' cars found</h4>';
+			echo '</td>';
+			echo '<td align="right" width="99%">';
+			echo '<div>';
+			echo '<label style="margin-right:8px;margin-bottom:0px;">sort:</label>';
+			echo '<select name="price_sort" style="float:right;margin-right:30px;">';
+			echo '<option name="price_sort" value="price ascending">price ascending</option>';
+			echo '<option name="price_sort" value="price descending">price descending</option>';
+			echo '</select>';
+			echo '</div>';
+			echo '</td>';
+		}
+		echo '</tr>';
+		echo '</table>';
+		echo '</div>';
+		
 		echo '<div class="results-col">';
 		
 	    while ($car = mysqli_fetch_array($result)) {   //$car['car_category'];
@@ -143,7 +161,7 @@ EOD;
 		  $cccar 		= $char['cc'];
 		  $passengers 	= $char['passengers'];
 		  $doors 		= $char['doors'];
-		  $radio 		= $char['radio'];		  
+		  $radio 		= $char['radio'];
 		  
           
 		  echo <<<EOD

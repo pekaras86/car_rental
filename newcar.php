@@ -100,9 +100,9 @@
 				  </td>
 				  <td>
 					  <select size="4" multiple="multiple" name="ccat" class="form-control" id="ccat" style="width:200px;">
-						<option name="ccat" value="Suv">Suv</option>
-						<option name="ccat" value="Station Wagon">Station Wagon</option>
-						<option name="ccat" value="City Car">City Car</option>
+						<option name="ccat" value="2">Suv</option>
+						<option name="ccat" value="3">Station Wagon</option>
+						<option name="ccat" value="1">City Car</option>
 					  </select>
 				   </td>
 				</tr>

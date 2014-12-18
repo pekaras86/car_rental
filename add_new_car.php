@@ -60,14 +60,13 @@ $now = time();
 						"permissions or related error moving " .
 						"file to {$upload_filename}");
 				  
-			  
 
 	  
 //upload car query
 $insert_car_query = sprintf("INSERT INTO cars " .
 								"(name, car_Category_ID, " .
 								"description, plate_number, location_ID, price, pic_path, active) " .
-							"VALUES ('%s', '%d', '%s', '%d','%d', '%d', '%s', '%d');",
+							"VALUES ('%s', '%d', '%s', '%s','%d', '%d', '%s', '%d');",
 							mysql_real_escape_string($car_name),
 							mysql_real_escape_string($car_category),
 							mysql_real_escape_string($car_description),

@@ -177,12 +177,20 @@
 				<tr>
 				  <td width="200">
 					*
+					<b>Plate Number:</b>
+				  </td>
+				  <td>
+				    <input type="text" size="4" value="" name="plate" class="form-control" style="width:200px;">
+                  </td>
+				  <tr>
+				<tr>
+				  <td width="200">
+					*
 					<b>Price/Day:</b>
 				  </td>
 				  <td>
 				    <input type="text" size="4" value="" name="cprice" class="form-control" style="width:100px;">
-                      
-				  </td>
+                  </td>
 				  <tr>
 				   <td>
 				    <input type="submit" value="Submit" class="btn btn-default btn-file">

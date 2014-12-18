@@ -17,6 +17,7 @@ $car_name = $_REQUEST['cname'];
 $car_category = $_REQUEST['ccat'];
 $car_description = $_REQUEST['cdescription'];
 $car_location = $_REQUEST['clocation'];
+$plate_number = $_REQUEST['plate'];
 $car_price = $_REQUEST['cprice'];
 
 $air_con = $_REQUEST['air_con'];	//epipleon haraktiristika autokinitou
@@ -59,7 +60,7 @@ $now = time();
 				  
 			  
 
-			  
+		  
 //upload car query
 $insert_car_query = sprintf("INSERT INTO cars " .
 								"(car_name, car_category, " .
@@ -74,9 +75,8 @@ $insert_car_query = sprintf("INSERT INTO cars " .
 							
 mysqli_query($con, $insert_car_query); 
 
-
 //upload car characteristics query
-$insert_car_characteristics = sprintf("INSERT INTO characteristics " .
+$insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
 								         "(car_id, air_con, " .
 								         "cccar, airbags, passengers, doors, radio) " .
 							          "VALUES ('%d', '%s', '%d', '%d', '%d', '%d', '%s');",
@@ -89,7 +89,6 @@ $insert_car_characteristics = sprintf("INSERT INTO characteristics " .
 							           mysql_real_escape_string($radio));
 							
 mysqli_query($con, $insert_car_characteristics); 
-
 ?>
 
 

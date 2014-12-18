@@ -81,7 +81,7 @@
                      <b>Car Name:</b>
                   </td>
 				  <td>
-					 <input type="text" size="40" name="cname" class="form-control" style="width:200px;">
+					 <input type="text" size="40" name="cname" class="form-control" id="cname" style="width:200px;">
 				  </td>
 				</tr>
 				<tr>
@@ -90,7 +90,7 @@
 				     <b>Car Image:</b>
 				  </td>
 				  <td>
-				   <span class="btn btn-default btn-file"><input type="file" size="35" name="cimg"></span>
+				   <span class="btn btn-default btn-file"><input type="file" size="35" name="cimg" id="cimg"></span>
 				  </td>
 				</tr>
 				<tr>
@@ -99,7 +99,7 @@
 					<b>Car Category:</b>
 				  </td>
 				  <td>
-					  <select size="4" multiple="multiple" name="ccat" class="form-control" style="width:200px;">
+					  <select size="4" multiple="multiple" name="ccat" class="form-control" id="ccat" style="width:200px;">
 						<option name="ccat" value="Suv">Suv</option>
 						<option name="ccat" value="Station Wagon">Station Wagon</option>
 						<option name="ccat" value="City Car">City Car</option>
@@ -112,7 +112,7 @@
 					<b>Car Description:</b>
 				  </td>
 				  <td>
-				     <textarea rows="4" cols="50" name="cdescription" class="form-control"></textarea> 
+				     <textarea rows="4" cols="50" name="cdescription" id="cdescription" class="form-control"></textarea> 
 				  </td>
 				</tr>
 				<tr>
@@ -121,12 +121,12 @@
 					<b>Location:</b>
 				  </td>
 				  <td>
-					  <select size="4" multiple="multiple" name="clocation" class="form-control" style="width:250px;">
-						<option name="clocation" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
-						<option name="clocation" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
-						<option name="clocation" value="VOLOS">VOLOS</option>
-						<option name="clocation" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
-						<option name="clocation" value="CHANIA">CHANIA</option>
+					  <select size="4" multiple="multiple" name="clocation" id="clocation" class="form-control" style="width:250px;">
+						<option name="clocation" value="1">ATHENS AIRPORT</option>
+						<option name="clocation" value="2">THESSALONIKI AIRPORT</option>
+						<option name="clocation" value="4">VOLOS</option>
+						<option name="clocation" value="5">ALEKSANDROUPOLI</option>
+						<option name="clocation" value="3">CHANIA</option>
 					  </select>
 				   </td>
 				</tr>
@@ -143,7 +143,7 @@
 					</select>
 					
 					<img class="char-img" src="images/char-icons/engine.png">
-				    <input type="text" name="cccar" style="width:70px;">
+				    <input type="text" name="cccar" id="cccar" style="width:70px;">
 					
 					<img class="char-img" src="images/char-icons/airbag.png">
 				    <select name="airbags">
@@ -180,7 +180,7 @@
 					<b>Plate Number:</b>
 				  </td>
 				  <td>
-				    <input type="text" size="4" value="" name="plate" class="form-control" style="width:200px;">
+				    <input type="text" size="4" value="" name="plate" id="plate" class="form-control" style="width:200px;">
                   </td>
 				  <tr>
 				<tr>
@@ -189,11 +189,11 @@
 					<b>Price/Day:</b>
 				  </td>
 				  <td>
-				    <input type="text" size="4" value="" name="cprice" class="form-control" style="width:100px;">
+				    <input type="text" size="4" value="" name="cprice" id="cprice" class="form-control" style="width:100px;">
                   </td>
 				  <tr>
 				   <td>
-				    <input type="submit" value="Submit" class="btn btn-default btn-file">
+				    <input type="submit" value="Submit" class="btn btn-default btn-file" onClick="return addCarFields();">
 				   </td>
 				  </tr>
 				</tr>
@@ -228,5 +228,57 @@
 	
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script>
+	  function addCarFields(){
+	    var cname = document.getElementById("cname").value;
+	    if(cname === ""){
+		  alert("Car Name field is necessary!");
+		  return false;
+		}
+		
+		var cimg = document.getElementById("cimg").value;
+		if(cimg === ""){
+		  alert("Car Image field is necessary!");
+		  return false;
+		}
+		
+		var ccat = document.getElementById("ccat").value;
+		if(ccat === ""){
+		  alert("Car Category field is necessary!");
+		  return false;
+		}
+		
+		var cdescription = document.getElementById("cdescription").value;
+		if(cdescription === ""){
+		  alert("Car Description field is necessary!");
+		  return false;
+		}
+		
+		var clocation = document.getElementById("clocation").value;
+		if(clocation === ""){
+		  alert("Car Location field is necessary!");
+		  return false;
+		}
+		
+		var cccar = document.getElementById("cccar").value;
+		if(cccar === ""){
+		  alert("Car Engine field is necessary!");
+		  return false;
+		}
+		
+		var plate = document.getElementById("plate").value;
+		if(plate === ""){
+		  alert("Plate Number field is necessary!");
+		  return false;
+		}
+		
+		var cprice = document.getElementById("cprice").value;
+		if(cprice === ""){
+		  alert("Price/Day field is necessary!");
+		  return false;
+		}
+		
+	  } // end addCarFields() 
+	</script>
   </body>
 </html>

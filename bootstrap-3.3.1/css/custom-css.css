@@ -489,3 +489,12 @@ table.addcar td {
     padding: 5px;
     text-align: left;
 }
+
+
+#success_message {
+  margin-left:450px;
+  color:green;
+  border-style: dotted;
+  border-width: 1px;
+  padding:3px;
+}

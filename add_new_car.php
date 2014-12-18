@@ -95,6 +95,13 @@ $insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
 							
 mysqli_query($con, $insert_car_characteristics); 
 
+
+$success_message = "{$car_name} added successfully!";
+
+header("Location: newcar.php?" .
+         "success_message={$success_message}");
+exit();
+
 ?>
 
 

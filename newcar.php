@@ -1,3 +1,12 @@
+<?php
+
+$success_message = NULL;
+
+$success_message = $_REQUEST['success_message'];
+
+?>
+
+
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -70,7 +79,11 @@
 	<div class="container"> 
 	  <div class="jumbotron">
         <div class="row"> 
-		
+		  <?php echo <<<EOD
+                     <span id="success_message"><b>{$success_message}</b></span>            		  
+EOD;
+		  
+		  ?>
 		  <form method="post" action="add_new_car.php" name="addcar" enctype="multipart/form-data">
 		   <div class="form-group">
 		    <table class="addcar">
@@ -279,6 +292,11 @@
 		}
 		
 	  } // end addCarFields() 
+	</script>
+	<script>
+	  $(document).ready(function(){
+	    $("#success_message").fadeOut(4000);
+	  }); // end document
 	</script>
   </body>
 </html>

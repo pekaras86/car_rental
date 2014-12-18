@@ -85,7 +85,7 @@
              </select>
 		    </div> <!--end dropoff location-->
 		  <div class="form-group search_mod_button">        
-            <button type="submit" class="btn btn-default btn-info search-module">SEARCH</button>
+            <button type="submit" class="btn btn-default btn-info search-module" onClick="return dateFields();">SEARCH</button>
           </div>
 		</form>
 	  </div>
@@ -259,6 +259,25 @@ EOD;
  
  <script>
   $('#timepicker1, #timepicker2').timepicker();
+  </script>
+  
+  <script>
+   function dateFields() {
+     var pickUpDate = document.getElementById("datepicker1").value;
+	 var dropOffDate = document.getElementById("datepicker2").value;
+	 
+	 if(pickUpDate.length === 0 && dropOffDate.length === 0) {
+	   alert ("Please choose a pickup and a drop off date!");
+	   return false;
+	 } else if(pickUpDate.length === 0) {
+	   alert("Please choose a pickup date");
+	   return false;
+	 } else if(dropOffDate.length === 0){
+	   alert("Please choose a drop off date!");
+	   return false;
+	 }
+	 
+    }
   </script>
   
   

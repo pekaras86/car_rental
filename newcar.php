@@ -1,8 +1,14 @@
 <?php
 
-$success_message = NULL;
+if (isset($_REQUEST['success_message'])) {
+  $success_message = $_REQUEST['success_message'];
+} else {
+  $success_message = NULL;
+}
 
-$success_message = $_REQUEST['success_message'];
+
+
+
 
 ?>
 
@@ -79,10 +85,12 @@ $success_message = $_REQUEST['success_message'];
 	<div class="container"> 
 	  <div class="jumbotron">
         <div class="row"> 
-		  <?php echo <<<EOD
+		  <?php 
+		  if(isset($success_message)) {
+		    echo <<<EOD
                      <span id="success_message"><b>{$success_message}</b></span>            		  
 EOD;
-		  
+		  }
 		  ?>
 		  <form method="post" action="add_new_car.php" name="addcar" enctype="multipart/form-data">
 		   <div class="form-group">

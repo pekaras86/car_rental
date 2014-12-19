@@ -32,6 +32,7 @@
 	  // pianei ta stoixeia apo ti forma	   
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
+	  $srt = $_REQUEST['hidden'];
 	  setcookie('dropoff_location', $_REQUEST['dropoff_location']);
 	  setcookie('pickup_date', $_REQUEST['pickup_date']);
 	  setcookie('dropoff_date', $_REQUEST['dropoff_date']);
@@ -39,6 +40,7 @@
 	  echo <<<EOD
 	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">
 		<form role="form" action="car_results.php" method="POST">
+		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
              <select class="form-control" id="pickup_location" name="pickup_location">
@@ -96,14 +98,20 @@ EOD;
 	    $select_query = "SELECT cars.id, cars.name, car_categories.name as car_category, cars.description, car_locations.name as car_location, price, pic_path FROM cars " . 
 						"INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
 						"INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
-						"WHERE active = 1 AND car_locations.name = '{$pickup_location}'";
+						"WHERE active = 1 AND car_locations.name = '{$pickup_location}' " .
+						"ORDER BY price";
 	  } else {
 	  $select_query = "SELECT cars.id, cars.name, car_categories.name as car_category, cars.description, car_locations.name as car_location, price, pic_path FROM cars " .
-					  "INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
-					  "INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
-					  "WHERE active = 1 AND car_categories.name = '{$category}' " .
-					  "AND car_locations.name = '{$pickup_location}'";
+						"INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
+						"INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
+						"WHERE active = 1 AND car_categories.name = '{$category}' " .
+						"AND car_locations.name = '{$pickup_location}' " .
+						"ORDER BY price";
 	    }
+
+		if($srt == 'price descending') {
+			$select_query = $select_query . " DESC";
+		}
 
 	   // run the query	
 	  $result = mysqli_query($con, $select_query);  
@@ -127,9 +135,13 @@ EOD;
 			echo '<td align="right" width="99%">';
 			echo '<div>';
 			echo '<label style="margin-right:8px;margin-bottom:0px;">sort:</label>';
-			echo '<select name="price_sort" style="float:right;margin-right:30px;">';
+			echo '<select name="price_sort" style="float:right;margin-right:30px;" onchange="set_sorting(this)">';
 			echo '<option name="price_sort" value="price ascending">price ascending</option>';
-			echo '<option name="price_sort" value="price descending">price descending</option>';
+			if($srt=="price ascending") {
+				echo '<option name="price_sort" value="price descending">price descending</option>';
+			} else {
+				echo '<option name="price_sort" value="price descending" selected>price descending</option>';
+			}
 			echo '</select>';
 			echo '</div>';
 			echo '</td>';
@@ -314,4 +326,11 @@ EOD;
 	document.getElementById('datepicker2').value = "<?php echo $_REQUEST['dropoff_date'];?>";
 	document.getElementById('timepicker1').value = "<?php echo $_REQUEST['pickup_time'];?>";
 	document.getElementById('timepicker2').value = "<?php echo $_REQUEST['dropoff_time'];?>";
+	document.getElementById('hidden').value = "<?php echo $_REQUEST['hidden'];?>";
+</script>
+
+<script>
+	function set_sorting(elem) {
+		document.getElementById('hidden').value = elem.value;
+	}
 </script>

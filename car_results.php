@@ -130,7 +130,16 @@ EOD;
 			echo '<h4 id="results_count" style="color:blue;margin-left: 10px;">Results: 1 car found</h4>';
 			echo '</td>';
 		} else {
-			echo '<h4 id="reults_count" style="color:blue;margin-left: 10px;">Results: ' . $num_rows . ' cars found</h4>';
+			echo '<h4 id="reults_count" style="color:blue;margin-left: 10px;margin-right:60px;">Results: ' . $num_rows . ' cars found</h4>';
+			echo '</td>';
+			echo '<td style="white-space:nowrap;">';
+			echo '<div class="page-div">';
+			echo '<span class="page active">first</span>';
+			echo '<a href="#" class="page">2</a>';
+			echo '<a href="#" class="page">3</a>';
+			echo '<a href="#" class="page">4</a>';
+			echo '<a href="#" class="page">last</a>';
+			echo '</div>';
 			echo '</td>';
 			echo '<td align="right" width="99%">';
 			echo '<div>';

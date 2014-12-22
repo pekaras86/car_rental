@@ -53,7 +53,7 @@
 		    </div> <!--end pickup location-->
 		  <div class="form-group pickdrop_date">  <!--start pickup date-->
 		    <label>Pickup Date</label>
-            <input type="text" class="form-control date" id="datepicker1" name="pickup_date">
+            <input type="text" class="form-control date" id="datepicker1" name="pickup_date" placeholder="Pickup Date">
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
             <label>Pickup Time</label>		  
@@ -71,7 +71,7 @@
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->
 		    <label>Drop Off Date</label>
-            <input type="text" class="form-control date" id="datepicker2" name="dropoff_date">
+            <input type="text" class="form-control date" id="datepicker2" name="dropoff_date" placeholder="Drop Off Date">
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
             <label>Drop Off Time</label>		  
@@ -309,22 +309,24 @@ EOD;
   </script>
   
   <script>
-   function dateFields() {
-     var pickUpDate = document.getElementById("datepicker1").value;
-	 var dropOffDate = document.getElementById("datepicker2").value;
-	 
-	 if(pickUpDate.length === 0 && dropOffDate.length === 0) {
-	   alert ("Please choose a pickup and a drop off date!");
-	   return false;
-	 } else if(pickUpDate.length === 0) {
-	   alert("Please choose a pickup date");
-	   return false;
-	 } else if(dropOffDate.length === 0){
-	   alert("Please choose a drop off date!");
-	   return false;
-	 }
-	 
-    }
+    function dateFields(){
+	  var pickUpDate = document.getElementById("datepicker1").value;
+	  var dropOffDate = document.getElementById("datepicker2").value;
+	  
+	  if (pickUpDate === "") {
+	    datepicker1.setAttribute("placeholder", "This field is required!");
+		datepicker1.focus();
+		datepicker1.style.background = "#FFEBEB";
+		return false;
+	  }
+	  
+	  if (dropOffDate === "") {
+	    datepicker2.setAttribute("placeholder", "This field is required!");
+		datepicker2.focus();
+		datepicker2.style.background = "#FFEBEB";
+		return false;
+	  }
+	} // end dateFields
   </script>
   
   

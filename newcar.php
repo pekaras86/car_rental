@@ -6,10 +6,6 @@ if (isset($_REQUEST['success_message'])) {
   $success_message = NULL;
 }
 
-
-
-
-
 ?>
 
 
@@ -70,8 +66,14 @@ if (isset($_REQUEST['success_message'])) {
 			  <li class=""><a href=""></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class=""><a href="log_in_form.php">Log in</a></li>
-              <li class=""><a href="sign_up_form.php">Sign up</a></li>
+			<?php
+			  if (isset($_COOKIE['user_id'])) {
+                echo "<li><a href='logout.php'>Log Out</a>";
+              } else {
+                echo "<li class=''><a href='log_in_form.php'>Log In</a></li>";
+				echo "<li class=''><a href='sign_up_form.php'>Sign up</a></li>";
+              }
+			?>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

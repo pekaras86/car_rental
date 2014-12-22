@@ -258,6 +258,14 @@ EOD;
 			echo '<h4 id="reults_count" style="color:red">No cars found. Please repeat your search.</h4>';
 			echo '<div class="car_result_restricted"/></div>';
 	  }
+
+	echo '<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">';
+	echo '<center>';
+	echo '<label style="margin-right:8px;">cars per page:</label>';
+	echo '<label id="show_cap" style="color:blue;margin-right:12px;">20</label>';
+	echo '<input id="per_page" type="range" min="10" value="20" max="100" step="10" onchange="set_page_cap(this)">';
+	echo '</center>';
+	echo '</div>';
 	?>
 	</div>  <!-- / row -->
         
@@ -333,5 +341,8 @@ EOD;
 	function set_sorting(elem) {
 		document.getElementById('hidden').value = elem.value;
 		document.getElementById('search_frm').submit();
+	}
+	function set_page_cap(elem) {
+		document.getElementById('show_cap').innerHTML = elem.value;
 	}
 </script>

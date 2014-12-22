@@ -39,7 +39,7 @@
 	 
 	  echo <<<EOD
 	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">
-		<form role="form" action="car_results.php" method="POST">
+		<form id="search_frm" role="form" action="car_results.php" method="POST">
 		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
@@ -332,5 +332,6 @@ EOD;
 <script>
 	function set_sorting(elem) {
 		document.getElementById('hidden').value = elem.value;
+		document.getElementById('search_frm').submit();
 	}
 </script>

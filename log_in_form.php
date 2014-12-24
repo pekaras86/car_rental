@@ -23,8 +23,8 @@
   //elegkse ean o user symplirose ti forma 
   if (isset($_POST['user'])) {
     
-	$username = mysql_real_escape_string(trim($_REQUEST['user']));  
-	$password = mysql_real_escape_string(trim($_REQUEST['pass'])); 
+	$username = mysqli_real_escape_string($con, trim($_REQUEST['user']));  
+	$password = mysqli_real_escape_string($con, trim($_REQUEST['pass'])); 
 	
 	//psakse ton user ston pinaka admins
 	$query = sprintf("SELECT user_id, username FROM admins " .

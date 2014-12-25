@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="bootstrap-3.3.1/css/custom-css.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -77,10 +78,8 @@
 	  <div class="jumbotron">
         <div class="row"> 
            <div class="table-responsive">
-             <table class="table table-hover table-striped">
-			    <tr>
-				  <th style="text-align:center;" colspan="10">Current Orders</th>
-				</tr>
+             <table class="table table-hover table-striped display" id="datatable">
+			    <thead>
 				<tr>
 				  <th>ID</th>
 				  <th>Date</th>
@@ -93,6 +92,8 @@
 				  <th>Status</th>
 				  <th>Delete</th>
 				</tr>
+				</thead>
+				<tbody>
 			    <tr>
 				  <td>1123</td>
 				  <td><a href="rental_details.php">11/24/2014 07:23</a></td>
@@ -153,6 +154,7 @@
 				  <td style="color:green;">Standby</td>
 				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
 				</tr>
+				</tbody>
 			 </table>
 		  </div>
         </div>
@@ -181,5 +183,12 @@
 	
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+	<script>
+	$(document).ready( function () {
+    $('#datatable').DataTable();
+	  
+    });
+    </script>
   </body>
 </html>

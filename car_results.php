@@ -318,7 +318,7 @@ EOD;
   
   
 EOD;
-    
+
   // Requires the footer (JS declarations) part of the page 
   display_footer($jqScript);
 

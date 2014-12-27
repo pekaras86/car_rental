@@ -1,6 +1,7 @@
 <?php
   
   require_once ('scripts/database_connection.php');
+  require_once ('scripts/db_cars.php');
   require_once ('scripts/views.php');
   
   // Requires the <HEAD></HEAD> part of the page
@@ -20,13 +21,8 @@
   
   //anazitisi amaksiou me to sygekrimeno id 
   $car_id = $_REQUEST['car_id'];
-  
-  $query = "SELECT cars.id, cars.name, car_categories.name as car_category, cars.description, car_locations.name as car_location, price, pic_path FROM cars " . 
-						"INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
-						"INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
-						"WHERE cars.id = '{$car_id}'";
 
-  $result = mysqli_query($con, $query);
+  $result = getCarByID($con, $car_id);
 
   $car = mysqli_fetch_array($result);
 
@@ -39,8 +35,7 @@
   $car_pic_path        = $car['pic_path'];  
   
   //car characteristics
-  $char_query = "SELECT * FROM car_characteristics WHERE car_id = '{$car_id}'";
-  $char_result = mysqli_query($con, $char_query);
+  $char_result = getCarCharacteristics($con, $car_id);
   $char = mysqli_fetch_array($char_result);
 		  
   $air_con 		= $char['air_con'];
@@ -186,20 +181,7 @@
 		  </div>
 	   </div>
 	  </form>
-	  
-	  
-	  
-	    
-		
-		
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-		
+
       
       </div> <!-- / jumbotron-->
 

@@ -9,6 +9,7 @@
   }
   
   require_once ('scripts/database_connection.php');
+  require_once ('scripts/db_cars.php');
   require_once ('scripts/views.php');
   
   // Requires the <HEAD></HEAD> part of the page
@@ -94,27 +95,15 @@
 EOD;
 
      // dimiourgia query anazitisis sti vasi
-	  if ($category == 'Any') {
-	    $select_query = "SELECT cars.id, cars.name, car_categories.name as car_category, cars.description, car_locations.name as car_location, price, pic_path FROM cars " . 
-						"INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
-						"INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
-						"WHERE active = 1 AND car_locations.name = '{$pickup_location}' " .
-						"ORDER BY price";
-	  } else {
-	  $select_query = "SELECT cars.id, cars.name, car_categories.name as car_category, cars.description, car_locations.name as car_location, price, pic_path FROM cars " .
-						"INNER JOIN car_locations ON car_locations.id = cars.location_ID " .
-						"INNER JOIN car_categories ON car_categories.id = cars.car_Category_ID " .
-						"WHERE active = 1 AND car_categories.name = '{$category}' " .
-						"AND car_locations.name = '{$pickup_location}' " .
-						"ORDER BY price";
-	    }
 
 		if($srt == 'price descending') {
-			$select_query = $select_query . " DESC";
+			//$select_query = $select_query . " DESC";
+			$order_by = "DESC";
+		} else {
+			$order_by = "ASC";
 		}
-
-	   // run the query	
-	  $result = mysqli_query($con, $select_query);  
+	   // run the query
+	  $result = getCars($con, $pickup_location, $category, $order_by);
     	  
 	  //emfanise ola ta amaksia
 	  
@@ -172,14 +161,12 @@ EOD;
 		  $car_pic_path        = $car['pic_path'];
 		  
 		  //car characteristics
-		  $char_query = "SELECT * FROM car_characteristics WHERE car_id = '{$car_id}'";
-		  $char_result = mysqli_query($con, $char_query);
+		  $char_result = getCarCharacteristics($con, $car_id);
 		  $char = mysqli_fetch_array($char_result);
 		  
 		  $air_con 		= $char['air_con'];
 		  $cccar 		= $char['cc'];
 		  $airbags 		= $char['airbags'];
-		  $cccar 		= $char['cc'];
 		  $passengers 	= $char['passengers'];
 		  $doors 		= $char['doors'];
 		  $radio 		= $char['radio'];
@@ -269,11 +256,11 @@ EOD;
 	  }
 
 	echo '<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">';
-	echo '<center>';
+	//echo '<center>';
 	echo '<label style="margin-right:8px;">cars per page:</label>';
 	echo '<label id="show_cap" style="color:blue;margin-right:12px;">20</label>';
 	echo '<input id="per_page" type="range" min="10" value="20" max="100" step="10" onchange="set_page_cap(this)">';
-	echo '</center>';
+	//echo '</center>';
 	echo '</div>';
 	?>
 	</div>  <!-- / row -->

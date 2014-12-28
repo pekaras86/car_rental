@@ -14,9 +14,6 @@
     <!-- Main component for a primary marketing message or call to action -->
     <div class="container"> 
 	  
-	 <div class="jumbotron">
-       
-	  
         <div class="car_result">
 	    <form method="get" action="car-types-book-now.php">
 		  <table class="car_result_table">
@@ -294,8 +291,6 @@
 	  </div>
 		
       
-      </div> <!-- / jumbotron-->
-
     </div> <!-- /container -->
 
 

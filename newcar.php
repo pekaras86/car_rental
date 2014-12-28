@@ -85,7 +85,6 @@ if (isset($_REQUEST['success_message'])) {
 	
 	
 	<div class="container"> 
-	  <div class="jumbotron">
         <div class="row"> 
 		  <?php 
 		  if(isset($success_message)) {
@@ -226,7 +225,6 @@ EOD;
 		  </form>
            
         </div>
-      </div> <!-- / jumbotron-->
     </div> <!-- /container -->
 	
 	

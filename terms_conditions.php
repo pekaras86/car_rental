@@ -13,7 +13,6 @@
 ?>
 
    <div class="container">
-    <div class="jumbotron"> 
       <h2> Terms & Conditions </h2>
       <ol>
       	<li>Drivers:</li>
@@ -40,7 +39,6 @@
         <li>Accident:</li>
         In case of an accident the renter is obliged to inform the company as well as the police.
       </ol>
-    </div>
    </div>
 
 

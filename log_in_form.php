@@ -68,7 +68,6 @@
 
       <!-- Main component for a primary marketing message or call to action -->
 	<div class="container">
-      <div class="jumbotron">
 			  <?php 
 		  if(isset($_REQUEST['error_message'])) {
 		    echo <<<EOD
@@ -89,7 +88,6 @@ EOD;
             <a href="#">Forgot Password</a>
           </div>
        </div>
-      </div> <!-- / jumbotron-->
 
     </div> <!-- /container -->
 

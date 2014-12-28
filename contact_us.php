@@ -14,7 +14,6 @@
 
 	<!-- Main component for a primary marketing message or call to action -->
 	<div class="container">
-		<div class="jumbotron">
 			<h2> Contact us </h2>
 			<div class="contact-form" style="width:40%;">
 				<form action="MAILTO:pekaras86@gmail.com" method="POST" enctype="multipart/form-data" role="form" id="cntform">
@@ -41,7 +40,6 @@
 				  </div>
 				</form>
 			</div>
-		</div>
 	</div>
 
 

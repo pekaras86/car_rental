@@ -89,8 +89,6 @@
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="container"> 
-	  <div class="jumbotron">
-	  
 	    
 		
 		<div class="contsite">
@@ -295,9 +293,7 @@ EOD;
 	    
 
       
-      </div> <!-- / jumbotron-->
-
-    </div> <!-- /container -->
+   </div> <!-- /container -->
 
 
 <?php

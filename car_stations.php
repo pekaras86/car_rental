@@ -15,7 +15,6 @@ display_navbar($tag);
 
     <div class="container">
 
-    <div class="jumbotron">
       <h2> Car stations </h2>
 
 
@@ -24,10 +23,9 @@ display_navbar($tag);
             <div id="map-element">
                 <iframe class="embed-responsive-item" src="https://mapsengine.google.com/map/embed?mid=zMkCKgEPr2rU.kWx_lXDFFNY0" width="100%" height="100%"></iframe>
             </div>
-        </div>
 
+		</div>
     </div>
-
 
 
 

@@ -68,7 +68,6 @@
 	
 	
 	<div class="container"> 
-	  <div class="jumbotron">
         <div class="row"> 
            <div class="table-responsive">
 		     <form method="post" action="admin_panel/admin.php" name="adminForm">
@@ -131,7 +130,6 @@
 			 </form>  
 		  </div>
         </div>
-      </div> <!-- / jumbotron-->
     </div> <!-- /container -->
 	
 	

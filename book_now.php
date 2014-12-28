@@ -50,8 +50,6 @@
     <!-- Main component for a primary marketing message or call to action -->
     <div class="container"> 
 	  
-	 <div class="jumbotron">
-       
 	    <form method="post" action="confirm_order.php?car_id=<?php echo $car_id ?>">
         <div class="car_result">
 	    
@@ -183,7 +181,6 @@
 	  </form>
 
       
-      </div> <!-- / jumbotron-->
 
     </div> <!-- /container -->
 

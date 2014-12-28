@@ -1,20 +1,16 @@
 <?php
 
 require_once('../scripts/database_connection.php');
+require_once('db.php');
 
 try
 {
-	//Open database connection
-	//$con = mysqli_connect("localhost","root","ghawk79","thessaloniki_car_rental");
-	//mysql_select_db("jtabletestdb", $con);
-	//mysqli_set_charset($con,'utf8');
 
 	//Getting records (listAction)
 	if($_GET["action"] == "list")
 	{
 		//Get records from database
-
-		$result = mysqli_query($con, "SELECT * FROM car_locations;");
+		$result = getCarLocations($con);
 		
 		//Add all records to an array
 		$rows = array();
@@ -33,9 +29,11 @@ try
 	else if($_GET["action"] == "create")
 	{
 		//Insert record into database
-		$result = mysqli_query($con, "INSERT INTO car_locations(name, description, lat, `long`) VALUES('" . $_POST["name"] . "', '" . $_POST["description"] . "', " . $_POST["lat"] . ", " . $_POST["long"] . ");");
+		$result =  insertCarLocations($con, $_POST["name"], $_POST["description"], $_POST["lat"], $_POST["long"]);
+
 		//Get last inserted record (to return to jTable)
-		$result = mysqli_query($con, "SELECT * FROM car_locations WHERE id = LAST_INSERT_ID();");
+		$result = getLastInsertedCarLocation($con);
+
 		$row = mysqli_fetch_array($result);
 
 		//Return result to jTable
@@ -48,7 +46,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = mysqli_query($con, "UPDATE car_locations SET name = '" . $_POST["name"] . "', description = '" . $_POST["description"] . "', lat = " . $_POST["lat"] . ", `long`=" . $_POST["long"] . " WHERE id = " . $_POST["id"] . ";");
+		$result = updateCarLocation($con, $_POST["name"], $_POST["description"], $_POST["lat"], $_POST["long"], $_POST["id"]);
 
 		//Return result to jTable
 		$jTableResult = array();
@@ -59,7 +57,7 @@ try
 	else if($_GET["action"] == "delete")
 	{
 		//Delete from database
-		$result = mysqli_query($con, "DELETE FROM car_locations WHERE id = " . $_POST["id"] . ";");
+		$result = deleteCarLocation($con, $_POST["id"]);
 
 		//Return result to jTable
 		$jTableResult = array();

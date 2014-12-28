@@ -15,8 +15,7 @@
   
 	 <!-- Main component for a primary marketing message or call to action -->
 	 <div class="container"> 
-	  <div class="jumbotron">
-      
+	  <div>   
 	  
 	  <div class="row">
 	  <div class="calendar-module col-xs-12 col-s-12 col-md-5 col-lg-5">  

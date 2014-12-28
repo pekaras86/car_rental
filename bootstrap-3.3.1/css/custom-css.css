@@ -3,11 +3,13 @@
 	background-color: #832121;
 	border-color: #832121;
 	border-radius: 0px;
+	border: 0px;
 }
 
 /* custom style for brand name color */
 .navbar-default .navbar-brand {
 	color: #FFF;
+	text-shadow: -5px -4px 8px #000;
 }
 
 /* custom style for brand name color hover*/

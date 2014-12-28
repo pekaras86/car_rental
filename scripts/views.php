@@ -44,15 +44,15 @@ EOD;
 function display_footer($jqScripts = NULL) {
 
 echo <<<EOD
-<div id="footer" style="background-image: url('images/other/footer.png'); background-repeat: repeat-x; margin-top:20px;">
+<div id="footer" style="background-image: linear-gradient(#FFF 0%, #832121 100%); margin-top:50px;">
     <div class="container">
         <div class="row no-side-margins">
               <div style="width:55%; float:left;">
-                  <p style="font-size:13px; text-align:center; color:white;">Dear Clients</p>
-					<p style="font-size:13px; text-align:center; color:white;">Welcome to Thessaloniki Car Rentals, a highly specialized car rental company based in Thessaloniki, Greece.</p>
-					<p style="font-size:13px; text-align:center; color:white;">We offer you a wide variety of brand new and safe vehicles at the best prices in the market.<br>You can find Thessaloniki Car Rentals branches at the biggest cities throughout Greece,<br> including Athens, Thessaloniki, Chania, Larissa, Alexandroupoli and more. </p>	
-					<p style="font-size:13px; text-align:center;">Our main priority is your complete satisfaction,<br>so we provide you with the highest quality service possible, making your stay unforgetable!</p>
-					<p style="font-size:13px; text-align:center; font-weight:bold;">The Thessaloniki Car Rentals Team</p> 
+                  <p style="font-size:13px; text-align:center; color:#000;">Dear Clients</p>
+					<p style="font-size:13px; text-align:center; color:#000;">Welcome to Thessaloniki Car Rentals, a highly specialized car rental company based in Thessaloniki, Greece.</p>
+					<p style="font-size:13px; text-align:center; color:#000;">We offer you a wide variety of brand new and safe vehicles at the best prices in the market.<br>You can find Thessaloniki Car Rentals branches at the biggest cities throughout Greece,<br> including Athens, Thessaloniki, Chania, Larissa, Alexandroupoli and more. </p>	
+					<p style="font-size:13px; text-align:center; color:#FFF;">Our main priority is your complete satisfaction,<br>so we provide you with the highest quality service possible, making your stay unforgetable!</p>
+					<p style="font-size:13px; text-align:center; font-weight:bold; color:#FFF;">The Thessaloniki Car Rentals Team</p> 
 				</div>
 					<img src="images/char-icons/keychain.png" class="img-responsive" alt="Responsive image" style="width:200px; display:inline;">
 				<div style="display:inline; float:right;">

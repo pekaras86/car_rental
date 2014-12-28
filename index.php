@@ -91,6 +91,176 @@
    </div> <!-- /container -->
 
 
+<div class="section gray-light">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div id="main">
+                    <div class="features-block block">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="page-header">
+                                    <div class="page-header-inner">
+                                        <div class="heading">
+                                            <h2>Why Choose Us?</h2>
+                                        </div><!-- /.heading -->
+
+                                        <div class="line">
+                                            <hr/>
+                                        </div><!-- /.line -->
+                                    </div><!-- /.page-header-inner -->
+                                </div><!-- /.page-header -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="feature">
+                                <div class="col-xs-12 col-md-4 col-sm-4">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-5">
+                                            <div class="feature-icon">
+                                                <div class="feature-icon-inverse">
+                                                    <i class="icon-outline-car"></i>
+                                                </div><!-- /.feature-icon-inverse -->
+
+                                                <div class="feature-icon-normal">
+                                                    <i class="icon-normal-car"></i>
+                                                </div><!-- /.feature-icon-normal -->
+                                            </div><!-- /.feature-icon -->
+                                        </div><!-- /.col-md-5 -->
+
+                                        <div class="col-xs-12 col-md-7">
+                                            <h3>Great Prices</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
+                                        </div><!-- /.col-md-7 -->
+                                    </div><!-- /.row -->
+                                </div><!-- /.col-md-4 -->
+                            </div><!-- /.feature -->
+
+                            <div class="feature">
+                                <div class="col-xs-12 col-md-4 col-sm-4">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-5">
+                                            <div class="feature-icon">
+                                                <div class="feature-icon-inverse">
+                                                    <i class="icon-outline-currency-dollar"></i>
+                                                </div><!-- /.feature-icon-inverse -->
+
+                                                <div class="feature-icon-normal">
+                                                    <i class="icon-normal-currency-dollar"></i>
+                                                </div><!-- /.feature-icon-normal -->
+                                            </div><!-- /.feature-icon -->
+                                        </div><!-- /.col-md-5 -->
+
+                                        <div class="col-xs-12 col-md-7">
+                                            <h3>Wide Selection</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
+                                        </div><!-- /.col-md-7 -->
+                                    </div><!-- /.row -->
+                                </div><!-- /.col-md-4 -->
+                            </div><!-- /.feature -->
+
+                            <div class="feature">
+                                <div class="col-xs-12 col-md-4 col-sm-4">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-5">
+                                            <div class="feature-icon">
+                                                <div class="feature-icon-inverse">
+                                                    <i class="icon-outline-car-door"></i>
+                                                </div><!-- /.feature-icon-inverse -->
+
+                                                <div class="feature-icon-normal">
+                                                    <i class="icon-normal-car-door"></i>
+                                                </div><!-- /.feature-icon-normal -->
+                                            </div><!-- /.feature-icon -->
+                                        </div><!-- /.col-md-5 -->
+
+                                        <div class="col-xs-12 col-md-7">
+                                            <h3>24/7 Hotline</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
+                                        </div><!-- /.col-md-7 -->
+                                    </div><!-- /.row -->
+                                </div><!-- /.col-md-4 -->
+                            </div><!-- /.feature -->
+                        </div><!-- /.row -->
+                    </div><!-- /.block -->
+
+                    <div class="partners-block block">
+                        <div class="page-header">
+                            <div class="page-header-inner">
+
+                                <div class="heading">
+                                    <h2>Our Partners</h2>
+                                </div><!-- /.heading -->
+
+                                <div class="line">
+                                    <hr/>
+                                </div><!-- /.line -->
+                            </div><!-- /.page-header-inner -->
+                        </div><!-- /.page-header -->
+
+                        <div class="inner-block white block-shadow">
+                            <div class="row">
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="partner">
+                                        <a href="#">
+                                            <img src="assets/img/partners/volkswagen.png" alt="#">
+                                        </a>
+                                    </div><!-- /.partner -->
+                                </div><!-- /.col-md-2 -->
+
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="partner">
+                                        <a href="#">
+                                            <img src="assets/img/partners/ford.png" alt="#">
+                                        </a>
+                                    </div><!-- /.partner -->
+                                </div><!-- /.col-md-2 -->
+
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="partner">
+                                        <a href="#">
+                                            <img src="assets/img/partners/honda.png" alt="#">
+                                        </a>
+                                    </div><!-- /.partner -->
+                                </div><!-- /.col-md-2 -->
+
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="partner">
+                                        <a href="#">
+                                            <img src="assets/img/partners/mercedes.png" alt="#">
+                                        </a>
+                                    </div><!-- /.partner -->
+                                </div><!-- /.col-md-2 -->
+
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="partner">
+                                        <a href="#">
+                                            <img src="assets/img/partners/toyota.png" alt="#">
+                                        </a>
+                                    </div><!-- /.partner -->
+                                </div><!-- /.col-md-2 -->
+
+                                <div class="col-sm-2 col-md-2">
+                                    <div class="partner">
+                                        <a href="#">
+                                            <img src="assets/img/partners/bmw.png" alt="#">
+                                        </a>
+                                    </div><!-- /.partner -->
+                                </div><!-- /.col-md-2 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.inner-block -->
+                    </div><!-- /.partners-block -->
+                </div><!-- /#main -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.section -->
+
+
 <?php
   
   $jqScript = <<<EOD

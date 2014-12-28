@@ -88,7 +88,6 @@ EOD;
 function display_navbar($tag = NULL) {
 
 $home = NULL;
-$about = NULL;
 $carTypes = NULL;
 $carStations = NULL;
 $terms = NULL;
@@ -99,9 +98,6 @@ $signUp = NULL;
 switch($tag) {
   case "home":
     $home = "active";
-	break;
-  case "about":
-    $about = "active";
 	break;
   case "carTypes":
     $carTypes = "active";
@@ -143,7 +139,6 @@ echo <<<EOD
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="<?php {$home} ?>"><a href="index.php">Home</a></li>
-			  <li class="<?php {$about} ?>"><a href="about_us.php">About Us</a></li>
 			  <li class="<?php {$carTypes} ?>"><a href="car_types.php">Car Types</a></li>
 			  <li class="<?php {$carStations} ?>"><a href="car_stations.php">Car Stations</a></li>
 			  <li class="<?php {$terms} ?>"><a href="terms_conditions.php">Terms & Conditions</a></li>

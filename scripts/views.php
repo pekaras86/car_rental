@@ -44,7 +44,7 @@ EOD;
 function display_footer($jqScripts = NULL) {
 
 echo <<<EOD
-<div id="footer" style="background-image: linear-gradient(#FFF 0%, #832121 100%); margin-top:50px;">
+<div id="footer" style="background-image: linear-gradient(#FFF 0%, #832121 100%); margin-top:50px; padding-top: 10px;">
     <div class="container">
         <div class="row no-side-margins">
               <div style="width:55%; float:left;">

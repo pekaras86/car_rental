@@ -88,7 +88,6 @@ EOD;
 function display_navbar($tag = NULL) {
 
 $home = NULL;
-$about = NULL;
 $carTypes = NULL;
 $carStations = NULL;
 $terms = NULL;
@@ -121,9 +120,9 @@ switch($tag) {
 }
 
 echo <<<EOD
-  <body style="background-color:black;">
+  <body>
 
-    <div class="container">
+    <div class="wrapper">
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default" role="navigation">

@@ -1,6 +1,38 @@
 /* custom style for navigation bar */
 .navbar {
-	margin-top: 20px;
+	background-color: #832121;
+	border-color: #832121;
+	border-radius: 0px;
+}
+
+/* custom style for brand name color */
+.navbar-default .navbar-brand {
+	color: #FFF;
+}
+
+/* custom style for brand name color hover*/
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #FFF;
+}
+
+/* custom style for navbar items */
+.navbar-default .navbar-nav>li>a {
+	color: #FFF;
+}
+
+/* custom style for navbar items hover */
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: #FFF;
+	background-color: #000;
+	font-style: italic;
+}
+
+/* custom style for navbar items avtive */
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	color: #832121;
+	background-color: #FFF;
+	font-weight: bold;
+	font-style: normal;
 }
 
 /* custom style for sign_up_form.php */

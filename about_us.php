@@ -16,7 +16,6 @@
     <!-- Main component for a primary marketing message or call to action -->
     <div class="container"> 
 	  
-	 <div class="jumbotron">
       <div class="row"> 
            <p style="font-size:15px; text-align:center;">Dear Clients</p>
 	   <p style="font-size:15px; text-align:center;">Welcome to Thessaloniki Car Rentals, a highly specialized car rental company based in Thessaloniki, Greece.</p>
@@ -27,7 +26,6 @@
 	     <img src="images/char-icons/keychain.png" class="img-responsive" alt="Responsive image" style="width:200px;">
         </div>	   
       </div>
-     </div> <!-- / jumbotron-->
 
     </div> <!-- /container -->
 

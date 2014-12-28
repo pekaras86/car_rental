@@ -46,7 +46,7 @@
 	  setcookie('username', $username); // kai to username tou
 	  setcookie('admin','admin');
 	  
-	  header("Location: admin.php");   // sti synexeia katefthine ton sti selida show_user kai pare mazi to cookie user_id
+	  header("Location: admin_panel/admin.php");   // sti synexeia katefthine ton sti selida show_user kai pare mazi to cookie user_id
 	  
 	  exit();  //telos selidas
 	

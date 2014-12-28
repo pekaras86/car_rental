@@ -48,7 +48,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class=""><a href="index.php">View Site</a></li>
-			  <li class="active"><a href="admin.php">Dashboard</a></li>
+			  <li class="active"><a href="admin_panel/admin.php">Dashboard</a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
@@ -71,7 +71,7 @@
 	  <div class="jumbotron">
         <div class="row"> 
            <div class="table-responsive">
-		     <form method="post" action="admin.php" name="adminForm">
+		     <form method="post" action="admin_panel/admin.php" name="adminForm">
                <table class="table adminform">
 			    <tbody>
 				  <tr>
@@ -123,7 +123,7 @@
 					 </div>
 					 <br>
 					 <p class="totaleur"><b>Total: EUR 230</b></p>
-					 <p><a href="admin.php"><img src="images/other/left_arrow.png" alt="" style="width:50px;"></a></p>
+					 <p><a href="admin_panel/admin.php"><img src="images/other/left_arrow.png" alt="" style="width:50px;"></a></p>
 				   </td>
 				  </tr>
 				</tbody>

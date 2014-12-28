@@ -11,13 +11,19 @@
     <title>Admin Panel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.1/css/jquery.timepicker.css" />  <!--time_picker-->
-	<link href="bootstrap-3.3.1/css/jquery.validate.password.css" rel="stylesheet" type="text/css" />
+    <link href="../bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-3.3.1/css/jquery.timepicker.css" />  <!--time_picker-->
+	<link href="../bootstrap-3.3.1/css/jquery.validate.password.css" rel="stylesheet" type="text/css" />
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap-3.3.1/css/custom-css.css" rel="stylesheet">
+    <link href="../bootstrap-3.3.1/css/custom-css.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
+
+	  <!-- jtable.org CSS -->
+	  <link href="../plugins/jtable/themes/metro/blue/jtable.css" rel="stylesheet" type="text/css" />
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -44,13 +50,13 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Thessaloniki Car Rentals</a>
+            <a class="navbar-brand" href="../index.php">Thessaloniki Car Rentals</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class=""><a href="index.php">View Site</a></li>
+              <li class=""><a href="../index.php">View Site</a></li>
 			  <li class="active"><a href="admin.php">Dashboard</a></li>
-			  <li class=""><a href="newcar.php">New Car</a></li>
+			  <li class=""><a href="../newcar.php">New Car</a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
@@ -58,10 +64,10 @@
             <ul class="nav navbar-nav navbar-right">
               <?php
 			    if (isset($_COOKIE['user_id'])) {
-                  echo "<li><a href='logout.php'>Log Out</a>";
+                  echo "<li><a href='../logout.php'>Log Out</a>";
                 } else {
-                  echo "<li class=''><a href='log_in_form.php'>Log In</a></li>";
-				  echo "<li class=''><a href='sign_up_form.php'>Sign up</a></li>";
+                  echo "<li class=''><a href='../log_in_form.php'>Log In</a></li>";
+				  echo "<li class=''><a href='../sign_up_form.php'>Sign up</a></li>";
                 }
 			  ?>
             </ul>
@@ -96,7 +102,7 @@
 				<tbody>
 			    <tr>
 				  <td>1123</td>
-				  <td><a href="rental_details.php">11/24/2014 07:23</a></td>
+				  <td><a href="../rental_details.php">11/24/2014 07:23</a></td>
 				  <td>Name:Giorgos Last Name:Antoniadis email:anto@yahoo.gr</td>
 				  <td>Seat Leon</td>
 				  <td>11/25/2014 13:30</td>
@@ -104,7 +110,7 @@
 				  <td>2</td>
 				  <td>230</td>
 				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
+				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				</tr>
 				<tr>
 				  <td>1124</td>
@@ -116,7 +122,7 @@
 				  <td>7</td>
 				  <td>386</td>
 				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
+				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				</tr>
 				<tr>
 				  <td>1125</td>
@@ -128,7 +134,7 @@
 				  <td>4</td>
 				  <td>310</td>
 				  <td style="color:red;">Standby</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
+				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				</tr>
 				<tr>
 				  <td>1126</td>
@@ -140,7 +146,7 @@
 				  <td>7</td>
 				  <td>270</td>
 				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
+				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				</tr>
 				<tr>
 				  <td>1127</td>
@@ -152,35 +158,83 @@
 				  <td>6</td>
 				  <td>380</td>
 				  <td style="color:green;">Standby</td>
-				  <td style="text-align:center;"><img src="images/other/delete.png" width="15" /></a></td>
+				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				</tr>
 				</tbody>
 			 </table>
 		  </div>
         </div>
-      </div> <!-- / jumbotron-->
-    </div> <!-- /container -->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+	<div id="carLocationsTableContainer" style="width: 600px;"></div>
+
+		<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			//Prepare jTable
+			$('#carLocationsTableContainer').jtable({
+				title: 'Car Locations',
+				actions: {
+					listAction: 'carLocationsActions.php?action=list',
+					createAction: 'carLocationsActions.php?action=create',
+					updateAction: 'carLocationsActions.php?action=update',
+					deleteAction: 'carLocationsActions.php?action=delete'
+				},
+				fields: {
+					id: {
+						key: true,
+						create: false,
+						edit: false,
+						list: false
+					},
+					name: {
+						title: 'Location Name',
+						width: '30%'
+					},
+					description: {
+						title: 'Description',
+						width: '30%',
+						defaultValue: null // defaultvalue: null simainei oti to pedio den einai ypoxrewtiko
+					},
+					lat: {
+						title: 'Latitude',
+						width: '20%',
+						defaultValue: 0
+
+					},
+					long: {
+						title: 'Longitude',
+						width: '20%',
+						defaultValue: 0
+					}
+				}
+			});
+
+			//Load person list from server
+			$('#carLocationsTableContainer').jtable('load');
+
+		});
+
+	</script>
+	  </div> <!-- / jumbotron-->
+	</div> <!-- /container -->
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<link href="http://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="bootstrap-3.3.1/js/jquery.validate.min.js"></script>
-    <script src="bootstrap-3.3.1/js/bootstrap.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-	<script type="text/javascript" src="bootstrap-3.3.1/js/jquery.timepicker.js"></script>  <!--time_picker-->
-    <script src="bootstrap-3.3.1/js/modernizr.custom.52675.js"></script>
-	
+
+	<script src="../bootstrap-3.3.1/js/jquery.validate.min.js"></script>
+    <script src="../bootstrap-3.3.1/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="../bootstrap-3.3.1/js/jquery.timepicker.js"></script>  <!--time_picker-->
+    <script src="../bootstrap-3.3.1/js/modernizr.custom.52675.js"></script>
+
+	<!-- jtable.org jquery plugin -->
+	<script src="../plugins/jtable/jquery.jtable.min.js" type="text/javascript"></script>
+
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>

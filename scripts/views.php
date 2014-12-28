@@ -145,7 +145,7 @@ echo <<<EOD
 			  <li class="<?php {$contactUs} ?>"><a href="contact_us.php">Contact Us</a></li>
 EOD;
 			  if (isset($_COOKIE['admin'])) {
-			    echo "<li class=''><a href='admin.php'>Admin Panel</a></li>";
+			    echo "<li class=''><a href='admin_panel/admin.php'>Admin Panel</a></li>";
 			  }
 echo <<<EOD
             </ul>

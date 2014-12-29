@@ -14,15 +14,15 @@
 
   
 	 <!-- Main component for a primary marketing message or call to action -->
-	 <div class="container"> 
+	 <div class="container" style="margin-left:20px; margin-right:20px;"> 
 	  <div>   
 	  
 	  <div class="row">
-	  <div class="calendar-module col-xs-12 col-s-12 col-md-5 col-lg-5">  
+	  <div id="srch-mod" class="calendar-module">  
 		<form role="form" action="car_results.php" method="POST">
 		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
-		     <label>Pickup Location</label>
+		     <label class="white-label">Pickup Location</label>
              <select class="form-control" id="pickup_location" name="pickup_location">
                <option name="pickup_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
                <option name="pickup_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
@@ -33,16 +33,16 @@
 		    </div> <!--end pickup location-->
 			<div id="pUp">
 		  <div class="form-group pickdrop_date" id="pickup_field">  <!--start pickup date-->
-		    <label>Pickup Date</label>
+		    <label class="white-label">Pickup Date</label>
             <input type="text" class="form-control date" id="datepicker1" name="pickup_date" placeholder="Pickup Date">
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
-            <label>Pickup Time</label>		  
+            <label class="white-label">Pickup Time</label>		  
 			<input type="text" class="form-control" id="timepicker1" name="pickup_time">
 		  </div> <!--end pickup time-->
 		  </div>
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
-		     <label>Drop Off Location</label>
+		     <label class="white-label">Drop Off Location</label>
              <select class="form-control" id="dropoff_location" name="dropoff_location">
                <option name="dropoff_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
                <option name="dropoff_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
@@ -52,15 +52,15 @@
              </select>
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->
-		    <label>Drop Off Date</label>
+		    <label class="white-label">Drop Off Date</label>
             <input type="text" class="form-control date" id="datepicker2" name="dropoff_date" placeholder="Drop Off Date">
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
-            <label>Drop Off Time</label>		  
+            <label class="white-label">Drop Off Time</label>		  
 			<input type="text" class="form-control" id="timepicker2" name="dropoff_time">
 		  </div> <!--end dropoff time-->
 		  <div class="form-group car-category"> <!--start drop-off location-->
-		     <label>Category</label>
+		     <label class="white-label">Category</label>
              <select class="form-control" id="car-category" name="category">
                <option name="category" value="Any">ANY</option>
                <option name="category" value="City Car">CITY CAR</option>
@@ -87,7 +87,7 @@
 	  </div>
 		 
 		 
-	 </div> <!-- / jumbotron-->
+	 </div>
    </div> <!-- /container -->
 
 

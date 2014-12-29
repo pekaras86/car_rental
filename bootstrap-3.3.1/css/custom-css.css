@@ -78,9 +78,37 @@
 
 
 .calendar-module {
+  width: 272px;
   display:inline-block;
+  background-color:#000;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
+@media screen (min-width: 1200px) {
+ .calendar-module {
+    width:50% !important;
+  }
+}
+
+.white-label {
+  color:#FFF;
+}
+
+/* search button of calendar-module*/
+.btn-info {
+  color: #fff;
+  background-color: #0B4456;
+  border-color: #46b8da;
+}
+
+/* search button of calendar-module (hover) */
+.btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open>.dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #15637B;
+  border-color: #269abc;
+}
 
 /* custom style for front page cars */
 .front-page-cars {

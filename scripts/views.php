@@ -36,12 +36,13 @@ function display_head($page_title = "") {
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+    <!-- social buttons part start here -->
     <script src="js/jquery-1.10.2.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script type="text/javascript">
 $(document).ready(function() {
-	 var pageTitle = document.title; //HTML page title
-	 var pageUrl = location.href; //Location of the page
+	  var pageTitle = document.title; //HTML page title
+	  var pageUrl = location.href; //Location of the page
 	
 	//user hovers on the share button	
 	$('#share-wrapper li').hover(function() {
@@ -111,6 +112,7 @@ body {margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;font
 }
 -->
 </style>
+<!-- social buttons part ends here -->
 
   </head>
   
@@ -715,6 +717,7 @@ echo <<<EOD
             <a class="navbar-brand" href="index.php">Thessaloniki Car Rentals</a>
           </div>
           
+      <!-- social media buttons -->
       <div id="share-wrapper">
         <ul class="share-inner-wrp">
         <!-- Facebook -->
@@ -724,10 +727,11 @@ echo <<<EOD
         <li class="twitter button-wrap"><a href="#">Tweet</a></li>
                 
         <!-- Google -->
-        <li class="google button-wrap"><a href="#">Plus Share</a></li>
+        <li class="google button-wrap"><a href="#">Google+</a></li>
         
-    </ul>
-</div>
+        </ul>
+      </div>
+       <!-- social media buttons -->
 
           
           <div id="navbar" class="navbar-collapse collapse">

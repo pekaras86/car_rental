@@ -71,6 +71,24 @@ echo <<<EOD
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 				<div class="block random-cars">
 					<div class="title">
+						<h2>About Us</h2>
+					</div>
+						
+					<div class="items">
+						<span style="font-size:13px; text-align:center; color:#FFF;">
+							<p>Dear Clients</p>
+							<p>Welcome to Thessaloniki Car Rentals, a highly specialized car rental company based in Thessaloniki, Greece.</p>
+							<p>We offer you a wide variety of brand new and safe vehicles at the best prices in the market.<br>You can find Thessaloniki Car Rentals branches at the biggest cities throughout Greece,<br> including Athens, Thessaloniki, Chania, Larissa, Alexandroupoli and more. </p>	
+							<p>Our main priority is your complete satisfaction,<br>so we provide you with the highest quality service possible, making your stay unforgetable!</p>
+							<p style="font-size:14px; font-weight:bold;">The Thessaloniki Car Rentals Team</p>
+						</span>
+					</div><!-- /.items -->
+				</div><!-- /.block -->
+			</div><!-- /.col-md-4 -->
+
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<div class="block random-cars">
+					<div class="title">
 						<h2>Popular Cars</h2>
 					</div><!-- /.title -->
 
@@ -137,56 +155,6 @@ echo <<<EOD
 							</div><!-- /.teaser-item -->
 						</div><!-- /.teaser-item-wrapper -->
 					</div><!-- /.items -->
-				</div><!-- /.block -->
-			</div><!-- /.col-md-4 -->
-
-			<div class="col-lg-4 col-md-4 col-sm-6">
-				<div class="block">
-					<div class="title">
-						<h2>Subscribe to Newsletter</h2>
-					</div><!-- /.title -->
-
-					<form method="post">
-						<div class="input-group">
-						  <input type="email" class="form-control" placeholder="Your e-mail address" required="required">
-
-					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button">Submit</button><!-- /.btn -->
-					      </span><!-- /.input-group-btn -->
-						</div><!-- /.input-group -->
-					</form>
-
-					<br>
-
-					<div class="opening-hours">
-						<div class="day clearfix">
-							<span class="name">Monday</span><span class="hours">07:00 AM - 07:00 PM</span>
-						</div><!-- /.day -->
-
-						<div class="day clearfix">
-							<span class="name">Tuesday</span><span class="hours">07:00 AM - 07:00 PM</span>
-						</div><!-- /.day -->
-
-						<div class="day clearfix">
-							<span class="name">Wednesday</span><span class="hours"><i class="icon icon-normal-car"></i> Demonstration drives only</span>
-						</div><!-- /.day -->
-
-						<div class="day clearfix">
-							<span class="name">Thursday</span><span class="hours">07:00 AM - 07:00 PM</span>
-						</div><!-- /.day -->
-
-						<div class="day clearfix">
-							<span class="name">Friday</span><span class="hours">07:00 AM - 07:00 PM</span>
-						</div><!-- /.day -->
-
-						<div class="day clearfix">
-							<span class="name">Saturday</span><span class="hours">07:00 AM - 02:00 PM</span>
-						</div><!-- /.day -->
-
-						<div class="day clearfix">
-							<span class="name">Sunday</span><span class="hours"><i class="icon icon-normal-door-out"></i> Closed</span>
-						</div><!-- /.day -->
-					</div><!-- /.opening-hours -->
 				</div><!-- /.block -->
 			</div><!-- /.col-md-4 -->
 
@@ -580,15 +548,15 @@ echo <<<EOD
 			<div class="row">
 				<div class="col-md-12 clearfix">
 					<div class="copyright">
-						&copy; Carat HTML Template<span class="separator">/</span> <a href="http://pragmaticmates.com/">Pragmatic Mates</a> <span class="separator">/</span> All rights reserved
+						&copy; Thessaloniki Car Rentals
 					</div><!-- /.pull-left -->
 
 					<ul class="nav nav-pills">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Features</a></li>
-						<li><a href="#">Reservation</a></li>
-						<li><a href="#">Our Offer</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="car_types.php">Car Types</a></li>
+						<li><a href="car_stations.php">Car Stations</a></li>
+						<li><a href="terms_conditions.php">Terms & Conditions</a></li>
+						<li><a href="contact_us.php">Contact Us</a></li>
 					</ul><!-- /.nav -->
 				</div><!-- /.col-md-12 -->
 			</div><!-- /.row -->

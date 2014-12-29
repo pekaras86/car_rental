@@ -35,6 +35,9 @@ function display_head($page_title = "") {
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="css/sharebuttons.css" /> <!-- social buttons -->
+
   </head>
   
   
@@ -577,6 +580,9 @@ echo <<<EOD
 	
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="js/sharebuttons.js"></script>
+
 	{$jqScripts}
   </body>
 </html>
@@ -622,8 +628,8 @@ switch($tag) {
 
 echo <<<EOD
   <body>
-
-    <div class="wrapper">
+  
+      <div class="wrapper">
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default" role="navigation">
@@ -637,6 +643,24 @@ echo <<<EOD
             </button>
             <a class="navbar-brand" href="index.php">Thessaloniki Car Rentals</a>
           </div>
+          
+      <!-- social media buttons -->
+      <div id="share-wrapper">
+        <ul class="share-inner-wrp">
+        <!-- Facebook -->
+        <li class="facebook button-wrap"><a href="#">Facebook</a></li>
+        
+        <!-- Twitter -->
+        <li class="twitter button-wrap"><a href="#">Tweet</a></li>
+                
+        <!-- Google -->
+        <li class="google button-wrap"><a href="#">Google+</a></li>
+        
+        </ul>
+      </div>
+       <!-- social media buttons -->
+
+          
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="<?php {$home} ?>"><a href="index.php">Home</a></li>

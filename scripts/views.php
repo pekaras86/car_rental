@@ -35,6 +35,83 @@ function display_head($page_title = "") {
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="js/jquery-1.10.2.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><script type="text/javascript">
+$(document).ready(function() {
+	 var pageTitle = document.title; //HTML page title
+	 var pageUrl = location.href; //Location of the page
+	
+	//user hovers on the share button	
+	$('#share-wrapper li').hover(function() {
+		var hoverEl = $(this); //get element
+		
+		//browsers with width > 699 get button slide effect
+		if($(window).width() > 699) { 
+			if (hoverEl.hasClass('visible')){
+				hoverEl.animate({"margin-left":"-117px"}, "fast").removeClass('visible');
+			} else {
+				hoverEl.animate({"margin-left":"0px"}, "fast").addClass('visible');
+			}
+		}
+	});
+		
+	//user clicks on a share button
+	$('.button-wrap').click(function(event) {
+			var shareName = $(this).attr('class').split(' ')[0]; //get the first class name
+			
+			switch (shareName) //react to different class name
+			{
+				case 'facebook':
+					var openLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
+					break;
+				case 'twitter':
+					var openLink = 'http://twitter.com/home?status=' + encodeURIComponent(pageTitle + ' ' + pageUrl);
+					break;
+			case 'google':
+					var openLink = 'https://plus.google.com/share?url=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
+					break;
+			}
+		
+		//Parameters for the Popup window
+		winWidth 	= 650;	
+		winHeight	= 450;
+		winLeft   	= ($(window).width()  - winWidth)  / 2,
+		winTop    	= ($(window).height() - winHeight) / 2,	
+		winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
+		
+		//open Popup window and redirect user to share website.
+		window.open(openLink,'Share This Link',winOptions);
+		return false;
+	});
+});
+</script>
+
+<style type="text/css">
+<!--
+body {margin-left: 0px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;font-family: Georgia, "Times New Roman", Times, serif;color: #333333;background: #FFFFFF;}
+.wrapper {max-width: 800px;margin-right: auto;margin-left: auto;background: #F5F5F5;padding: 20px;}
+
+
+/* Share button */
+#share-wrapper {margin-top: 0px;position:fixed;left: 0;}
+#share-wrapper ul.share-inner-wrp{list-style: none;margin: 0px;padding: 0px;}
+#share-wrapper li.button-wrap {background: #E4EFF0;padding: 0px 0px 0px 10px;display: block;width: 140px;margin: 0px 0px 1px -117px;}
+#share-wrapper li.button-wrap > a {padding-right: 60px;height: 32px;display: block;line-height: 32px;font-weight: bold;color: #444;text-decoration: none;font-family: Arial, Helvetica, sans-serif;font-size: 14px;}
+#share-wrapper .facebook > a{background: url(buttons/facebook.jpg) no-repeat right;}
+#share-wrapper .twitter > a{background: url(buttons/twitter.jpg) no-repeat right;}
+#share-wrapper .google > a{background: url(buttons/google.jpg) no-repeat right;}
+
+@media all and (max-width: 699px) {
+#share-wrapper {bottom: 0;position: fixed;padding: 5px 5px 0px 5px;background: #EBEBEB;width: 100%;margin: 0px;-webkit-box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);-moz-box-shadow: 0 -1px 4px rgba(0,0,0,0.15);-o-box-shadow: 0 -1px 4px rgba(0,0,0,0.15);box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);}
+#share-wrapper ul.share-inner-wrp {list-style: none;margin: 0px auto;padding: 0px;text-align: center;overflow: auto;}
+#share-wrapper li.button-wrap {display: inline-block;width: 32px!important;margin: 0px;padding: 0px;margin-left:0px!important;}
+#share-wrapper li.button-wrap > a {height: 32px;display: inline-block;text-indent: -10000px;width: 32px;padding-right: 0;float: left;}
+}
+-->
+</style>
+
   </head>
   
   
@@ -622,8 +699,8 @@ switch($tag) {
 
 echo <<<EOD
   <body>
-
-    <div class="wrapper">
+  
+      <div class="wrapper">
 
       <!-- Static navbar -->
       <nav class="navbar navbar-default" role="navigation">
@@ -637,6 +714,22 @@ echo <<<EOD
             </button>
             <a class="navbar-brand" href="index.php">Thessaloniki Car Rentals</a>
           </div>
+          
+      <div id="share-wrapper">
+        <ul class="share-inner-wrp">
+        <!-- Facebook -->
+        <li class="facebook button-wrap"><a href="#">Facebook</a></li>
+        
+        <!-- Twitter -->
+        <li class="twitter button-wrap"><a href="#">Tweet</a></li>
+                
+        <!-- Google -->
+        <li class="google button-wrap"><a href="#">Plus Share</a></li>
+        
+    </ul>
+</div>
+
+          
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="<?php {$home} ?>"><a href="index.php">Home</a></li>

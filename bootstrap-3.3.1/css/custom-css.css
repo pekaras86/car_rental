@@ -376,7 +376,6 @@
 .results-col {
     float:right;
     width:71%;
-    margin-bottom:10px;
 }
 
 .results-bar {
@@ -418,7 +417,7 @@
 }
 
 input[type=range] {
-    width:40%;
+    width:58%;
     display:inline;
     vertical-align:middle;
     -webkit-appearance:none;

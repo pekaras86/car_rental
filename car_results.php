@@ -22,7 +22,7 @@
 ?>
 
     <!-- Main component for a primary marketing message or call to action -->
-    <div class="container"> 
+    <div class="container" style="margin-bottom:20px;"> 
 	  
 <!--	 <div class="jumbotron"> -->
 
@@ -118,6 +118,11 @@ EOD;
 	    if($num_rows==1) {
 			echo '<h4 id="results_count" style="color:blue;margin-left: 10px;">Results: 1 car found</h4>';
 			echo '</td>';
+			echo '<style type="text/css">
+					#paging_selector {
+						display:none;
+					}
+				  </style>';
 		} else {
 			echo '<h4 id="reults_count" style="color:blue;margin-left: 10px;margin-right:60px;">Results: ' . $num_rows . ' cars found</h4>';
 			echo '</td>';
@@ -252,10 +257,16 @@ EOD;
 	  }	 else {
 	  		echo '<div class="results-col">';
 			echo '<h4 id="reults_count" style="color:red">No cars found. Please repeat your search.</h4>';
-			echo '<div class="car_result_restricted"/></div>';
+			echo '<div class="car_result_restricted"></div>';
+			echo '</div>';
+			echo '<style type="text/css">
+					#paging_selector {
+						display:none;
+					}
+				  </style>';
 	  }
 
-	echo '<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">';
+	echo '<div id="paging_selector" class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">';
 	//echo '<center>';
 	echo '<label style="margin-right:8px;">cars per page:</label>';
 	echo '<label id="show_cap" style="color:blue;margin-right:12px;">20</label>';
@@ -267,8 +278,7 @@ EOD;
         
 	    
 		
-	<!-- </div> <!-- / jumbotron-->
-
+	
     </div> <!-- /container -->
 
  <?php

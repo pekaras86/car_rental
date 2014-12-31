@@ -48,10 +48,10 @@
 ?>
 
     <!-- Main component for a primary marketing message or call to action -->
-    <div class="container"> 
+    <div class="container" style="margin-bottom:20px;"> 
 	  
 	    <form method="post" action="confirm_order.php?car_id=<?php echo $car_id ?>">
-        <div class="car_result">
+        <div class="car_result" style="margin-top:0px;">
 	    
 		  <table class="car_result_table">
 		    <tbody>

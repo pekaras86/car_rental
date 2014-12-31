@@ -67,7 +67,7 @@
 
 
       <!-- Main component for a primary marketing message or call to action -->
-	<div class="container">
+	<div class="container" style="margin-bottom:20px;">
 			  <?php 
 		  if(isset($_REQUEST['error_message'])) {
 		    echo <<<EOD
@@ -76,7 +76,7 @@
 EOD;
 		  }
 		  ?>
-         <div class="login-card">
+         <div class="login-card" style="box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px; margin-bottom:28px;">
            <h1>Log-in</h1><br>
            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
              <input type="text" name="user" placeholder="Username">

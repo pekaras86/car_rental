@@ -13,8 +13,9 @@
 
     <!-- Main component for a primary marketing message or call to action -->
     <div class="container"> 
+	    <h2 style="margin-top:0px;"> Our Fleet </h2>
 	  
-        <div class="car_result">
+        <div class="car_result" style="margin-top:0px;">
 	    <form method="get" action="car-types-book-now.php">
 		  <table class="car_result_table">
 		    <tbody>
@@ -222,7 +223,7 @@
 	  
 	  
 	  
-	  <div class="car_result">
+	  <div class="car_result" style="margin-bottom:20px;">
 	    <form method="get" action="">
 		  <table class="car_result_table">
 		    <tbody>

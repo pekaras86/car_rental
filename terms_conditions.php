@@ -12,8 +12,8 @@
 
 ?>
 
-   <div class="container">
-      <h2> Terms & Conditions </h2>
+   <div class="container" style="margin-bottom:20px;">
+      <h2 style="margin-top:0px;"> Terms & Conditions </h2>
       <ol>
       	<li>Drivers:</li>
         <ol type="a">

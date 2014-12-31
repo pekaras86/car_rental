@@ -556,7 +556,7 @@ echo <<<EOD
 
 					<ul class="nav nav-pills">
 						<li><a href="index.php">Home</a></li>
-						<li><a href="car_types.php">Car Types</a></li>
+						<li><a href="car_types.php">Our Fleet</a></li>
 						<li><a href="car_stations.php">Car Stations</a></li>
 						<li><a href="terms_conditions.php">Terms & Conditions</a></li>
 						<li><a href="contact_us.php">Contact Us</a></li>
@@ -645,7 +645,7 @@ echo <<<EOD
           </div>
           
       <!-- social media buttons -->
-      <div id="share-wrapper">
+      <div id="share-wrapper" style="z-index:2;">
         <ul class="share-inner-wrp">
         <!-- Facebook -->
         <li class="facebook button-wrap"><a href="#">Facebook</a></li>
@@ -664,7 +664,7 @@ echo <<<EOD
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="<?php {$home} ?>"><a href="index.php">Home</a></li>
-			  <li class="<?php {$carTypes} ?>"><a href="car_types.php">Car Types</a></li>
+			  <li class="<?php {$carTypes} ?>"><a href="car_types.php">Our Fleet</a></li>
 			  <li class="<?php {$carStations} ?>"><a href="car_stations.php">Car Stations</a></li>
 			  <li class="<?php {$terms} ?>"><a href="terms_conditions.php">Terms & Conditions</a></li>
 			  <li class="<?php {$contactUs} ?>"><a href="contact_us.php">Contact Us</a></li>

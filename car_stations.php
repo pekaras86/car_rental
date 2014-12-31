@@ -13,9 +13,9 @@ display_navbar($tag);
 ?>
 
 
-    <div class="container">
+    <div class="container" style="margin-bottom:20px;">
 
-      <h2> Car stations </h2>
+      <h2 style="margin-top:0px;"> Car stations </h2>
 
 
         <div id="map-container">

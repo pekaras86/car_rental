@@ -13,8 +13,8 @@
 ?>
 
 	<!-- Main component for a primary marketing message or call to action -->
-	<div class="container">
-			<h2> Contact us </h2>
+	<div class="container" style="margin-bottom:20px;">
+			<h2 style="margin-top:0px;"> Contact us </h2>
 			<div class="contact-form" style="width:40%;">
 				<form action="MAILTO:pekaras86@gmail.com" method="POST" enctype="multipart/form-data" role="form" id="cntform">
 				  <div class="form-group col-sm-12 col-lg-12">

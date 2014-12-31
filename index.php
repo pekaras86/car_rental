@@ -17,7 +17,7 @@
 	 <div class="container" style="margin-left:20px; margin-right:20px;"> 
 	  <div>   
 	  
-	  <div class="row">
+	  <div class="row" style="margin-bottom:20px;">
 	  <div id="srch-mod" class="calendar-module">  
 		<form role="form" action="car_results.php" method="POST">
 		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
@@ -91,13 +91,13 @@
    </div> <!-- /container -->
 
 
-<div class="section gray-light">
+<div class="section" style="background-color:#B6B6B6;">
     <div class="container">
         <div class="row">
 
             <div class="col-md-12">
                 <div id="main">
-                    <div class="features-block block">
+                    <div class="features-block block" style="margin-top:0px;">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="page-header">

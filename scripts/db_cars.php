@@ -23,13 +23,13 @@ function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_d
     "																			OR ( dropoff_datetime BETWEEN '{$startdate->format('Y-m-d')}' AND '{$enddate->format('Y-m-d')}')  " .
     "																			OR ( '{$startdate->format('Y-m-d')}' BETWEEN pickup_datetime AND dropoff_datetime) ) ";
 
-    if ($category <> 'Any') {$query .= " AND car_categories.name = '{$category}' ";}
+    if ($category <> 'Any') {$query .= " AND car_categories.id = '{$category}' ";}
 
     $query .= " GROUP BY car_types.id";
     $query .= " ORDER BY price";
 
     if ($order_by == "DESC") {$query .= " " . $order_by;}
-    echo $query;
+
     $result = mysqli_query($dbcon, $query);
     return $result;
 }

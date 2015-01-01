@@ -78,10 +78,16 @@
 		  <div class="form-group car-category"> <!--start drop-off location-->
 		     <label class="white-label">Category</label>
              <select class="form-control" id="car-category" name="category">
-               <option name="category" value="Any">ANY</option>
-               <option name="category" value="City Car">CITY CAR</option>
+               <option name="category" value="Any">Any</option>
+                 <?php
+                 $result = getCarCategories($con);
+                 while($row = mysqli_fetch_array($result)) {
+                     echo '<option value="'.$row['id'].'">'.$row['name'].'</option>'; //populate categories
+                 }
+                 ?>
+               <!-- <option name="category" value="City Car">CITY CAR</option>
                <option name="category" value="Station Wagon">STATION WAGON</option>
-               <option name="category" value="Suv">SUV</option>
+               <option name="category" value="Suv">SUV</option> -->
              </select>
 		    </div> <!--end dropoff location-->
 		  <div class="form-group search_mod_button">        

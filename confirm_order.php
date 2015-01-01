@@ -83,7 +83,25 @@
     $fullOrStan = 0;
   }
   
+  // difference in days from american format to european format
+  function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
+  {
+    $d1 = explode("/", $date_1);
+    $dTemp = explode(" ", $d1[2]);
+	$d1[2] = $dTemp[0];
+	$dt1 = $d1[1]."/".$d1[0]."/".$d1[2];
+    $datetime1 = date_create($dt1);
+    $d2 = explode("/", $date_2);
+	$dTemp = explode(" ", $d2[2]);
+	$d2[2] = $dTemp[0];
+    $dt2 = $d2[1]."/".$d2[0]."/".$d2[2];
+    $datetime2 = date_create($dt2);
+    $interval = date_diff($datetime1, $datetime2);
+    return $interval->format($differenceFormat);  
+    
+  }
   
+  $diff = dateDifference($pickup_date, $dropoff_date);
 
 ?>
 
@@ -145,7 +163,7 @@ EOD;
 					}
 				  ?>
                 </td>
-				<td align="center">2</td>
+				<td align="center"><?php echo $diff; ?></td>
 				<td align="center">
 					<span class="vrccurrency">€</span>
 					<span class="vrcprice">82.64</span>

@@ -182,7 +182,7 @@ EOD;
 		
 	    while ($car = mysqli_fetch_array($result)) {   //$car['car_category'];
 
-		  $car_id		       = $car['id'];
+		  $car_type_id		   = $car['id'];
 		  $car_name 	       = $car['name'];
 		  $car_category 	   = $car['car_category'];
 		  $car_description     = $car['description'];
@@ -192,7 +192,7 @@ EOD;
 		  $available_cars_quantity = $car['car_quantity'];
 		  
 		  //car characteristics
-		  $char_result = getCarCharacteristics($con, $car_id);
+		  $char_result = getCarCharacteristics($con, $car_type_id);
 		  $char = mysqli_fetch_array($char_result);
 		  
 		  $air_con 		= $char['air_con'];
@@ -205,7 +205,7 @@ EOD;
           
 		  echo <<<EOD
            <div class="car_result_restricted">
-	        <form method="post" action="book_now.php?car_id={$car_id}">
+	        <form method="post" action="book_now.php?car_id={$car_type_id}&pickup_location={$pickup_location}">
 		      <table class="car_result_table">
 		        <tbody>
 			      <tr>

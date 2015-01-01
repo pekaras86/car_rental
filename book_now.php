@@ -20,9 +20,19 @@
   }
   
   //anazitisi amaksiou me to sygekrimeno id 
-  $car_id = $_REQUEST['car_id'];
+  $car_type_id = $_REQUEST['car_id'];
+  $pickup_location = $_REQUEST['pickup_location'];
+  $dropoff_location = $_COOKIE['dropoff_location'];
+  $pickup_date = $_COOKIE['pickup_date'];
+  $dropoff_date = $_COOKIE['dropoff_date'];
 
-  $result = getCarByID($con, $car_id);
+
+  //$result = getCarByID($con, $car_id);
+   $result = getFirstAvailableCarByTypeID($con, $pickup_location, $pickup_date, $dropoff_date, $car_type_id);
+
+  $available_car = mysqli_fetch_array($result);
+
+  $result = getCarByID($con, $available_car['id']);
 
   $car = mysqli_fetch_array($result);
 

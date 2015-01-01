@@ -9,6 +9,7 @@
   }
   
   require_once ('scripts/database_connection.php');
+  require_once ('admin_panel/db.php');
   require_once ('scripts/db_cars.php');
   require_once ('scripts/views.php');
   
@@ -34,9 +35,13 @@
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
 	  $srt = $_REQUEST['hidden'];
+	  $pickup_date = $_REQUEST['pickup_date'];
+	  $dropoff_date = $_REQUEST['dropoff_date'];
 	  setcookie('dropoff_location', $_REQUEST['dropoff_location']);
 	  setcookie('pickup_date', $_REQUEST['pickup_date']);
 	  setcookie('dropoff_date', $_REQUEST['dropoff_date']);
+
+
 	 
 	  echo <<<EOD
 	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">
@@ -44,12 +49,20 @@
 		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
-             <select class="form-control" id="pickup_location" name="pickup_location">
-               <option name="pickup_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+		     <select class="form-control" id="pickup_location" name="pickup_location">
+EOD;
+          $result = getCarLocations($con);
+          //mysqli_query($con,"SELECT id,name FROM car_locations");
+          while($row = mysqli_fetch_array($result)) {
+          echo '<option value="'.$row['id'].'">'.$row['name'].'</option>'; //populate pickup locations
+          }
+
+	  echo <<<EOD
+               <!--<option name="pickup_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
                <option name="pickup_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
                <option name="pickup_location" value="VOLOS">VOLOS</option>
                <option name="pickup_location" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
-			   <option name="pickup_location" value="CHANIA">CHANIA</option>
+			   <option name="pickup_location" value="CHANIA">CHANIA</option> -->
              </select>
 		    </div> <!--end pickup location-->
 		  <div class="form-group pickdrop_date">  <!--start pickup date-->
@@ -63,11 +76,17 @@
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
 		     <label>Drop Off Location</label>
              <select class="form-control" id="dropoff_location" name="dropoff_location">
-               <option name="dropoff_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+EOD;
+			  $result = getCarLocations($con);
+			  while($row = mysqli_fetch_array($result)) {
+				  echo '<option value="'.$row['id'].'">'.$row['name'].'</option>'; //populate dropoff locations
+			  }
+	  echo <<<EOD
+               <!-- <option name="dropoff_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
                <option name="dropoff_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
                <option name="dropoff_location" value="VOLOS">VOLOS</option>
                <option name="dropoff_location" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
-			   <option name="dropoff_location" value="CHANIA">CHANIA</option>
+			   <option name="dropoff_location" value="CHANIA">CHANIA</option> -->
              </select>
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->
@@ -103,7 +122,7 @@ EOD;
 			$order_by = "ASC";
 		}
 	   // run the query
-	  $result = getCars($con, $pickup_location, $category, $order_by);
+	  $result = getAvailableCarTypes($con, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by);
     	  
 	  //emfanise ola ta amaksia
 	  
@@ -164,6 +183,7 @@ EOD;
 		  $car_location 	   = $car['car_location'];
 		  $car_price 		   = $car['price'];
 		  $car_pic_path        = $car['pic_path'];
+		  $available_cars_quantity = $car['car_quantity'];
 		  
 		  //car characteristics
 		  $char_result = getCarCharacteristics($con, $car_id);
@@ -233,6 +253,11 @@ EOD;
 							        <span>{$car_location}</span>
 							    </div>
 							  </div>
+						    </td>
+					      </tr>
+					      <tr>
+					        <td>
+						      <span>{$available_cars_quantity} units available</span>
 						    </td>
 					      </tr>
 					      <tr>
@@ -325,7 +350,6 @@ EOD;
 	  }
 	} // end dateFields
   </script>
-  
   
 EOD;
 

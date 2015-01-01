@@ -1,6 +1,8 @@
 <?php
   
   require_once ('scripts/views.php');
+  require_once ('scripts/database_connection.php');
+  require_once ('admin_panel/db.php');
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
@@ -24,11 +26,18 @@
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label class="white-label">Pickup Location</label>
              <select class="form-control" id="pickup_location" name="pickup_location">
-               <option name="pickup_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+                 <?php
+                 $result = getCarLocations($con);
+                 //mysqli_query($con,"SELECT id,name FROM car_locations");
+                 while($row = mysqli_fetch_array($result)) {
+                     echo '<option value="'.$row['id'].'">'.$row['name'].'</option>'; //populate pickup locations
+                 }
+                 ?>
+               <!-- <option name="pickup_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
                <option name="pickup_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
                <option name="pickup_location" value="VOLOS">VOLOS</option>
                <option name="pickup_location" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
-			   <option name="pickup_location" value="CHANIA">CHANIA</option>
+			   <option name="pickup_location" value="CHANIA">CHANIA</option> -->
              </select>
 		    </div> <!--end pickup location-->
 			<div id="pUp">
@@ -44,11 +53,18 @@
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
 		     <label class="white-label">Drop Off Location</label>
              <select class="form-control" id="dropoff_location" name="dropoff_location">
-               <option name="dropoff_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
+                 <?php
+                 $result = getCarLocations($con);
+                 //mysqli_query($con,"SELECT id,name FROM car_locations");
+                 while($row = mysqli_fetch_array($result)) {
+                     echo '<option value="'.$row['id'].'">'.$row['name'].'</option>'; //populate dropoff locations
+                 }
+                 ?>
+               <!-- <option name="dropoff_location" value="ATHENS AIRPORT">ATHENS AIRPORT</option>
                <option name="dropoff_location" value="THESSALONIKI AIRPORT">THESSALONIKI AIRPORT</option>
                <option name="dropoff_location" value="VOLOS">VOLOS</option>
                <option name="dropoff_location" value="ALEKSANDROUPOLI">ALEKSANDROUPOLI</option>
-			   <option name="dropoff_location" value="CHANIA">CHANIA</option>
+			   <option name="dropoff_location" value="CHANIA">CHANIA</option> -->
              </select>
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->

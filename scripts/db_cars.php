@@ -9,9 +9,6 @@
 
 function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by) {
 
-    $startdate = new DateTime($pickup_date);
-    $enddate = new Datetime($dropoff_date);
-
     $query = "SELECT car_types.*, car_categories.name as car_category,car_locations.name as car_location, count(car_items.id) as car_quantity " .
     "FROM car_types  " .
     "INNER JOIN car_categories ON car_types.car_Category_ID = car_categories.id  " .
@@ -19,9 +16,9 @@ function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_d
     "INNER JOIN car_locations ON car_items.location_ID = car_locations.id  " .
     "WHERE car_locations.id = '{$pickup_location}' AND car_items.id NOT IN (SELECT DISTINCT car_id  " .
     "  																		   FROM reservations  " .
-    "																			WHERE (pickup_datetime BETWEEN '{$startdate->format('Y-m-d')}' AND '{$enddate->format('Y-m-d')}')  " .
-    "																			OR ( dropoff_datetime BETWEEN '{$startdate->format('Y-m-d')}' AND '{$enddate->format('Y-m-d')}')  " .
-    "																			OR ( '{$startdate->format('Y-m-d')}' BETWEEN pickup_datetime AND dropoff_datetime) ) ";
+    "																			WHERE (date_format(pickup_datetime, '%d/%m/%Y') BETWEEN '{$pickup_date}' AND '{$dropoff_date}')  " .
+    "																			OR ( date_format(dropoff_datetime, '%d/%m/%Y')  BETWEEN '{$pickup_date}' AND '{$dropoff_date}')  " .
+    "																			OR ( '{$pickup_date}' BETWEEN date_format(pickup_datetime, '%d/%m/%Y') AND  date_format(dropoff_datetime, '%d/%m/%Y') ) ) ";
 
     if ($category <> 'Any') {$query .= " AND car_categories.id = '{$category}' ";}
 
@@ -46,9 +43,9 @@ function getFirstAvailableCarByTypeID($dbcon, $pickup_location, $pickup_date, $d
         "INNER JOIN car_locations ON car_items.location_ID = car_locations.id  " .
         "WHERE car_locations.id = '{$pickup_location}' AND car_items.id NOT IN (SELECT DISTINCT car_id  " .
         "  																		   FROM reservations  " .
-        "																			WHERE (pickup_datetime BETWEEN '{$startdate->format('Y-m-d')}' AND '{$enddate->format('Y-m-d')}')  " .
-        "																			OR ( dropoff_datetime BETWEEN '{$startdate->format('Y-m-d')}' AND '{$enddate->format('Y-m-d')}')  " .
-        "																			OR ( '{$startdate->format('Y-m-d')}' BETWEEN pickup_datetime AND dropoff_datetime) ) " .
+        "																			WHERE (date_format(pickup_datetime, '%d/%m/%Y') BETWEEN '{$pickup_date}' AND '{$dropoff_date}')  " .
+        "																			OR ( date_format(dropoff_datetime, '%d/%m/%Y')  BETWEEN '{$pickup_date}' AND '{$dropoff_date}')  " .
+        "																			OR ( '{$pickup_date}' BETWEEN date_format(pickup_datetime, '%d/%m/%Y') AND  date_format(dropoff_datetime, '%d/%m/%Y') ) ) " .
         " AND car_types.id ='{$car_type_id}' LIMIT 1";
 
 

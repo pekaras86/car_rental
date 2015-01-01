@@ -27,32 +27,40 @@
 	$password = mysqli_real_escape_string($con, trim($_REQUEST['pass'])); 
 	
 	//psakse ton user ston pinaka admins
-	$query = sprintf("SELECT user_id, username FROM admins " .
+	$query = sprintf("SELECT users.id, username, usergroups.id as usergroup_id FROM users " .
+                     "INNER JOIN usergroups ON usergroups.id = users.user_group_id" .
 					" WHERE username = '%s' AND " .
 					" password = '%d';",
 					$username, $password);
 	
 	$results = mysqli_query($con, $query);
 	
-	//ean vrethike ston pinaka admins
+	//ean vrethike ston pinaka users
 	if (mysqli_num_rows($results) == 1) {
 	  
 	  $result = mysqli_fetch_array($results);
-	  
-	  $user_id = $result['user_id'];  //ean yparxei eksygage to user_id tou
+
+	  $user_id = $result['id'];  //ean yparxei eksygage to user_id tou
 	  $username = $result['username'];  //kai to username tou
+	  $usergroup_id = $result['usergroup_id'];
 	  
 	  setcookie('user_id', $user_id);  // kai ftiakse cookie me to user_id tou
 	  setcookie('username', $username); // kai to username tou
-	  setcookie('admin','admin');
-	  
-	  header("Location: admin_panel/admin.php");   // sti synexeia katefthine ton sti selida show_user kai pare mazi to cookie user_id
-	  
-	  exit();  //telos selidas
+
+        if ($usergroup_id == 1 ) { //einai administrator
+            setcookie('admin','admin');
+            header("Location: admin_panel/admin.php");   // sti synexeia katefthine ton sti selida show_user kai pare mazi to cookie user_id
+
+            exit();  //telos selidas
+        }
+        else{ //einai pelatis
+            
+        }
+
 	
 	} else {
-	  //ean den yparxei ston pinaka admins psaxton ston pinaka customers (afto na to kanw pio meta otan ginoun oi pinakes)
-	  //ean den yparxei pouthena kane anakatefthinsi edw me error message
+	  //ean den yparxei ston pinaka kane anakatefthinsi edw me error message
+
 	  $error_message = "Your username/password combination was invalid.";
 	  header("Location: log_in_form.php?error_message={$error_message}");
 	}

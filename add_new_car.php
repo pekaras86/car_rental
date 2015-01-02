@@ -63,15 +63,13 @@ $now = time();
 
 	  
 //upload car query
-$insert_car_query = sprintf("INSERT INTO cars " .
+$insert_car_query = sprintf("INSERT INTO car_types " .
 								"(name, car_Category_ID, " .
-								"description, plate_number, location_ID, price, pic_path, active) " .
-							"VALUES ('%s', '%d', '%s', '%s','%d', '%d', '%s', '%d');",
+								"description, price, pic_path, active) " .
+							"VALUES ('%s', '%d', '%s', '%d', '%s', '%d');",
 							mysql_real_escape_string($car_name),
 							mysql_real_escape_string($car_category),
 							mysql_real_escape_string($car_description),
-							mysql_real_escape_string($plate_number),
-							mysql_real_escape_string($car_location),
 							mysql_real_escape_string($car_price),
 							mysql_real_escape_string($upload_filename),
 							mysql_real_escape_string($active));						
@@ -82,10 +80,9 @@ mysqli_query($con, $insert_car_query);
 
 //upload car characteristics query
 $insert_car_characteristics = sprintf("INSERT INTO car_characteristics " .
-								         "(car_id, air_con, " .
+								         "(air_con, " .
 								         "cc, airbags, passengers, doors, radio) " .
-							          "VALUES ('%d', '%d', '%d', '%d', '%d', '%d', '%d');",
-									   mysqli_insert_id($con),
+							          "VALUES ('%d', '%d', '%d', '%d', '%d', '%d');",
 							           mysql_real_escape_string($air_con),
 							           mysql_real_escape_string($cccar),
 							           mysql_real_escape_string($airbags),

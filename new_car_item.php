@@ -60,8 +60,8 @@ if (isset($_REQUEST['success_message'])) {
             <ul class="nav navbar-nav">
               <li class=""><a href="index.php">View Site</a></li>
 			  <li class=""><a href="admin_panel/admin.php">Dashboard</a></li>
-			  <li class="active"><a href="../car_rental/newcar.php">New Car Type</a></li>
-			  <li class=""><a href="../car_rental/new_car_item.php">New Car Item</a></li>
+			  <li class=""><a href="../car_rental/newcar.php">New Car Type</a></li>
+			  <li class="active"><a href="../car_rental/new_car_item.php">New Car Item</a></li>
 			  <li class=""><a href=""></a></li>
 			  <li class=""><a href=""></a></li>
             </ul>
@@ -93,27 +93,25 @@ if (isset($_REQUEST['success_message'])) {
 EOD;
 		  }
 		  ?>
-		  <form method="post" action="add_new_car.php" name="addcar" enctype="multipart/form-data">
+		  <form method="post" action="add_new_car_item.php" name="addcar" enctype="multipart/form-data">
 		   <div class="form-group">
 		    <table class="addcar">
 			  <tbody>
 			    <tr>
 				  <td width="200">
-                     *
-                     <b>Car Name:</b>
-                  </td>
-				  <td>
-					 <input type="text" size="40" name="cname" class="form-control" id="cname" style="width:200px;">
-				  </td>
-				</tr>
-				<tr>
-				  <td width="200" valign="top">
-					 *
-				     <b>Car Image:</b>
+					*
+					<b>Location:</b>
 				  </td>
 				  <td>
-				   <span class="btn btn-default btn-file"><input type="file" size="35" name="cimg" id="cimg"></span>
-				  </td>
+					  <select size="4" multiple="multiple" name="clocation" id="clocation" class="form-control" style="width:250px;">
+						<option name="clocation" value="1">ATHENS AIRPORT</option>
+						<option name="clocation" value="2">THESSALONIKI AIRPORT</option>
+						<option name="clocation" value="4">VOLOS</option>
+						<option name="clocation" value="5">ALEKSANDROUPOLI</option>
+						<option name="clocation" value="3">CHANIA</option>
+						<option name="clocation" value="7">KATERINI</option>
+					  </select>
+				   </td>
 				</tr>
 				<tr>
 				  <td width="200">
@@ -131,100 +129,21 @@ EOD;
 				<tr>
 				  <td width="200">
 					*
-					<b>Car Description:</b>
-				  </td>
-				  <td>
-				     <textarea rows="4" cols="50" name="cdescription" id="cdescription" class="form-control"></textarea> 
-				  </td>
-				</tr>
-				<!--<tr>
-				  <td width="200">
-					*
-					<b>Location:</b>
-				  </td>
-				  <td>
-					  <select size="4" multiple="multiple" name="clocation" id="clocation" class="form-control" style="width:250px;">
-						<option name="clocation" value="1">ATHENS AIRPORT</option>
-						<option name="clocation" value="2">THESSALONIKI AIRPORT</option>
-						<option name="clocation" value="4">VOLOS</option>
-						<option name="clocation" value="5">ALEKSANDROUPOLI</option>
-						<option name="clocation" value="3">CHANIA</option>
-						<option name="clocation" value="7">KATERINI</option>
-					  </select>
-				   </td>
-				</tr>-->
-				<tr>
-				  <td width="200">
-					*
-					<b>Car Characteristics:</b>
-				  </td>
-				  <td>
-				    <img class="char-img" src="images/char-icons/ac.png">
-				    <select name="air_con">
-					  <option name="air_con" value="1">Yes</option>
-					  <option name="air_con" value="0">No</option>
-					</select>
-					
-					<img class="char-img" src="images/char-icons/engine.png">
-				    <input type="text" name="cccar" id="cccar" style="width:70px;">
-					
-					<img class="char-img" src="images/char-icons/airbag.png">
-				    <select name="airbags">
-					  <option name="airbags" value="0">0</option>
-					  <option name="airbags" value="1">1</option>
-					  <option name="airbags" value="2">2</option>
-					  <option name="airbags" value="4">4</option>
-					</select>
-					
-					<img class="char-img" src="images/char-icons/body.png">
-				    <select name="passengers">
-					  <option name="passengers" value="2">2</option>
-					  <option name="passengers" value="4">4</option>
-					  <option name="passengers" value="5">5</option>
-					  <option name="passengers" value="6">6</option>
-					</select>
-					
-					<img class="char-img" src="images/char-icons/door.png">
-				    <select name="doors">
-					  <option name="doors" value="2">2</option>
-					  <option name="doors" value="4">4</option>
-					</select>
-					
-					<img class="char-img" src="images/char-icons/radio.png">
-				    <select name="radio">
-					  <option name="radio" value="1">Yes</option>
-					  <option name="radio" value="0">No</option>
-					</select>
-				  </td>
-				</tr>
-				<!--<tr>
-				  <td width="200">
-					*
 					<b>Plate Number:</b>
 				  </td>
 				  <td>
 				    <input type="text" size="4" value="" name="plate" id="plate" class="form-control" style="width:200px;">
                   </td>
-				  </tr>-->
-				<tr>
-				  <td width="200">
-					*
-					<b>Price/Day:</b>
-				  </td>
-				  <td>
-				    <input type="text" size="4" value="" name="cprice" id="cprice" class="form-control" style="width:100px;">
-                  </td>
-				  <tr>
+				  </tr>
+				   <tr>
 				   <td>
 				    <input type="submit" value="Submit" class="btn btn-default btn-file" onClick="return addCarFields();">
 				   </td>
 				  </tr>
-				</tr>
 			  </tbody>
 			</table>
 		   </div>
 		  </form>
-           
         </div>
     </div> <!-- /container -->
 	

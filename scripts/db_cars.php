@@ -33,9 +33,6 @@ function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_d
 
 function getFirstAvailableCarByTypeID($dbcon, $pickup_location, $pickup_date, $dropoff_date, $car_type_id) {
 
-    $startdate = new DateTime($pickup_date);
-    $enddate = new Datetime($dropoff_date);
-
     $query = "SELECT car_items.id " .
         "FROM car_types  " .
         "INNER JOIN car_categories ON car_types.car_Category_ID = car_categories.id  " .

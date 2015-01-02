@@ -120,9 +120,12 @@ EOD;
 				  </td>
 				  <td>
 					  <select size="4" multiple="multiple" name="ccat" class="form-control" id="ccat" style="width:200px;">
-						<option name="ccat" value="2">Suv</option>
-						<option name="ccat" value="3">Station Wagon</option>
-						<option name="ccat" value="1">City Car</option>
+						<option name="ccat" value="1">Peugeot 206</option>
+						<option name="ccat" value="4">Renault Megane</option>
+						<option name="ccat" value="6">Chevrolet Cruze</option>
+						<option name="ccat" value="8">Toyota Highlander</option>
+						<option name="ccat" value="10">Suzuki Grand Vitara</option>
+						<option name="ccat" value="11">Renault Duster</option>
 					  </select>
 				   </td>
 				</tr>

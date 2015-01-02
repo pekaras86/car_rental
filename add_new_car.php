@@ -16,8 +16,8 @@ $image_fieldname = "cimg";
 $car_name = $_REQUEST['cname'];				
 $car_category = $_REQUEST['ccat'];
 $car_description = $_REQUEST['cdescription'];
-$car_location = $_REQUEST['clocation'];
-$plate_number = $_REQUEST['plate'];
+//$car_location = $_REQUEST['clocation'];
+//$plate_number = $_REQUEST['plate'];
 $car_price = $_REQUEST['cprice'];
 
 $air_con = $_REQUEST['air_con'];	//epipleon haraktiristika autokinitou
@@ -28,6 +28,7 @@ $doors = $_REQUEST['doors'];
 $radio = $_REQUEST['radio'];
 
 $active = 1;
+
 
 
 // elegxos sfalmatwn gia photo
@@ -61,7 +62,7 @@ $now = time();
 						"file to {$upload_filename}");
 				  
 
-	  
+  
 //upload car query
 $insert_car_query = sprintf("INSERT INTO car_types " .
 								"(name, car_Category_ID, " .

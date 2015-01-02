@@ -1,3 +1,11 @@
+<?php
+
+require_once '../scripts/app_config.php';
+require_once '../scripts/database_connection.php';
+
+
+?>
+
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -76,9 +84,12 @@
       </nav>
 	</div> <!-- /container -->	
 	
- 
-	
-	
+   <?php
+     $query = "SELECT * FROM car_items";
+	 $result = mysqli_query($con, $query);
+	 
+   
+   ?>
 	
 	<div class="container"> 
 	  <div class="jumbotron">
@@ -112,55 +123,7 @@
 				  <td style="color:green;">Confirmed</td>
 				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				</tr>
-				<tr>
-				  <td>1124</td>
-				  <td>11/24/2014 10:29</td>
-				  <td>Name:Anestis Last Name:Papas email:anpap@hotmail.com</td>
-				  <td>Honda Civic</td>
-				  <td>11/25/2014 17:00</td>
-				  <td>12/2/2014 22:30</td>
-				  <td>7</td>
-				  <td>386</td>
-				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1125</td>
-				  <td>11/24/2014 18:20</td>
-				  <td>Name:Diamantis Last Name:Kalaitzis email:dkala@hotmail.com</td>
-				  <td>Opel Ascona</td>
-				  <td>11/30/2014 17:00</td>
-				  <td>12/3/2014 22:30</td>
-				  <td>4</td>
-				  <td>310</td>
-				  <td style="color:red;">Standby</td>
-				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1126</td>
-				  <td>11/24/2014 18:20</td>
-				  <td>Name:Aleksis Last Name:Papadospoulos email:alpap@hotmail.com</td>
-				  <td>Scoda Fabia</td>
-				  <td>11/24/2014 17:00</td>
-				  <td>12/1/2014 22:30</td>
-				  <td>7</td>
-				  <td>270</td>
-				  <td style="color:green;">Confirmed</td>
-				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
-				</tr>
-				<tr>
-				  <td>1127</td>
-				  <td>11/23/2014 18:20</td>
-				  <td>Name:Stefanos Last Name:Saleas email:stesal@hotmail.com</td>
-				  <td>Ford Focus</td>
-				  <td>11/25/2014 20:00</td>
-				  <td>12/01/2014 20:00</td>
-				  <td>6</td>
-				  <td>380</td>
-				  <td style="color:green;">Standby</td>
-				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
-				</tr>
-				</tbody>
+			   </tbody>
 			 </table>
 		  </div>
         </div>

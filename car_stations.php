@@ -9,7 +9,23 @@
 $tag = "carStations";
 display_navbar($tag);
 
+define("DATABASE_HOST", "");
+define("DATABASE_USERNAME", "user");
+define("DATABASE_PASSWORD", "user");
+define("DATABASE_NAME", "thessaloniki_car_rental");
 
+define("SITE_ROOT", "/git_projects/car_rental/");
+$con=mysqli_connect(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_NAME);
+$sql="SELECT * FROM car_locations";
+$result=mysqli_query($con,$sql);
+
+$num = 0;
+while ($row = mysqli_fetch_array($result)) {
+$rowsOfLocations[$num] = $row;
+$num = $num +1;
+}
+
+$numRows = mysqli_num_rows($result);
 ?>
 
 <head>
@@ -24,7 +40,7 @@ display_navbar($tag);
   <link href='css/forMap.css' rel='stylesheet' type='text/css' />
   <script type="text/javascript">
     var map;
-    $(document).ready(function(){
+    $(document).ready(function(){1
       
       map = new GMaps({
         div: '#map',
@@ -32,78 +48,20 @@ display_navbar($tag);
         lng: 22.948085
       });
       
-      map.addMarker({
-        lat: 40.582042,
-        lng: 22.965862,
-        title: 'Thessaloniki Car Rentals',
-        infoWindow: {
-          content: '<p>Kalamaria Branch</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 40.634148,
-        lng: 22.940433,
-        title: 'Thessaloniki Car Rentals',
-        infoWindow: {
-          content: '<p>City Branch</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 40.523936,
-        lng: 22.978136,
-        title: 'Thessaloniki Car Rentals - Drop off car',
-        infoWindow: {
-          content: '<p>City Airport</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 39.363423,
-        lng: 22.943892,
-        title: 'Thessaloniki Car Rentals - Drop off car',
-        infoWindow: {
-          content: '<p>City of Volos</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 40.847101,
-        lng: 25.877936,
-        title: 'Thessaloniki Car Rentals - Drop off car',
-        infoWindow: {
-          content: '<p>City of Alexandroupoli</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 35.511732,
-        lng: 24.024131,
-        title: 'Thessaloniki Car Rentals - Drop off car',
-        infoWindow: {
-          content: '<p>City of Chania</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 37.920925,
-        lng: 23.932886,
-        title: 'Thessaloniki Car Rentals - Drop off car',
-        infoWindow: {
-          content: '<p>Athens Airport</p>'
-        }
-      });
-
-      map.addMarker({
-        lat: 40.273988,
-        lng: 22.495715,
-        title: 'Thessaloniki Car Rentals - Drop off car',
-        infoWindow: {
-          content: '<p>City of Katerini</p>'
-        }
-      });
-    });
+      var locationRows = <?php echo json_encode($rowsOfLocations ); ?>;
+      var rowNum = <?php echo json_encode($numRows); ?>;
+      for(var i=0;i<rowNum ;i++){
+        map.addMarker({
+          lat: locationRows[i][3],
+          lng: locationRows[i][4],
+          title: locationRows[i][2],
+          infoWindow: {
+             content: locationRows[i][1]
+          }
+       });
+      };
+     
+    }); 1
 
 
   </script>  

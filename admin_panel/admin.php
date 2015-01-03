@@ -29,10 +29,10 @@ require_once '../scripts/database_connection.php';
 
 	  <!-- jtable.org CSS -->
 	  <link href="../plugins/jtable/themes/metro/blue/jtable.css" rel="stylesheet" type="text/css" />
-
-	  
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    
+	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
@@ -216,8 +216,7 @@ EOD;
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<link href="http://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	
    
 	<script src="../bootstrap-3.3.1/js/jquery.validate.min.js"></script>
     <script src="../bootstrap-3.3.1/js/bootstrap.min.js"></script>

@@ -84,14 +84,9 @@ require_once '../scripts/database_connection.php';
       </nav>
 	</div> <!-- /container -->	
 	
-   <?php
-     $query = "SELECT * FROM car_items";
-	 $result = mysqli_query($con, $query);
-	 
-   
-   ?>
-	
-	<div class="container"> 
+ 
+
+   <div class="container"> 
 	  <div class="jumbotron">
         <div class="row"> 
            <div class="table-responsive">
@@ -101,7 +96,7 @@ require_once '../scripts/database_connection.php';
 				  <th>ID</th>
 				  <th>Date</th>
 				  <th>Purchaser</th>
-				  <th>Car</th>
+				  <th>Plate Number</th>
 				  <th>Pickup</th>
 				  <th>Drop Off</th>
 				  <th>Days</th>
@@ -111,18 +106,40 @@ require_once '../scripts/database_connection.php';
 				</tr>
 				</thead>
 				<tbody>
-			    <tr>
-				  <td>1123</td>
-				  <td><a href="../rental_details.php">11/24/2014 07:23</a></td>
-				  <td>Name:Giorgos Last Name:Antoniadis email:anto@yahoo.gr</td>
-				  <td>Seat Leon</td>
-				  <td>11/25/2014 13:30</td>
-				  <td>11/27/2014 21:30</td>
+				<?php
+				 $query = "SELECT * FROM reservations";
+	             $result = mysqli_query($con, $query);
+				 
+				 
+				 while($row = mysqli_fetch_array($result)) {
+				 
+				 //evresi customer
+				 $custom_query = "SELECT * FROM customers WHERE id='{$row['customer_id']}'";
+				 $custom_result = mysqli_query($con, $custom_query);
+				 $custom_row = mysqli_fetch_array($custom_result);
+				 
+				 //evresi oximatos
+				 $item_query = "SELECT * FROM car_items WHERE id='{$row['id']}'";
+				 $item_result = mysqli_query($con, $item_query);
+				 $item_row = mysqli_fetch_array($item_result);
+				 
+				 
+				 echo <<<EOD
+			     <tr>
+				  <td>{$row['id']}</td>
+				  <td><a href="../rental_details.php">{$row['reserv_date']}</a></td>
+				  <td>Name:{$custom_row['name']} Last Name:{$custom_row['lastname']} email:{$custom_row['email']}</td>
+				  <td>{$item_row['plate_number']}</td>
+				  <td>{$row['pickup_datetime']}</td>
+				  <td>{$row['dropoff_datetime']}</td>
 				  <td>2</td>
-				  <td>230</td>
+				  <td>{$row['amount']}</td>
 				  <td style="color:green;">Confirmed</td>
 				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
-				</tr>
+				 </tr>
+EOD;
+				}
+				?>
 			   </tbody>
 			 </table>
 		  </div>

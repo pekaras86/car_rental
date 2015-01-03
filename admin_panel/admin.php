@@ -124,7 +124,10 @@ require_once '../scripts/database_connection.php';
 				 $item_result = mysqli_query($con, $item_query);
 				 $item_row = mysqli_fetch_array($item_result);
 				 //echo $item_row['plate_number'];
-				 echo date('dd-Mos-yy hh:mm:ss', strftime($reserv_row['pickup_datetime']));
+				 
+				 
+				 //$pickup_date = date('d-m-Y h:m:s', strtotime($reserv_row['pickup_datetime']));
+				 //$dropoff_date = date('d-m-Y h:m:s', strtotime($reserv_row['dropoff_datetime']));
 				 
 				 echo <<<EOD
 			     <tr>

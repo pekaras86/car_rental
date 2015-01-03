@@ -50,7 +50,62 @@ display_navbar($tag);
         }
       });
 
+      map.addMarker({
+        lat: 40.523936,
+        lng: 22.978136,
+        title: 'Thessaloniki Car Rentals - Drop off car',
+        infoWindow: {
+          content: '<p>City Airport</p>'
+        }
+      });
+
+      map.addMarker({
+        lat: 39.363423,
+        lng: 22.943892,
+        title: 'Thessaloniki Car Rentals - Drop off car',
+        infoWindow: {
+          content: '<p>City of Volos</p>'
+        }
+      });
+
+      map.addMarker({
+        lat: 40.847101,
+        lng: 25.877936,
+        title: 'Thessaloniki Car Rentals - Drop off car',
+        infoWindow: {
+          content: '<p>City of Alexandroupoli</p>'
+        }
+      });
+
+      map.addMarker({
+        lat: 35.511732,
+        lng: 24.024131,
+        title: 'Thessaloniki Car Rentals - Drop off car',
+        infoWindow: {
+          content: '<p>City of Chania</p>'
+        }
+      });
+
+      map.addMarker({
+        lat: 37.920925,
+        lng: 23.932886,
+        title: 'Thessaloniki Car Rentals - Drop off car',
+        infoWindow: {
+          content: '<p>Athens Airport</p>'
+        }
+      });
+
+      map.addMarker({
+        lat: 40.273988,
+        lng: 22.495715,
+        title: 'Thessaloniki Car Rentals - Drop off car',
+        infoWindow: {
+          content: '<p>City of Katerini</p>'
+        }
+      });
     });
+
+
   </script>  
 </head>
 

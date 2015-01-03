@@ -30,8 +30,7 @@ require_once '../scripts/database_connection.php';
 	  <!-- jtable.org CSS -->
 	  <link href="../plugins/jtable/themes/metro/blue/jtable.css" rel="stylesheet" type="text/css" />
 
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	  <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	  
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -107,33 +106,36 @@ require_once '../scripts/database_connection.php';
 				</thead>
 				<tbody>
 				<?php
-				 $query = "SELECT * FROM reservations";
-	             $result = mysqli_query($con, $query);
+				//evresi kratisis
+				 $reserv_query = "SELECT * FROM reservations";
+	             $reserv_result = mysqli_query($con, $reserv_query);
+				 //echo $reserv_row['pickup_datetime'];
 				 
-				 
-				 while($row = mysqli_fetch_array($result)) {
+				 while($reserv_row = mysqli_fetch_array($reserv_result)) {
 				 
 				 //evresi customer
-				 $custom_query = "SELECT * FROM customers WHERE id='{$row['customer_id']}'";
+				 $custom_query = "SELECT * FROM customers WHERE id='{$reserv_row['customer_id']}'";
 				 $custom_result = mysqli_query($con, $custom_query);
 				 $custom_row = mysqli_fetch_array($custom_result);
+				 //echo $custom_row['name'];
 				 
 				 //evresi oximatos
-				 $item_query = "SELECT * FROM car_items WHERE id='{$row['id']}'";
+				 $item_query = "SELECT * FROM car_items WHERE id='{$reserv_row['car_id']}'";
 				 $item_result = mysqli_query($con, $item_query);
 				 $item_row = mysqli_fetch_array($item_result);
+				 //echo $item_row['plate_number'];
 				 
 				 
 				 echo <<<EOD
 			     <tr>
-				  <td>{$row['id']}</td>
-				  <td><a href="../rental_details.php">{$row['reserv_date']}</a></td>
+				  <td>{$reserv_row['id']}</td>
+				  <td><a href="../rental_details.php">{$reserv_row['reserv_date']}</a></td>
 				  <td>Name:{$custom_row['name']} Last Name:{$custom_row['lastname']} email:{$custom_row['email']}</td>
 				  <td>{$item_row['plate_number']}</td>
-				  <td>{$row['pickup_datetime']}</td>
-				  <td>{$row['dropoff_datetime']}</td>
+				  <td>{$reserv_row['pickup_datetime']}</td>
+				  <td>{$reserv_row['dropoff_datetime']}</td>
 				  <td>2</td>
-				  <td>{$row['amount']}</td>
+				  <td>{$reserv_row['amount']}</td>
 				  <td style="color:green;">Confirmed</td>
 				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				 </tr>
@@ -205,7 +207,9 @@ EOD;
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 	<link href="http://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+   
 	<script src="../bootstrap-3.3.1/js/jquery.validate.min.js"></script>
     <script src="../bootstrap-3.3.1/js/bootstrap.min.js"></script>
 

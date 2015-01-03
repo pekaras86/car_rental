@@ -1,6 +1,8 @@
 ﻿<?php
   
   require_once ('scripts/views.php');
+  require_once ('scripts/database_connection.php');
+  require_once ('admin_panel/db.php');
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
@@ -9,7 +11,7 @@
 $tag = "carStations";
 display_navbar($tag);
 
-define("DATABASE_HOST", "");
+/* define("DATABASE_HOST", "");
 define("DATABASE_USERNAME", "user");
 define("DATABASE_PASSWORD", "user");
 define("DATABASE_NAME", "thessaloniki_car_rental");
@@ -17,14 +19,14 @@ define("DATABASE_NAME", "thessaloniki_car_rental");
 define("SITE_ROOT", "/git_projects/car_rental/");
 $con=mysqli_connect(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_NAME);
 $sql="SELECT * FROM car_locations";
-$result=mysqli_query($con,$sql);
+$result=mysqli_query($con,$sql); */
 
+$result = getCarLocations($con);
 $num = 0;
 while ($row = mysqli_fetch_array($result)) {
-$rowsOfLocations[$num] = $row;
-$num = $num +1;
+    $rowsOfLocations[$num] = $row;
+    $num = $num +1;
 }
-
 $numRows = mysqli_num_rows($result);
 ?>
 

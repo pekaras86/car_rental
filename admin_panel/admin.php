@@ -107,7 +107,7 @@ require_once '../scripts/database_connection.php';
 				<tbody>
 				<?php
 				//evresi kratisis
-				 $reserv_query = "SELECT * FROM reservations";
+				 $reserv_query = "SELECT * FROM reservations LIMIT 20";
 	             $reserv_result = mysqli_query($con, $reserv_query);
 				 //echo $reserv_row['pickup_datetime'];
 				 
@@ -124,7 +124,7 @@ require_once '../scripts/database_connection.php';
 				 $item_result = mysqli_query($con, $item_query);
 				 $item_row = mysqli_fetch_array($item_result);
 				 //echo $item_row['plate_number'];
-				 
+				 echo date('dd-Mos-yy hh:mm:ss', strftime($reserv_row['pickup_datetime']));
 				 
 				 echo <<<EOD
 			     <tr>

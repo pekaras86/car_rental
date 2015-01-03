@@ -126,8 +126,14 @@ require_once '../scripts/database_connection.php';
 				 //echo $item_row['plate_number'];
 				 
 				 
+				 //sinolikes meres kratisis
 				 //$pickup_date = date('d-m-Y h:m:s', strtotime($reserv_row['pickup_datetime']));
 				 //$dropoff_date = date('d-m-Y h:m:s', strtotime($reserv_row['dropoff_datetime']));
+				 $diff = abs(strtotime($reserv_row['dropoff_datetime']) - strtotime($reserv_row['pickup_datetime']));
+				 $years = floor($diff / (365*60*60*24));
+				 $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+				 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+				 $total_days = $years + $months + $days;
 				 
 				 echo <<<EOD
 			     <tr>
@@ -137,7 +143,7 @@ require_once '../scripts/database_connection.php';
 				  <td>{$item_row['plate_number']}</td>
 				  <td>{$reserv_row['pickup_datetime']}</td>
 				  <td>{$reserv_row['dropoff_datetime']}</td>
-				  <td>2</td>
+				  <td>{$total_days}</td>
 				  <td>{$reserv_row['amount']}</td>
 				  <td style="color:green;">Confirmed</td>
 				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>

@@ -26,9 +26,17 @@ $status_id = 1;
 
 
 $pickup_date = $_COOKIE['pickup_date'];
-$pickup =  date('Y-m-d h:i:sa', strtotime($pickup_date));
+$d = str_replace('/', '-', $pickup_date);
+$pickup =  date('Y-m-d h:i:sa', strtotime($d));
+
 $dropoff_date = $_COOKIE['dropoff_date'];
-$dropoff =  date('Y-m-d h:i:sa', strtotime($dropoff_date));
+$d = str_replace('/', '-', $dropoff_date);
+$dropoff =  date('Y-m-d h:i:sa', strtotime($d));
+
+//$d = str_replace('/', '-', $pickup_date);
+//echo date('Y-m-d h:i:sa', strtotime($d));
+
+
 
 $dropoff_location = $_COOKIE['dropoff_location'];
 $car_location = $_REQUEST['car_location'];
@@ -79,12 +87,12 @@ $insert_car_reservation = sprintf("INSERT INTO reservations " .
 mysqli_query($con, $insert_car_reservation); 
 
 
-/*
+
 $success_message = "Your request has been sent.";
 header("Location: index.php?" .
          "success_message={$success_message}");
 exit();
-*/
+
 
 
 

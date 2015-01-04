@@ -12,8 +12,17 @@
   display_navbar($tag);
 
 
+  if(isset($_REQUEST['success_message'])) {
+    echo <<<EOD
+	<script>
+	alert('Your request has been sent.');
+	</script>
+EOD;
+  }
+  
 ?>
-
+    
+	
   
 	 <!-- Main component for a primary marketing message or call to action -->
 	 <div class="container" style="margin-left:20px; margin-right:20px;"> 

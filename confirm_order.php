@@ -378,16 +378,21 @@ EOD;
   
   }
   
-$insert_car_characteristics = sprintf("INSERT INTO customers " .
+$insert_customer = sprintf("INSERT INTO customers " .
 								         "(user_id, " .
-								         "name, lastname, email) " .
-							          "VALUES ('%d', '%s', '%s', '%s');",
+								         "name, lastname, email, phone, address, zipcode, city, birthdate) " .
+							          "VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%d');",
 							           mysql_real_escape_string($custom_user_id),
 							           mysql_real_escape_string($custom_fname),
 							           mysql_real_escape_string($custom_lname),
-							           mysql_real_escape_string($custom_email));
+							           mysql_real_escape_string($custom_email),
+									   mysql_real_escape_string($custom_phone),
+									   mysql_real_escape_string($custom_address),
+									   mysql_real_escape_string($custom_zipcode),
+									   mysql_real_escape_string($custom_city),
+									   mysql_real_escape_string($custom_birthdate));
 							
-mysqli_query($con, $insert_car_characteristics); 
+mysqli_query($con, $insert_customer); 
 
 
 

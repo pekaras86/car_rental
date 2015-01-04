@@ -40,6 +40,7 @@
   $pickup_date = $_COOKIE['pickup_date'];
   $dropoff_date = $_COOKIE['dropoff_date'];
   
+  
   //car characteristics
   $char_result = getCarCharacteristics($con, $car_id);
   $char = mysqli_fetch_array($char_result);
@@ -361,23 +362,26 @@ EOD;
 
 
   /*======Kataxwrisi Kratisis=======*/
+  if(isset($_REQUEST['fname'])) { $custom_fname = $_REQUEST['fname']; } else { $custom_fname = NULL;}
+  if(isset($_REQUEST['lname'])) { $custom_lname = $_REQUEST['lname']; } else { $custom_lname = NULL;}
+  if(isset($_REQUEST['email'])) { $custom_email = $_REQUEST['email']; } else { $custom_email = NULL;}
   
-  if(isset($_REQUEST['fname']) && isset($_REQUEST['lname']) && isset($_REQUEST['email']) ) {
-    $custom_fname 	= $_REQUEST['fname'];
-    $custom_lname 	= $_REQUEST['lname'];
-    $custom_email 	= $_REQUEST['email'];
+  if(isset($_REQUEST['phone'])) { $custom_phone = $_REQUEST['phone']; } else { $custom_phone = NULL;}  
+  if(isset($_REQUEST['address'])) { $custom_address = $_REQUEST['address']; } else { $custom_address = NULL;}	
+  if(isset($_REQUEST['zipcode'])) { $custom_zipcode = $_REQUEST['zipcode']; } else { $custom_zipcode = NULL;}	
+  if(isset($_REQUEST['city'])) { $custom_city = $_REQUEST['city']; } else { $custom_city = NULL;}  
+  if(isset($_REQUEST['birth'])) { $custom_birthdate = $_REQUEST['birth']; } else { $custom_birthdate = NULL;}  
+  if(isset($_REQUEST['message'])) { $custom_message = $_REQUEST['message']; } else { $custom_message = NULL;}  
+    
+  $custom_user_id = 2;
   
-    $custom_phone 	= $_REQUEST['phone'];
-    $custom_address 	= $_REQUEST['address'];
-    $custom_zipcode 	= $_REQUEST['zipcode'];
-    $custom_city 		= $_REQUEST['city'];
-    $custom_birthdate = $_REQUEST['birth'];
-    $custom_message   = $_REQUEST['message'];
-	
-	$custom_user_id = 2;
+  $reserv_day = date("Y-m-d h:i:sa");
+  $status_id = 1;
   
-  }
+  $car_location = 1;
   
+
+ 
 $insert_customer = sprintf("INSERT INTO customers " .
 								         "(user_id, " .
 								         "name, lastname, email, phone, address, zipcode, city, birthdate) " .
@@ -393,6 +397,25 @@ $insert_customer = sprintf("INSERT INTO customers " .
 									   mysql_real_escape_string($custom_birthdate));
 							
 mysqli_query($con, $insert_customer); 
+
+
+//upload car characteristics query
+$insert_car_reservation = sprintf("INSERT INTO reservations " .
+								         "(reserv_date, " .
+								         "customer_id, car_id, pickup_location_id, pickup_datetime, dropoff_location_id, dropoff_datetime, amount, status_id, notes) " .
+							          "VALUES ('%d', '%d', '%d', '%d', '%d', '%d', '%d', '%d', '%d', '%s');",
+							           mysql_real_escape_string($reserv_day),
+							           mysqli_insert_id($con),
+							           mysql_real_escape_string($car_id),
+							           mysql_real_escape_string($car_location),
+							           mysql_real_escape_string($pickup_date),
+							           mysql_real_escape_string($dropoff_location),
+									   mysql_real_escape_string($dropoff_date),
+									   mysql_real_escape_string($total_cost),
+									   mysql_real_escape_string($status_id),
+									   mysql_real_escape_string($custom_message));
+							
+mysqli_query($con, $insert_car_reservation); 
 
 
 

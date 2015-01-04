@@ -585,7 +585,7 @@ echo <<<EOD
 
     <script src="js/sharebuttons.js"></script>
 
-	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<!-- <script type="text/javascript" src="engine1/jquery.js"></script> -->
 	<script type="text/javascript" src="engine1/wowslider.js"></script>
 	<script type="text/javascript" src="engine1/script.js"></script>
 

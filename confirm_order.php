@@ -83,6 +83,11 @@
     $fullOrStan = 0;
   }
   
+  //posa pliromis
+  $tax = 17.36;
+  $total_cost = $fullOrStan + $tax;
+  
+  
   // difference in days from american format to european format
   function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
   {
@@ -166,15 +171,15 @@ EOD;
 				<td align="center"><?php echo $diff; ?></td>
 				<td align="center">
 					<span class="vrccurrency">€</span>
-					<span class="vrcprice">82.64</span>
+					<span class="vrcprice"><?php echo $fullOrStan; ?></span>
                </td>
 			   <td align="center">
                     <span class="vrccurrency">€</span>
-                    <span class="vrcprice">17.36</span>
+                    <span class="vrcprice"><?php echo $tax; ?></span>
                </td>
 			   <td align="center">
 					<span class="vrccurrency">€</span>
-					<span class="vrcprice">100.00</span>
+					<span class="vrcprice"><?php echo $total_cost; ?></span>
 			   </td>
 			  </tr>
 			  <tr height="20px">
@@ -185,15 +190,15 @@ EOD;
 				<td align="center"> </td>
 				<td align="center">
 					<span class="vrccurrency">€</span>
-					<span class="vrcprice">82.64</span>
+					<span class="vrcprice"><?php echo $fullOrStan; ?></span>
 				</td>
 				<td align="center">
 					<span class="vrccurrency">€</span>
-					<span class="vrcprice">17.36</span>
+					<span class="vrcprice"><?php echo $tax; ?></span>
 				</td>
 				<td class="vrctotalord" align="center">
 					<span class="vrccurrency">€</span>
-					<span class="vrcprice">100.00</span>
+					<span class="vrcprice"><?php echo $total_cost; ?></span>
 				</td>
 			  </tr>
 			</tbody>

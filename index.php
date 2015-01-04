@@ -57,6 +57,7 @@
                  $result = getCarLocations($con);
                  //mysqli_query($con,"SELECT id,name FROM car_locations");
                  while($row = mysqli_fetch_array($result)) {
+				    $cname = $row['name'];
                      echo '<option value="'.$row['id'].'">'.$row['name'].'</option>'; //populate dropoff locations
                  }
                  ?>

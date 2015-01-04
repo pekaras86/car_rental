@@ -13,6 +13,8 @@
   require_once ('scripts/db_cars.php');
   require_once ('scripts/views.php');
   
+
+  
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
   
@@ -34,6 +36,7 @@
 	  // pianei ta stoixeia apo ti forma	   
 	  $category = $_REQUEST['category'];
 	  $pickup_location = $_REQUEST['pickup_location'];
+	  $dropoff_location = $_REQUEST['dropoff_location'];
 	  $srt = $_REQUEST['hidden'];
 	  $pickup_date = $_REQUEST['pickup_date'];
 	  $dropoff_date = $_REQUEST['dropoff_date'];

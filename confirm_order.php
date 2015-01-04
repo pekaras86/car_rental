@@ -380,8 +380,11 @@ EOD;
   
   $car_location = 1;
   
+  echo $pickup_date;
+  echo date("Y-m-d h:i:sa",$pickup_date);
+  
 
- 
+ /*
 $insert_customer = sprintf("INSERT INTO customers " .
 								         "(user_id, " .
 								         "name, lastname, email, phone, address, zipcode, city, birthdate) " .
@@ -417,7 +420,7 @@ $insert_car_reservation = sprintf("INSERT INTO reservations " .
 							
 mysqli_query($con, $insert_car_reservation); 
 
-
+*/
 
 
 

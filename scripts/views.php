@@ -37,6 +37,8 @@ function display_head($page_title = "") {
     <![endif]-->
 
 	<link rel="stylesheet" type="text/css" href="css/sharebuttons.css" /> <!-- social buttons -->
+	
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
 
   </head>
   
@@ -582,6 +584,10 @@ echo <<<EOD
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <script src="js/sharebuttons.js"></script>
+
+	<script type="text/javascript" src="engine1/jquery.js"></script>
+	<script type="text/javascript" src="engine1/wowslider.js"></script>
+	<script type="text/javascript" src="engine1/script.js"></script>
 
 	{$jqScripts}
   </body>

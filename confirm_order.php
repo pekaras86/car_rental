@@ -362,17 +362,47 @@ EOD;
 
   /*======Kataxwrisi Kratisis=======*/
   
-  $custom_fname 	= $_REQUEST['fname'];
-  $custom_lname 	= $_REQUEST['lname'];
-  $custom_email 	= $_REQUEST['email'];
+  if(isset($_REQUEST['fname']) && isset($_REQUEST['lname']) && isset($_REQUEST['email']) ) {
+    $custom_fname 	= $_REQUEST['fname'];
+    $custom_lname 	= $_REQUEST['lname'];
+    $custom_email 	= $_REQUEST['email'];
   
-  $custom_phone 	= $_REQUEST['phone'];
-  $custom_address 	= $_REQUEST['address'];
-  $custom_zipcode 	= $_REQUEST['zipcode'];
-  $custom_city 		= $_REQUEST['city'];
-  $custom_birthdate = $_REQUEST['birth'];
-  $custom_message = $_REQUEST['message'];
-    
+    $custom_phone 	= $_REQUEST['phone'];
+    $custom_address 	= $_REQUEST['address'];
+    $custom_zipcode 	= $_REQUEST['zipcode'];
+    $custom_city 		= $_REQUEST['city'];
+    $custom_birthdate = $_REQUEST['birth'];
+    $custom_message   = $_REQUEST['message'];
+	
+	$custom_user_id = 2;
+  
+  }
+  
+$insert_car_characteristics = sprintf("INSERT INTO customers " .
+								         "(user_id, " .
+								         "name, lastname, email) " .
+							          "VALUES ('%d', '%s', '%s', '%s');",
+							           mysql_real_escape_string($custom_user_id),
+							           mysql_real_escape_string($custom_fname),
+							           mysql_real_escape_string($custom_lname),
+							           mysql_real_escape_string($custom_email));
+							
+mysqli_query($con, $insert_car_characteristics); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
   
   // Requires the footer (JS declarations) part of the page 

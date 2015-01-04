@@ -41,6 +41,8 @@
   $dropoff_date = $_COOKIE['dropoff_date'];
   
   
+  
+  
   //car characteristics
   $char_result = getCarCharacteristics($con, $car_id);
   $char = mysqli_fetch_array($char_result);
@@ -51,6 +53,18 @@
   $passengers 	= $char['passengers'];
   $doors 		= $char['doors'];
   $radio 		= $char['radio'];
+  
+  
+  
+  //metatropoi timis dropoff location apo id se name
+  $select_query = "SELECT * FROM car_locations WHERE id = " . $dropoff_location;
+  $result = mysqli_query($con, $select_query);
+  $r = mysqli_fetch_array($result);
+  
+  
+  
+  
+  
   
   //oi epipleon ypiresies
   if(isset($_REQUEST['gps'])) {
@@ -136,7 +150,7 @@
              </p>
 			 <p class="vrcdropoffloc">
                Drop Off Location:
-               <span class="vrcdropofflocname"><?php echo $dropoff_location; ?></span>
+               <span class="vrcdropofflocname"><?php echo $r['name']; ?></span>
              </p>
 			</div>
 		  </div>
@@ -204,7 +218,7 @@ EOD;
 			  </tr>
 			</tbody>
 		  </table>
-		  <form method="post" action="" role="form" id="conorform">
+		  <form method="post" action="send_order.php?car_id=<?php echo $car_id ?>&car_location=<?php echo $car_location ?>&total_cost=<?php echo $total_cost ?>" role="form" id="conorform">
 		  <div class="form-group">
 		    <table class="cnorderflds">
 			  <tbody>
@@ -360,84 +374,6 @@ $jqScript = <<<EOD
   
 EOD;
 
-
-  /*======Kataxwrisi Kratisis=======*/
-  if(isset($_REQUEST['fname'])) { $custom_fname = $_REQUEST['fname']; } else { $custom_fname = NULL;}
-  if(isset($_REQUEST['lname'])) { $custom_lname = $_REQUEST['lname']; } else { $custom_lname = NULL;}
-  if(isset($_REQUEST['email'])) { $custom_email = $_REQUEST['email']; } else { $custom_email = NULL;}
-  
-  if(isset($_REQUEST['phone'])) { $custom_phone = $_REQUEST['phone']; } else { $custom_phone = NULL;}  
-  if(isset($_REQUEST['address'])) { $custom_address = $_REQUEST['address']; } else { $custom_address = NULL;}	
-  if(isset($_REQUEST['zipcode'])) { $custom_zipcode = $_REQUEST['zipcode']; } else { $custom_zipcode = NULL;}	
-  if(isset($_REQUEST['city'])) { $custom_city = $_REQUEST['city']; } else { $custom_city = NULL;}  
-  if(isset($_REQUEST['birth'])) { $custom_birthdate = $_REQUEST['birth']; } else { $custom_birthdate = NULL;}  
-  if(isset($_REQUEST['message'])) { $custom_message = $_REQUEST['message']; } else { $custom_message = NULL;}  
-    
-  $custom_user_id = 2;
-  
-  $reserv_day = date("Y-m-d h:i:sa");
-  $status_id = 1;
-  
-  $car_location = 2; 
-  
-  $pickup =  date('Y-m-d H:i:s', strtotime($pickup_date));
-  $dropoff =  date('Y-m-d H:i:s', strtotime($dropoff_date));
-  
-  echo $pickup;
-  
-
-
-$insert_customer = sprintf("INSERT INTO customers " .
-								         "(user_id, " .
-								         "name, lastname, email, phone, address, zipcode, city, birthdate) " .
-							          "VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%d');",
-							           mysql_real_escape_string($custom_user_id),
-							           mysql_real_escape_string($custom_fname),
-							           mysql_real_escape_string($custom_lname),
-							           mysql_real_escape_string($custom_email),
-									   mysql_real_escape_string($custom_phone),
-									   mysql_real_escape_string($custom_address),
-									   mysql_real_escape_string($custom_zipcode),
-									   mysql_real_escape_string($custom_city),
-									   mysql_real_escape_string($custom_birthdate));
-							
-mysqli_query($con, $insert_customer); 
-
-
-//upload car characteristics query
-$insert_car_reservation = sprintf("INSERT INTO reservations " .
-								         "(reserv_date, " .
-								         "customer_id, car_id, pickup_location_id, pickup_datetime, dropoff_location_id, dropoff_datetime, amount, status_id, notes) " .
-							          "VALUES ('%s', '%d', '%d', '%d', '%s', '%d', '%s', '%d', '%d', '%s');",
-							           mysql_real_escape_string($reserv_day),
-							           mysqli_insert_id($con),
-							           mysql_real_escape_string($car_id),
-							           mysql_real_escape_string($car_location),
-							           mysql_real_escape_string($pickup),
-							           mysql_real_escape_string($dropoff_location),
-									   mysql_real_escape_string($dropoff),
-									   mysql_real_escape_string($total_cost),
-									   mysql_real_escape_string($status_id),
-									   mysql_real_escape_string($custom_message));
-							
-mysqli_query($con, $insert_car_reservation); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
   // Requires the footer (JS declarations) part of the page 
   display_footer($jqScript);
 

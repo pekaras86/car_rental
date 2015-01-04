@@ -378,13 +378,15 @@ EOD;
   $reserv_day = date("Y-m-d h:i:sa");
   $status_id = 1;
   
-  $car_location = 1;
+  $car_location = 2; 
   
-  echo $pickup_date;
-  echo date("Y-m-d h:i:sa",$pickup_date);
+  $pickup =  date('Y-m-d H:i:s', strtotime($pickup_date));
+  $dropoff =  date('Y-m-d H:i:s', strtotime($dropoff_date));
+  
+  echo $pickup;
   
 
- /*
+
 $insert_customer = sprintf("INSERT INTO customers " .
 								         "(user_id, " .
 								         "name, lastname, email, phone, address, zipcode, city, birthdate) " .
@@ -406,21 +408,21 @@ mysqli_query($con, $insert_customer);
 $insert_car_reservation = sprintf("INSERT INTO reservations " .
 								         "(reserv_date, " .
 								         "customer_id, car_id, pickup_location_id, pickup_datetime, dropoff_location_id, dropoff_datetime, amount, status_id, notes) " .
-							          "VALUES ('%d', '%d', '%d', '%d', '%d', '%d', '%d', '%d', '%d', '%s');",
+							          "VALUES ('%s', '%d', '%d', '%d', '%s', '%d', '%s', '%d', '%d', '%s');",
 							           mysql_real_escape_string($reserv_day),
 							           mysqli_insert_id($con),
 							           mysql_real_escape_string($car_id),
 							           mysql_real_escape_string($car_location),
-							           mysql_real_escape_string($pickup_date),
+							           mysql_real_escape_string($pickup),
 							           mysql_real_escape_string($dropoff_location),
-									   mysql_real_escape_string($dropoff_date),
+									   mysql_real_escape_string($dropoff),
 									   mysql_real_escape_string($total_cost),
 									   mysql_real_escape_string($status_id),
 									   mysql_real_escape_string($custom_message));
 							
 mysqli_query($con, $insert_car_reservation); 
 
-*/
+
 
 
 

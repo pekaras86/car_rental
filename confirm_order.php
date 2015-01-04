@@ -245,7 +245,7 @@ EOD;
                     <span>Phone</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="phone">
                   </td>
 				</tr>
 				<tr>
@@ -253,7 +253,7 @@ EOD;
                     <span>Address</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="address">
                   </td>
 				</tr>
 				<tr>
@@ -261,7 +261,7 @@ EOD;
                     <span>Zip Code</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="zipcode">
                   </td>
 				</tr>
 				<tr>
@@ -269,7 +269,7 @@ EOD;
                     <span>City</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="city">
                   </td>
 				</tr>
 				<tr>
@@ -277,7 +277,7 @@ EOD;
                     <span>Date of Birth</span>
                   </td>
 				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="vrcf1">
+                    <input class="confinput form-control" type="text" size="40" value="" name="birth">
                   </td>
 				</tr>
 				<tr>
@@ -360,7 +360,21 @@ $jqScript = <<<EOD
 EOD;
 
 
+  /*======Kataxwrisi Kratisis=======*/
+  
+  $custom_fname 	= $_REQUEST['fname'];
+  $custom_lname 	= $_REQUEST['lname'];
+  $custom_email 	= $_REQUEST['email'];
+  
+  $custom_phone 	= $_REQUEST['phone'];
+  $custom_address 	= $_REQUEST['address'];
+  $custom_zipcode 	= $_REQUEST['zipcode'];
+  $custom_city 		= $_REQUEST['city'];
+  $custom_birthdate = $_REQUEST['birth'];
+  $custom_message = $_REQUEST['message'];
     
+  
+  
   // Requires the footer (JS declarations) part of the page 
   display_footer($jqScript);
 

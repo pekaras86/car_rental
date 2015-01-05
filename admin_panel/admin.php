@@ -3,6 +3,53 @@
 require_once '../scripts/app_config.php';
 require_once '../scripts/database_connection.php';
 
+// Change status
+if (isset($_GET['reserv_id']) && isset($_GET['reserv_id'])) {
+  $reservation_status = $_GET['status'];
+  $reserv_id = $_GET['reserv_id'];
+  
+  if ($reservation_status == 1) { //confirm reservation
+    $change_status_query = "UPDATE reservations SET status_id = '1' WHERE id = '{$reserv_id}'";
+    $change_status_result = mysqli_query($con, $change_status_query);
+	
+    echo <<<EOD
+	<script>
+	  alert('Your changes has been saved successfully!');
+	</script>
+EOD;
+	
+  } else if ($reservation_status == 2) {  //cancel reservation
+    $change_status_query = "UPDATE reservations SET status_id = '2' WHERE id = '{$reserv_id}'";
+    $change_status_result = mysqli_query($con, $change_status_query);
+	
+	echo <<<EOD
+	<script>
+	  alert('Your changes has been saved successfully!');
+	</script>
+EOD;
+  
+  } else if ($reservation_status == 3) {  //delete reservation
+    $reserv_query = "SELECT * FROM reservations WHERE id='{$reserv_id}'";
+	$reserv_result = mysqli_query($con, $reserv_query);
+    $reserv_row = mysqli_fetch_array($reserv_result); //echo $reserv_row['customer_id'];
+	
+	$delete_query = "DELETE FROM customers WHERE id = '{$reserv_row['customer_id']}'";
+	$delete_result = mysqli_query($con, $delete_query);
+	
+	$delete_query = "DELETE FROM reservations WHERE id = '{$reserv_id}'";
+	$delete_result = mysqli_query($con, $delete_query);
+	
+echo <<<EOD
+ 	<script>
+	  alert('Your changes has been saved successfully!');
+	</script>
+EOD;
+    
+    	
+  
+  }
+}
+
 
 ?>
 
@@ -135,19 +182,34 @@ require_once '../scripts/database_connection.php';
 				 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
 				 $total_days = $years + $months + $days;
 				 
+				 // Status twn enoikiasewn (confirmed - standby - cancelled)
+				 $status = $reserv_row['status_id'];
+				
+				 if ($status == 0) {
+				   $color = 'red';
+				   $status_txt = 'Standby';
+				 } else if ($status == 1) {
+				   $color = 'green';
+				   $status_txt = 'Confirmed';
+				 } else if ($status == 2) {
+				   $color = 'red';
+				   $status_txt = 'Canceled';
+				 }
+				 
+				 
 				 
 				 
 				 echo <<<EOD
 			     <tr>
 				  <td>{$reserv_row['id']}</td>
-				  <td><a href="../rental_details.php?reserv_id={$reserv_row['id']}&total_days={$total_days}">{$reserv_row['reserv_date']}</a></td>
+				  <td><a href="../rental_details.php?reserv_id={$reserv_row['id']}&total_days={$total_days}&status={$status}">{$reserv_row['reserv_date']}</a></td>
 				  <td>Name:{$custom_row['name']} Last Name:{$custom_row['lastname']} email:{$custom_row['email']}</td>
 				  <td>{$item_row['plate_number']}</td>
 				  <td>{$reserv_row['pickup_datetime']}</td>
 				  <td>{$reserv_row['dropoff_datetime']}</td>
 				  <td>{$total_days}</td>
 				  <td>{$reserv_row['amount']}</td>
-				  <td style="color:green;">Confirmed</td>
+				  <td style="color:{$color};">{$status_txt}</td>
 				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
 				 </tr>
 EOD;

@@ -9,6 +9,29 @@ $reserv_id = $_GET['reserv_id'];
 // Days of reservation
 $total_days = $_GET['total_days'];
 
+// Status of reservation
+$status = $_GET['status'];
+
+if ($status == 0) {
+  $status_txt = "Standby";
+  $status_color = "red";
+  $change_status = "Confirm";
+  $change_status_button = "btn-warning";
+  $change_status_value = 1;
+} else if($status == 1) {
+  $status_txt = "Confirmed";
+  $status_color = "green";
+  $change_status = "Cancel";
+  $change_status_button = "btn-danger";
+  $change_status_value = 2;
+} else {
+  $status_txt = "Canceled";
+  $status_color = "red";
+  $change_status = "Delete";
+  $change_status_button = "btn-danger";
+  $change_status_value = 3;
+}
+
 /*======Table Reservations======*/
 $reserv_query = "SELECT * FROM reservations WHERE id='{$reserv_id}'";
 $reserv_result = mysqli_query($con, $reserv_query);
@@ -138,10 +161,10 @@ $type_row = mysqli_fetch_array($type_result);
 					  </p>
 					  <div class="status">
 					  <p class="vrcorderpar">Status:</p>
-					  <span style="color:green;">Confirmed</span>
+					  <span style="color:<?php echo $status_color; ?>"><?php echo $status_txt; ?></span>
 					  </div>
 					  <div class="statusbutton">
-					    <button type="button" class="btn btn-danger">Cancel Reservation</button>
+					    <a href="admin_panel/admin.php?status=<?php echo $change_status_value; ?>&reserv_id=<?php echo $reserv_id; ?>"><button type="button" class="btn <?php echo $change_status_button; ?>"><?php echo $change_status; ?></button></a>
 					  </div>
 					</td>
 				  </tr>

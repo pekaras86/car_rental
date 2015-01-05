@@ -1,3 +1,61 @@
+<?php
+
+require_once 'scripts/app_config.php';
+require_once 'scripts/database_connection.php';
+
+// Order number
+$reserv_id = $_GET['reserv_id'];
+
+// Days of reservation
+$total_days = $_GET['total_days'];
+
+/*======Table Reservations======*/
+$reserv_query = "SELECT * FROM reservations WHERE id='{$reserv_id}'";
+$reserv_result = mysqli_query($con, $reserv_query);
+$reserv_row = mysqli_fetch_array($reserv_result);		
+
+$reserv_date = date('d-m-Y h:m:s',strtotime($reserv_row['reserv_date']));	 // reservation date
+$pickup_datetime =  date('d-m-Y h:m:s',strtotime($reserv_row['pickup_datetime'])); // pickup datetime 
+$dropoff_datetime =  date('d-m-Y h:m:s',strtotime($reserv_row['dropoff_datetime'])); // dropoff datetime 
+
+/*======Table Customers======*/
+$custom_query = "SELECT * FROM customers WHERE id='{$reserv_row['customer_id']}'";
+$custom_result = mysqli_query($con, $custom_query);
+$custom_row = mysqli_fetch_array($custom_result);
+
+$birthdate =  date('d-m-Y h:m:s',strtotime($custom_row['birthdate'])); // customer's birthdate 
+
+/*======Table Car Types======*/
+// Pickup Location
+$location_query = "SELECT * FROM car_locations WHERE id='{$reserv_row['pickup_location_id']}'";
+$location_result = mysqli_query($con, $location_query);
+$location_row = mysqli_fetch_array($location_result);
+$pickup_location = $location_row['name'];
+
+// Dropoff Location
+$location_query = "SELECT * FROM car_locations WHERE id='{$reserv_row['dropoff_location_id']}'";
+$location_result = mysqli_query($con, $location_query);
+$location_row = mysqli_fetch_array($location_result);
+$dropoff_location = $location_row['name'];
+
+
+/*======Table Car Items======*/
+$item_query = "SELECT * FROM car_items WHERE id='{$reserv_row['car_id']}'";
+$item_result = mysqli_query($con, $item_query);
+$item_row = mysqli_fetch_array($item_result);
+
+
+/*======Table Car Type======*/
+$type_query = "SELECT * FROM car_types WHERE id='{$item_row['car_type_id']}'";
+$type_result = mysqli_query($con, $type_query);
+$type_row = mysqli_fetch_array($type_result);
+
+ 
+
+				 
+
+?>
+
 <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -76,7 +134,7 @@
 				  <tr>
 				    <td>
 					  <p class="vrcorderof">
-						Order Number: <span style="color:green">1205</span> - Order Date: <span style="color:green">11/23/2014 20:46</span>    
+						Order Number: <span style="color:green"><?php echo $reserv_id; ?></span> - Order Date: <span style="color:green"><?php echo $reserv_date; ?></span>    
 					  </p>
 					  <div class="status">
 					  <p class="vrcorderpar">Status:</p>
@@ -92,20 +150,21 @@
 				   <br>
 				     <p class="vrcorderpar"><b>Purchaser Info:</b></p>
 					 <div>
-					   <i>eMail Address: </i>anto@yahoo.com <br>
-					   <i>First Name: </i>Giorgos <br>
-					   <i>Last Name: </i>Antoniadis <br>
-					   <i>Date of Birth: </i>1 April 1987 <br>
+					   <i>eMail Address: </i><?php echo $custom_row['email']; ?><br>
+					   <i>First Name: </i><?php echo $custom_row['name']; ?><br>
+					   <i>Last Name: </i><?php echo $custom_row['lastname']; ?><br>
+					   <i>Date of Birth: </i><?php echo $birthdate; ?><br>
 					 </div>
 					 <br>
 					 <div>
-					   <b>Car: </b>Seat Leon <br>
-					   <b>Car ID: </b>021 <br>
-					   <b>Days of Rental: </b>2 <br>
-					   <b>Pickup: </b>11/25/2014 13:30 <br>
-					   <b>Drop Off: </b>11/27/2014 21:30 <br>
-					   <b>Pickup Location: </b>Athens Airport <br>
-					   <b>Drop Off Location: </b>Athens Airport <br>
+					   <b>Car: </b><?php echo $type_row['name']; ?><br>
+					   <b>Car ID: </b><?php echo $reserv_row['car_id']; ?><br>
+					   <b>Plate Number: </b><?php echo $item_row['plate_number']; ?><br>
+					   <b>Days of Rental: </b><?php echo $total_days; ?><br>
+					   <b>Pickup: </b><?php echo $pickup_datetime; ?><br>
+					   <b>Drop Off: </b><?php echo $dropoff_datetime; ?><br>
+					   <b>Pickup Location: </b><?php echo $pickup_location; ?><br>
+					   <b>Drop Off Location: </b><?php echo $dropoff_location; ?><br>
 					 </div>
 				   </td>
 				   <td>
@@ -121,7 +180,7 @@
 					   Baby Seat <br>
 					 </div>
 					 <br>
-					 <p class="totaleur"><b>Total: EUR 230</b></p>
+					 <p class="totaleur"><b>Total: EUR <?php echo $reserv_row['amount']; ?></b></p>
 					 <p><a href="admin_panel/admin.php"><img src="images/other/left_arrow.png" alt="" style="width:50px;"></a></p>
 				   </td>
 				  </tr>

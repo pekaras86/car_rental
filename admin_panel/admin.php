@@ -135,10 +135,12 @@ require_once '../scripts/database_connection.php';
 				 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
 				 $total_days = $years + $months + $days;
 				 
+				 
+				 
 				 echo <<<EOD
 			     <tr>
 				  <td>{$reserv_row['id']}</td>
-				  <td><a href="../rental_details.php">{$reserv_row['reserv_date']}</a></td>
+				  <td><a href="../rental_details.php?reserv_id={$reserv_row['id']}&total_days={$total_days}">{$reserv_row['reserv_date']}</a></td>
 				  <td>Name:{$custom_row['name']} Last Name:{$custom_row['lastname']} email:{$custom_row['email']}</td>
 				  <td>{$item_row['plate_number']}</td>
 				  <td>{$reserv_row['pickup_datetime']}</td>

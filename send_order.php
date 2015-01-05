@@ -22,7 +22,7 @@ $custom_user_id = 2;
 //reservation
 $reserv_day = date("Y-m-d h:i:sa");
 $car_id = $_REQUEST['car_id'];
-$status_id = 1;
+$status_id = 0;
 
 
 $pickup_date = $_COOKIE['pickup_date'];

@@ -4,6 +4,7 @@
  * Date: 5/1/2015
  * Time: 3:20 μμ
  */
+require_once ('myAPI.php');
 
 // Requests from the same server don't have a HTTP_ORIGIN header
 if (!array_key_exists('HTTP_ORIGIN', $_SERVER)) {

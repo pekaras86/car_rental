@@ -14,7 +14,6 @@
 
     if (!isset($_REQUEST['pass_sel_page'])) {
 	  $pagenum = 1;
-      echo "<script type='text/javascript'>alert('$pagenum');</script>";
   } else {
 	  $pagenum = $_REQUEST['pass_sel_page'];
   }

@@ -12,4 +12,10 @@ if(mysqli_connect_errno($con)){
 
 //echo "Connected with mySQL and database " . DATABASE_NAME . "<br>";
 
+function Sanitized($Input) {
+	return (get_magic_quotes_gpc()) ?
+	mysql_real_escape_string(stripslashes($Input)) :
+	mysql_real_escape_string($Input);
+}
+
 ?>

@@ -61,7 +61,7 @@ display_navbar($tag);
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" style="margin-top: 10px;margin-bottom: 10px">
                         <div class="table-responsive">
                             <table class="table table-hover table-striped display" id="datatable">
                                 <thead>

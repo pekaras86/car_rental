@@ -31,6 +31,9 @@ function display_head($page_title = "")
 
             <link href="http://code.jquery.com/ui/1.11.2/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 
+            <!-- jquery datatables -->
+            <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
+
             <!-- jtable.org CSS -->
             <link href="../plugins/jtable/themes/metro/blue/jtable.css" rel="stylesheet" type="text/css" />
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

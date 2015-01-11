@@ -85,10 +85,10 @@ echo <<<EOD
 					</div>
 						
 					<div class="items">
-						<span style="font-size:13px; text-align:center; color:#FFF;">
+						<span style="font-size:13px; color:#FFF;">
 							<p>Dear Clients</p>
 							<p>Welcome to Thessaloniki Car Rentals, a highly specialized car rental company based in Thessaloniki, Greece.</p>
-							<p>We offer you a wide variety of brand new and safe vehicles at the best prices in the market.<br>You can find Thessaloniki Car Rentals branches at the biggest cities throughout Greece,<br> including Athens, Thessaloniki, Chania, Larissa, Alexandroupoli and more. </p>	
+							<p>We offer you a wide variety of brand new and safe vehicles at the best prices in the market.<br>You can find Thessaloniki Car Rentals branches at the biggest cities throughout Greece, including Athens, Thessaloniki, Chania, Larissa, Alexandroupoli and more. </p>	
 							<p>Our main priority is your complete satisfaction,<br>so we provide you with the highest quality service possible, making your stay unforgetable!</p>
 							<p style="font-size:14px; font-weight:bold;">The Thessaloniki Car Rentals Team</p>
 						</span>
@@ -106,7 +106,7 @@ echo <<<EOD
 						<div class="teaser-item-wrapper">
 							<div class="teaser-item">
 							    <div class="title">
-							        <a href="detail.html">Toyota Landcruiser</a>
+							        <a href="car_types.php">Toyota Landcruiser</a>
 							    </div><!-- /.title -->
 
 		    					<div class="subtitle">Windsor Locks, CT </div><!-- /.subtitle -->
@@ -114,7 +114,7 @@ echo <<<EOD
 							    <div class="row">
 							        <div class="picture-wrapper col-lg-4 col-md-4 col-sm-4 col-xs-4">
 							            <div class="picture">
-							                <a href="detail.html">
+							                <a href="car_types.php">
 							                	<span class="hover">
 							                		<span class="hover-inner">
 							                			<i class="icon icon-normal-link"></i>
@@ -137,7 +137,7 @@ echo <<<EOD
 						<div class="teaser-item-wrapper">
 							<div class="teaser-item">
 							    <div class="title">
-							        <a href="detail.html">Toyota Landcruiser</a>
+							        <a href="car_types.php">Toyota Landcruiser</a>
 							    </div><!-- /.title -->
 
 		    					<div class="subtitle">Windsor Locks, CT </div><!-- /.subtitle -->
@@ -145,7 +145,7 @@ echo <<<EOD
 							    <div class="row">
 							        <div class="picture-wrapper col-lg-4 col-md-4 col-sm-4 col-xs-4">
 							            <div class="picture">
-							                <a href="detail.html">
+							                <a href="car_types.php">
 							                	<span class="hover">
 							                		<span class="hover-inner">
 							                			<i class="icon icon-normal-link"></i>
@@ -171,7 +171,7 @@ echo <<<EOD
 			<div class="col-lg-4 col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2">
 				<div class="block">
 					<div class="title center-sm">
-						<h2>Recent from Bazaar</h2>
+						<h2>Our Fleet</h2>
 					</div><!-- /.title -->
 
 					<div id="carousel-example-generic" class="carousel slide gallery-grid" data-ride="carousel">
@@ -185,7 +185,7 @@ echo <<<EOD
 							<div class="item clearfix active">
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -198,7 +198,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -210,7 +210,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -224,7 +224,7 @@ echo <<<EOD
 
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -236,7 +236,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -249,7 +249,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -263,7 +263,7 @@ echo <<<EOD
 
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -276,7 +276,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -288,7 +288,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -304,7 +304,7 @@ echo <<<EOD
 							<div class="item clearfix">
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -316,7 +316,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -329,7 +329,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -343,7 +343,7 @@ echo <<<EOD
 
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -355,7 +355,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -367,7 +367,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -382,7 +382,7 @@ echo <<<EOD
 
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -395,7 +395,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -407,7 +407,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -423,7 +423,7 @@ echo <<<EOD
 							<div class="item clearfix">
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -436,7 +436,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -448,7 +448,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -462,7 +462,7 @@ echo <<<EOD
 
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -474,7 +474,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -487,7 +487,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -501,7 +501,7 @@ echo <<<EOD
 
 								<div class="row">
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -513,7 +513,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>
@@ -525,7 +525,7 @@ echo <<<EOD
 									</div><!-- /.col-md-4 -->
 
 									<div class="image col-xs-4 col-md-4">
-										<a href="detail.html">
+										<a href="car_types.php">
 						                	<span class="hover">
 						                		<span class="hover-inner">
 						                			<i class="icon icon-normal-link"></i>

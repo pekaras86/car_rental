@@ -386,6 +386,12 @@
     border-radius:7px;
 }
 
+.results-bar-2 {
+    width:100%;
+    background-color:lightgrey;
+    border-radius:7px;
+}
+
 .page {
     display:inline-block;
     border:solid 1px #32373b;

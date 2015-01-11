@@ -67,3 +67,19 @@ function getCarCharacteristics($dbcon, $car_id){
     $query = "SELECT * FROM car_characteristics WHERE car_id = '{$car_id}'";
     return mysqli_query($dbcon, $query);
 }
+
+function getAllCars($dbcon, $order_by) {
+
+	 $query = "SELECT car_types.*, car_categories.name as car_category,car_locations.name as car_location, count(car_items.id) as car_quantity " .
+    "FROM car_types  " .
+    "INNER JOIN car_categories ON car_types.car_Category_ID = car_categories.id  " .
+    "INNER JOIN car_items ON car_items.car_type_id = car_types.id  " .
+    "INNER JOIN car_locations ON car_items.location_ID = car_locations.id  " .
+    "GROUP BY car_types.id  " .
+    "ORDER BY price";
+
+    if ($order_by == "DESC") {$query .= " " . $order_by;}
+
+    $result = mysqli_query($dbcon, $query);
+    return $result;
+}

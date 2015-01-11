@@ -39,7 +39,9 @@ function display_head($page_title = "") {
 	<link rel="stylesheet" type="text/css" href="css/sharebuttons.css" /> <!-- social buttons -->
 	
 	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
-
+	
+	<!-- Google+ -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   
   
@@ -545,7 +547,32 @@ echo <<<EOD
 					</div><!-- /.carousel -->
 				</div><!-- /.block -->
 			</div><!-- /.col-md-4 -->
+			
+			<!-- like us on FB -->
+			<p> <strong>Like us on Facebook and follow us onTwitter and Google+</strong> <br> </p>
+			<div class="fb-like" data-href="http://thess-car-rental.16mb.com/ " data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+			<p></p>
+			<a class="twitter-follow-button"
+            href="https://twitter.com/twitter"
+  			data-show-count="false"
+  			data-lang="en">
+			Follow @twitterapi
+			</a>
+			<script type="text/javascript">
+			window.twttr = (function (d, s, id) {
+ 			 var t, js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+ 			  js.src= "https://platform.twitter.com/widgets.js";
+ 		 	 fjs.parentNode.insertBefore(js, fjs);
+ 			 return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+			}(document, "script", "twitter-wjs"));
+			</script>
+			<div class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/u/0/103233891919413061630" data-rel="author"></div>			
+						
 		</div><!-- /.row -->
+		
+		
 	</div><!-- /.container -->
 
 	<div class="footer-bottom">
@@ -555,7 +582,8 @@ echo <<<EOD
 					<div class="copyright">
 						&copy; Thessaloniki Car Rentals
 					</div><!-- /.pull-left -->
-
+			
+				
 					<ul class="nav nav-pills">
 						<li><a href="index.php">Home</a></li>
 						<li><a href="car_types.php">Our Fleet</a></li>
@@ -635,6 +663,15 @@ switch($tag) {
 echo <<<EOD
   <body>
   
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/el_GR/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
       <div class="wrapper">
 
       <!-- Static navbar -->

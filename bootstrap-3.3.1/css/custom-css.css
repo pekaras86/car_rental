@@ -87,7 +87,7 @@
   padding-right: 15px;
 }
 
-@media screen (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
  .calendar-module {
     width:50% !important;
   }

@@ -68,7 +68,7 @@ function getCarCharacteristics($dbcon, $car_id){
     return mysqli_query($dbcon, $query);
 }
 
-function getAllCars($dbcon, $order_by) {
+function getAllCars($dbcon, $order_by, $limitation="") {
 
 	 $query = "SELECT car_types.*, car_categories.name as car_category,car_locations.name as car_location, count(car_items.id) as car_quantity " .
     "FROM car_types  " .
@@ -79,6 +79,8 @@ function getAllCars($dbcon, $order_by) {
     "ORDER BY price";
 
     if ($order_by == "DESC") {$query .= " " . $order_by;}
+
+	$query .= " " . $limitation;
 
     $result = mysqli_query($dbcon, $query);
     return $result;

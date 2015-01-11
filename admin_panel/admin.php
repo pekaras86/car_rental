@@ -44,12 +44,9 @@ echo <<<EOD
 	  alert('Your changes has been saved successfully!');
 	</script>
 EOD;
-    
-    	
-  
+
   }
 }
-
 
 ?>
 

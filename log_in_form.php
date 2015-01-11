@@ -7,16 +7,9 @@
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
-  
-  // Requires the navbar
-  $tag = "logIn";
-  display_navbar($tag);
-  
-  
+
   /*-----------------------Elegxos user--------------------------------*/
-  
-  
-  
+
   //ean exei setaristei cookie kane elegxo tou user pou kanei sign in
   if(!isset($_COOKIE['user_id'])) {  
   
@@ -67,10 +60,9 @@
 	
 	
   }
-  
-
-
-
+      // Requires the navbar
+      $tag = "logIn";
+      display_navbar($tag);
 ?>
 
 

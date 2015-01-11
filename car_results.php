@@ -223,7 +223,7 @@ EOD;
 				      <img class="imgresult" src="{$car_pic_path}" alt="" height="" width="">
 				      <div class="car-result-price-div">
 				        <span class="vrcstartfrom">Price/Day</span>
-					    <span class="car_cost">{$car_price}</span>
+					    <span class="car_cost">{$car_price} &euro;</span>
 				      </div>
 				    </td> <!--end car icon and price-->
 				    <td align="left" width="80%" valign="top">

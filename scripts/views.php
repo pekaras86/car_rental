@@ -549,29 +549,32 @@ echo <<<EOD
 						</a>
 					</div><!-- /.carousel -->
 				</div><!-- /.block -->
+				<div class="block"
+					<!-- like us on FB -->
+					<p> <strong>Like us on Facebook and follow us onTwitter and Google+</strong> <br> </p>
+					<div class="fb-like" data-href="http://thess-car-rental.16mb.com/ " data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+					<p></p>
+					<a class="twitter-follow-button"
+					href="https://twitter.com/twitter"
+					data-show-count="false"
+					data-lang="en">
+					Follow @twitterapi
+					</a>
+					<script type="text/javascript">
+					window.twttr = (function (d, s, id) {
+					 var t, js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src= "https://platform.twitter.com/widgets.js";
+					 fjs.parentNode.insertBefore(js, fjs);
+					 return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+					}(document, "script", "twitter-wjs"));
+					</script>
+					<div class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/u/0/103233891919413061630" data-rel="author"></div>
+				</div> <!-- /.block -->
 			</div><!-- /.col-md-4 -->
 			
-			<!-- like us on FB -->
-			<p> <strong>Like us on Facebook and follow us onTwitter and Google+</strong> <br> </p>
-			<div class="fb-like" data-href="http://thess-car-rental.16mb.com/ " data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-			<p></p>
-			<a class="twitter-follow-button"
-            href="https://twitter.com/twitter"
-  			data-show-count="false"
-  			data-lang="en">
-			Follow @twitterapi
-			</a>
-			<script type="text/javascript">
-			window.twttr = (function (d, s, id) {
- 			 var t, js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
- 			  js.src= "https://platform.twitter.com/widgets.js";
- 		 	 fjs.parentNode.insertBefore(js, fjs);
- 			 return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
-			}(document, "script", "twitter-wjs"));
-			</script>
-			<div class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/u/0/103233891919413061630" data-rel="author"></div>			
+
 						
 		</div><!-- /.row -->
 		

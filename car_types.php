@@ -106,11 +106,6 @@ EOD;
 						}
 
                         echo <<<EOD
-						<!--<span class="page active">first</span>
-							<a href="#" class="page">2</a>
-							<a href="#" class="page">3</a>
-							<a href="#" class="page">4</a>
-							<a href="#" class="page">last</a> -->
 						</div>
 					</td>
 					<td align="right" width="99%">

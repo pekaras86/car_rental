@@ -33,19 +33,39 @@
 					</td>
 					<td align="right" width="99%">
 						<div>
-							<label style="margin-right:8px;margin-bottom:0px;">sort:</label>
-							<select name="price_sort" style="float:right;margin-right:30px;" onchange="set_sorting(this)">
+							<form id="srt_frm" action="car_types.php" method="POST">
+								<label style="margin-right:8px;margin-bottom:0px;">sort:</label>
+								<select name="price_sort" style="float:right;margin-right:30px;" onchange="set_sorting()">
 								<option name="price_sort" value="price ascending">price ascending</option>
-								<option name="price_sort" value="price descending">price descending</option>
-							</select>
+								<?php
+									if (!empty($_REQUEST['price_sort'])) {
+										$srt = $_REQUEST['price_sort'];
+									} else {
+										$srt = "price ascending";
+									}
+
+									if($srt=="price ascending") {
+										echo '<option name="price_sort" value="price descending">price descending</option>';
+									} else {
+										echo '<option name="price_sort" value="price descending" selected>price descending</option>';
+									}
+									echo <<<EOD
+									
+								</select>
+							</form>
 						</div>
 					</td>
 				</tr>
 			</table>
 		</div>
+EOD;
 
-<?php
-	$result = getAllCars($con, "ASC");
+		if($srt == 'price descending') {
+			$order_by = "DESC";
+		} else {
+			$order_by = "ASC";
+		}
+	$result = getAllCars($con, $order_by);
 	
 	while ($car = mysqli_fetch_array($result)) {
 		$car_type_id = $car['id'];
@@ -154,9 +174,8 @@ EOD;
 ?>
 
 <script>
-	function set_sorting(elem) {
-		document.getElementById('hidden').value = elem.value;
-		document.getElementById('search_frm').submit();
+	function set_sorting() {
+		document.getElementById('srt_frm').submit();
 	}
 	function set_page_cap(elem) {
 		document.getElementById('show_cap').innerHTML = elem.value;

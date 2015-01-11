@@ -722,14 +722,12 @@ echo <<<EOD
             </ul>
             <ul class="nav navbar-nav navbar-right">
 EOD;
-            
 		if (isset($_COOKIE['user_id'])) {
          echo "<li><a href='logout.php'>Log Out</a>";
         } else {
          echo "<li class='{$logIn}'><a href='log_in_form.php'>Log In</a></li>";
 		 echo "<li class='{$signUp}'><a href='sign_up_form.php'>Sign up</a></li>";
         }
-
 echo <<<EOD
             </ul>
           </div><!--/.nav-collapse -->
@@ -738,5 +736,3 @@ echo <<<EOD
 	</div> <!-- /container -->	
 EOD;
 }
-
-?>

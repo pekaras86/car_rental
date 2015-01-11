@@ -17,6 +17,11 @@
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
+
+  // ta setcookie ginontai nwris giati alliws emfanizei sfalma "Headers already sent"
+	setcookie('dropoff_location', $_REQUEST['dropoff_location']);
+	setcookie('pickup_date', $_REQUEST['pickup_date']);
+	setcookie('dropoff_date', $_REQUEST['dropoff_date']);
   
   // Requires the navbar
   $tag = "home";
@@ -40,9 +45,11 @@
 	  $srt = $_REQUEST['hidden'];
 	  $pickup_date = $_REQUEST['pickup_date'];
 	  $dropoff_date = $_REQUEST['dropoff_date'];
+
+	  /* Metaferthikan pio panw
 	  setcookie('dropoff_location', $_REQUEST['dropoff_location']);
 	  setcookie('pickup_date', $_REQUEST['pickup_date']);
-	  setcookie('dropoff_date', $_REQUEST['dropoff_date']);
+	  setcookie('dropoff_date', $_REQUEST['dropoff_date']); */
 
 
 	 

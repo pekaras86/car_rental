@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 			if (hoverEl.hasClass('visible')){
 				hoverEl.stop(true);
-				hoverEl.animate({"margin-left":"-117px"}, "fast").removeClass('visible');
+				hoverEl.animate({"margin-left":"117px"}, "fast").removeClass('visible');
 			} else {
 				hoverEl.stop(true);
 				hoverEl.animate({"margin-left":"0px"}, "fast").addClass('visible');

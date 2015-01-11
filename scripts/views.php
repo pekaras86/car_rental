@@ -695,7 +695,7 @@ echo <<<EOD
           </div>
           
       <!-- social media buttons -->
-      <div id="share-wrapper" style="z-index:2;">
+      <div id="share-wrapper">
         <ul class="share-inner-wrp">
         <!-- Facebook -->
         <li class="facebook button-wrap"><a href="#">Facebook</a></li>

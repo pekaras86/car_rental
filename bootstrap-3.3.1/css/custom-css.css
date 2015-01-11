@@ -340,12 +340,13 @@
 
 /* car_results.php */
 .car_result {
-    background-color: #EDE4E8;
+    background-color: #FFFFFF;
     border: 1px solid #cccccc;
     border-radius: 7px;
     overflow: hidden;
     padding: 8px;
     margin-top:10px;
+    box-shadow:rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
 .car_result_restricted {
@@ -452,7 +453,7 @@ input[type=range] {
     width: 250px;
 	display: block;
     font-size: 11px !important;
-	background: none repeat scroll 0 0 #E6AFD4;
+	background: none repeat scroll 0 0 #898989;
     clear: both;
     color: #fff !important;
     float: left;

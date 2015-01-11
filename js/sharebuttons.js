@@ -9,9 +9,12 @@ $(document).ready(function() {
 
 		//browsers with width > 699 get button slide effect
 		if($(window).width() > 699) {
+
 			if (hoverEl.hasClass('visible')){
+				hoverEl.stop(true);
 				hoverEl.animate({"margin-left":"-117px"}, "fast").removeClass('visible');
 			} else {
+				hoverEl.stop(true);
 				hoverEl.animate({"margin-left":"0px"}, "fast").addClass('visible');
 			}
 		}

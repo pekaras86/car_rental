@@ -171,7 +171,7 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
 		   <td>{$amount}</td>
 		   <td>{$reserv_date}</td>
 		   <td>{$status_id}</td>
-		   <td style="text-align:center;"><a href=""><img src="images/other/delete.png" width="15" /></a></td>
+		   <td style="text-align:center;"><a href="cancel_reservation.php?car_id={$car_id}"><img src="images/other/delete.png" width="15" /></a></td>
 		 </tr>
 	   </tbody>
      </table>

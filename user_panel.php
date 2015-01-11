@@ -183,6 +183,17 @@ EOD;
       echo 'Den yparxoyn kratiseis gia to sygekrimeno logariasmo';
     }
 	
+	
+	//gia epitixi akyrwsi kratisis
+	if(isset($_GET['success_message'])) {
+	  echo <<<EOD
+	  <script>
+	    alert('{$_GET['success_message']}');
+	  </script>
+EOD;
+	}
+
+	
   ?>
 	
 	  </div>

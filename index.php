@@ -166,7 +166,7 @@ EOD;
                                         </div><!-- /.col-md-5 -->
 
                                         <div class="col-xs-12 col-md-7">
-                                            <h3>Great Prices</h3>
+                                            <h3>Wide Selection</h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
                                         </div><!-- /.col-md-7 -->
                                     </div><!-- /.row -->
@@ -179,17 +179,17 @@ EOD;
                                         <div class="col-xs-12 col-md-5">
                                             <div class="feature-icon">
                                                 <div class="feature-icon-inverse">
-                                                    <i class="icon-outline-currency-dollar"></i>
+                                                    <i class="icon-outline-currency-euro"></i>
                                                 </div><!-- /.feature-icon-inverse -->
 
                                                 <div class="feature-icon-normal">
-                                                    <i class="icon-normal-currency-dollar"></i>
+                                                    <i class="icon-normal-currency-euro"></i>
                                                 </div><!-- /.feature-icon-normal -->
                                             </div><!-- /.feature-icon -->
                                         </div><!-- /.col-md-5 -->
 
                                         <div class="col-xs-12 col-md-7">
-                                            <h3>Wide Selection</h3>
+                                            <h3>Great Prices</h3>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
                                         </div><!-- /.col-md-7 -->
                                     </div><!-- /.row -->

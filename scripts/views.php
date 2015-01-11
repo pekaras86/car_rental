@@ -24,7 +24,10 @@ function display_head($page_title = "") {
     <!-- Custom styles for this template -->
     <link href="bootstrap-3.3.1/css/custom-css.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="plugins/pictopro-outline/pictopro-outline.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="plugins/pictopro-normal/pictopro-normal.css" media="screen, projection">
     <link href="bootstrap-3.3.1/css/carat.css" rel="stylesheet">
+
 
     <!-- Just for debugging purposes. Dont actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

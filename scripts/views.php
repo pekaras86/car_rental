@@ -96,7 +96,7 @@ echo <<<EOD
 				</div><!-- /.block -->
 				<div class="block"
 					<!-- like us on FB -->
-					<p> <strong>Like us on Facebook and follow us onTwitter and Google+</strong> <br> </p>
+					<p> <strong>Like us on Facebook and follow us on Twitter and Google+</strong> <br> </p>
 					<div class="fb-like" data-href="http://thess-car-rental.16mb.com/ " data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
 					<p></p>
 					<a class="twitter-follow-button"

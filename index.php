@@ -32,7 +32,7 @@ EOD;
 		<form role="form" action="car_results.php" method="POST">
 		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
-		     <label class="white-label">Pickup Location</label>
+		     <label>Pickup Location</label>
              <select class="form-control" id="pickup_location" name="pickup_location">
                  <?php
                  $result = getCarLocations($con);
@@ -50,16 +50,16 @@ EOD;
 		    </div> <!--end pickup location-->
 			<div id="pUp">
 		  <div class="form-group pickdrop_date" id="pickup_field">  <!--start pickup date-->
-		    <label class="white-label">Pickup Date</label>
+		    <label>Pickup Date</label>
             <input type="text" class="form-control date" id="datepicker1" name="pickup_date" placeholder="Pickup Date">
 		  </div> <!--end pickup date-->
 		  <div class="form-group pickdrop_time">  <!--start pickup time--> 
-            <label class="white-label">Pickup Time</label>		  
+            <label>Pickup Time</label>		  
 			<input type="text" class="form-control" id="timepicker1" name="pickup_time">
 		  </div> <!--end pickup time-->
 		  </div>
 		  <div class="form-group pickdrop_lock"> <!--start drop-off location-->
-		     <label class="white-label">Drop Off Location</label>
+		     <label>Drop Off Location</label>
              <select class="form-control" id="dropoff_location" name="dropoff_location">
                  <?php
                  $result = getCarLocations($con);
@@ -77,15 +77,15 @@ EOD;
              </select>
 		    </div> <!--end dropoff location-->
 			<div class="form-group pickdrop_date">  <!--start dropoff date-->
-		    <label class="white-label">Drop Off Date</label>
+		    <label>Drop Off Date</label>
             <input type="text" class="form-control date" id="datepicker2" name="dropoff_date" placeholder="Drop Off Date">
 		  </div> <!--end dropoff date-->
 		  <div class="form-group pickdrop_time">  <!--start dropoff time--> 
-            <label class="white-label">Drop Off Time</label>		  
+            <label>Drop Off Time</label>		  
 			<input type="text" class="form-control" id="timepicker2" name="dropoff_time">
 		  </div> <!--end dropoff time-->
 		  <div class="form-group car-category"> <!--start drop-off location-->
-		     <label class="white-label">Category</label>
+		     <label>Category</label>
              <select class="form-control" id="car-category" name="category">
                <option name="category" value="Any">Any</option>
                  <?php

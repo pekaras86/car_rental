@@ -1,7 +1,7 @@
 /* custom style for navigation bar */
 .navbar {
-	background-color: #832121;
-	border-color: #832121;
+	background-color: #003e55;
+	border-color: #003e55;
 	border-radius: 0px;
 	border: 0px;
 }
@@ -24,14 +24,14 @@
 
 /* custom style for navbar items hover */
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-	color: #FFF;
-	background-color: #000;
+	color: #000;
+	background-color: #B6B6B6;
 	font-style: italic;
 }
 
 /* custom style for navbar items avtive */
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-	color: #832121;
+	color: #003e55;
 	background-color: #FFF;
 	font-weight: bold;
 	font-style: normal;
@@ -80,7 +80,7 @@
 .calendar-module {
   width: 272px;
   display:inline-block;
-  background-color:#000;
+  background-color: #B6B6B6;
   margin-left: 30px;
   padding-top: 15px;
   padding-left: 15px;
@@ -93,14 +93,10 @@
   }
 }*/
 
-.white-label {
-  color:#FFF;
-}
-
 /* search button of calendar-module*/
 .btn-info {
   color: #fff;
-  background-color: #0B4456;
+  background-color: #003e55;
   border-color: #46b8da;
 }
 

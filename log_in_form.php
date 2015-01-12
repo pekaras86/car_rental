@@ -84,7 +84,7 @@ EOD;
            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
              <input type="text" name="user" placeholder="Username">
              <input type="password" name="pass" placeholder="Password">
-             <input type="submit" name="login" class="login login-submit" value="login">
+             <input type="submit" name="login" class="btn btn-info btn-block" value="Log In">
            </form>
 
           <div class="login-help">

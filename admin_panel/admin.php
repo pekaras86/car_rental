@@ -109,7 +109,7 @@ EOD;
 			  <li class="active"><a href="admin.php">Dashboard</a></li>
 			  <li class=""><a href="../newcar.php">New Car Type</a></li>
 			  <li class=""><a href="../new_car_item.php">New Car Item</a></li>
-			  <li class=""><a href=""></a></li>
+			  <li class=""><a href="dashboard.php">New admin</a></li>
 			  <li class=""><a href=""></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

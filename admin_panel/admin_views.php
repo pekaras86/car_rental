@@ -57,6 +57,8 @@ function display_navbar($tag = NULL)
     $carLocations = NULL;
     $carCategories = NULL;
     $lastReservations = NULL;
+    $carTypes = NULL;
+    $carItems = NULL;
 
     switch($tag) {
         case "dashboard":
@@ -70,6 +72,12 @@ function display_navbar($tag = NULL)
             break;
         case "lastReservations":
             $lastReservations = "active";
+            break;
+        case "carTypes":
+            $carTypes = "active";
+            break;
+        case "carItems":
+            $carItems = "active";
             break;
     }
     echo <<<EOD
@@ -118,6 +126,18 @@ function display_navbar($tag = NULL)
                             </li>
                             <li class="<?php {$lastReservations} ?>">
                                 <a href="last_reservations.php"><i class="fa fa-table fa-fw"></i> Latest Reservations</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-table fa-fw"></i> Cars<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li class="<?php {$carTypes} ?>">
+                                        <a href="car_types.php">Car Types</a>
+                                    </li>
+                                    <li class="<?php {$carItems} ?>">
+                                        <a href="car_items.php">Car Items</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
                             </li>
                             <li>
                                 <a href="#"><i class="fa fa-table fa-fw"></i> Tables<span class="fa arrow"></span></a>

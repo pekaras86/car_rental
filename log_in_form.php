@@ -13,6 +13,13 @@ display_head("Thessaloniki Car Rentals");
 //ean exei setaristei cookie kane elegxo tou user pou kanei sign in
 if (!isset($_COOKIE['user_id'])) {
 
+    if (isset($_POST['saveorder'])) { //an yparxei to redirect exei ginei apo reservation
+        $saveorder = 1;
+    }
+    else {
+        $saveorder = 0;
+    }
+
     if(isset($_POST['button']) && $_POST['button'] == 'LogIn') {
 
 
@@ -42,7 +49,7 @@ if (!isset($_COOKIE['user_id'])) {
 
                 setcookie('user_id', $user_id);  // kai ftiakse cookie me to user_id tou
                 setcookie('username', $username); // kai to username tou
-                setcookie('password', $password);
+                //setcookie('password', $password);
 
 
                 if ($usergroup_id == 1) { //einai administrator
@@ -64,7 +71,7 @@ if (!isset($_COOKIE['user_id'])) {
             }
 
         }
-    } else { //register was pressed
+    } /* else { //register was pressed
         if (isset($_POST['first_name'])) { //elegxe an sumplirose
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
@@ -108,14 +115,15 @@ if (!isset($_COOKIE['user_id'])) {
             setcookie('password', $password);
             setcookie('user', 'user');
 
-           // if (isset($_POST['source']) && $_POST['source'] == "order") {
+           if (isset($_COOKIE['order'])) {
                 header("Location: confirm_order.php");
-           // } else {
-           //         header("Location: user_panel.php");
-           // }
+           } else {
+                    header("Location: user_panel.php");
+           }
 
         }
-    }
+    } */
+
     // Requires the navbar
     $tag = "logIn";
     display_navbar($tag);
@@ -154,7 +162,8 @@ EOD;
                         <h3 class="panel-title text-center">Please Register</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                        <!-- <form role="form" action="<?php /* echo $_SERVER['PHP_SELF']; */?>" method="POST"> -->
+                        <form role="form" action=<?php echo "sign_up_user.php?p={$saveorder}" ?> method="POST">
                             <div class="form-group">
                                 <input type="text" name="first_name" id="first_name" class="form-control input-sm"
                                        placeholder="First Name">

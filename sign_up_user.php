@@ -4,10 +4,12 @@ require_once ('scripts/database_connection.php');
 require_once ('scripts/db_cars.php');
 require_once ('scripts/views.php');
 
-$username = $_POST['username'];
+//$username = $_POST['username'];
+$username = $_POST['email'];
 setcookie('username', $username);
 $password = $_POST['password'];
-setcookie('password', $password);
+//setcookie('password', $password);
+/*
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
@@ -16,7 +18,18 @@ $phone = $_POST['phone'];
 $address = $_POST['address'];
 $zipcode = $_POST['zipcode'];
 $city = $_POST['city'];
-$birth = $_POST['birth'];
+$birth = $_POST['birth']; */
+
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+
+$email ='a';
+$phone = '';
+$phone = '';
+$address = '';
+$zipcode = '';
+$city = '';
+$birth = '';
 
 $user_group_id = 2;
 
@@ -61,10 +74,13 @@ $user_result = mysqli_query($con, $user_query);
 $user_rows = mysqli_fetch_array($user_result);
 $user_id = $user_rows['id'];
 
-setcookie('user_id', $user_id);	
-	
+setcookie('user_id', $user_id);
 
-	header("Location: user_panel.php");    
+if (isset($_GET['p']) && $_GET['p'] == 1) {
+	header("Location: confirm_order.php");
+} else {
+	header("Location: user_panel.php");
+}
 	
 	
 	

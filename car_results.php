@@ -322,7 +322,14 @@ EOD;
 					      </tr>
 					      <tr>
 					        <td>
-						      <span>{$available_cars_quantity} units available</span>
+EOD;
+							if ($available_cars_quantity == 1) {
+								echo '<span>1 unit available</span>';
+							} else {
+								echo '<span>' . $available_cars_quantity . ' units available</span>';
+							}
+				echo <<<EOD
+
 						    </td>
 					      </tr>
 					      <tr>

@@ -64,7 +64,7 @@
 						<div id="paging_selector" style="margin-right:60px;">
 							<label style="margin-right:8px; margin-bottom: 0px;">cars per page:</label>
 							<input id="per_page" type="number" min="1" value=$cars_per_page max="5" style="color: blue; font-weight: bold; text-align: center; border: 0px; width: 40px;" onchange="set_page_cap(this)">
-							<label style="margin-bottom: 0px; cursor:pointer; color: blue;" onclick="set_sorting()">ok</label>
+							<label style="margin-bottom: 0px; cursor:pointer; color: blue; margin-left:4px;" onclick="set_sorting()">ok</label>
 						</div>
 					</td>
 					<td style="white-space:nowrap;">

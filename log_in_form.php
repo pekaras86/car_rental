@@ -3,10 +3,17 @@
   require_once ('scripts/database_connection.php');
   require_once ('scripts/views.php');
   
-   //session_start();
+   
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
+  
+  if (isset($_GET['warning_message'])) {
+    echo <<<EOD
+	  <script>alert('You must log in to continue!');</script>
+EOD;
+  
+  }
 
   /*-----------------------Elegxos user--------------------------------*/
 
@@ -57,7 +64,7 @@
 	} else {
 	  //ean den yparxei ston pinaka kane anakatefthinsi edw me error message
 
-	  $error_message = "Your username/password combination was invalid.";
+	  $error_message = "Your username/password combination was invalid. Please sign up if you are not a member!";
 	  header("Location: log_in_form.php?error_message={$error_message}");
 	}
 	

@@ -39,6 +39,7 @@
 	  
 	  setcookie('user_id', $user_id);  // kai ftiakse cookie me to user_id tou
 	  setcookie('username', $username); // kai to username tou
+	  setcookie('password', $password);
 
 
         if ($usergroup_id == 1 ) { //einai administrator

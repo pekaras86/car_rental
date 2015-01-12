@@ -8,10 +8,24 @@ if (!isset($_COOKIE['user'])) {
   exit();
 }
 
+// stoixeia syndesis sygekrimenou pelati
+$username = $_COOKIE['username'];
+$password = $_COOKIE['password'];
 
-$name = "Giorgos";
-$lastname = "Kalimeris";
-$customer_id = 15128;
+
+// eksagwgi id user apo ton pinaka users
+$user_query = "SELECT * FROM users WHERE username='{$username}' AND password='{$password}'";
+$user_result = mysqli_query($con, $user_query);
+$user_rows = mysqli_fetch_array($user_result);
+$user_id = $user_rows['id'];
+
+
+// eksagwgi id user apo ton pinaka customers
+$custom_query = "SELECT * FROM customers WHERE user_id='{$user_id}'";
+$custom_result = mysqli_query($con, $custom_query);
+$custom_rows = mysqli_fetch_array($custom_result);
+$customer_id = $custom_rows['id'];
+
 
 
 // epilogi stoixeiwn apo ton pinaka reservations
@@ -93,115 +107,103 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
       </nav>
 	</div> <!-- /container -->	
 	
-	
-	
 	<div class="container"> 
 	  <div class="jumbotron">
-    
-	
-	<?php
-	
-	//emfanisi stoixeiwn sti selida
-	
-	
-	
-	
-	
-	if ($num_rows == 1) {  //ean yparxoun 
-  
-    while($row = mysqli_fetch_array($result)) {    // vgale ta records apo ton pinaka reservations
-  
-    $reserv_date = $row['reserv_date'];
-    $car_id = $row['car_id'];
-    $pickup_location_id = $row['pickup_location_id'];
-    $pickup_datetime = $row['pickup_datetime'];
-    $dropoff_location_id = $row['dropoff_location_id'];
-    $dropoff_datetime = $row['dropoff_datetime'];
-    $amount = $row['amount'];
-	$status_id = $row['status_id'];
-	if ($status_id == 0) {
-	  $status_id = 'Standby';
-	} else if ($status_id == 1) {
-	  $status_id = 'Confirmed';
-	} else if ($status_id == 2) {
-	  $status_id = 'Canceled';
-	}
-	
-	//evresi dropoff location
-	$loc_query = "SELECT * FROM car_locations WHERE id='{$dropoff_location_id}'";
-	$loc_result = mysqli_query($con, $loc_query);
-	$loc_row = mysqli_fetch_array($loc_result);
-	
-	//evresi pickup location
-	$ploc_query = "SELECT * FROM car_locations WHERE id='{$pickup_location_id}'";
-	$ploc_result = mysqli_query($con, $ploc_query);
-	$ploc_row = mysqli_fetch_array($ploc_result);
-	
-	//evresi plate number
-	$plate_query = "SELECT * FROM car_items WHERE id='{$car_id}'";
-	$plate_result = mysqli_query($con, $plate_query);
-	$plate_row = mysqli_fetch_array($plate_result);
-	$car_type_id = $plate_row['car_type_id']; 
-	
-	//evresi car type
-	$type_query = "SELECT * FROM car_types WHERE id='{$car_type_id}'";
-	$type_result = mysqli_query($con, $type_query);
-	$type_row = mysqli_fetch_array($type_result);
-	
-	
-    
-    echo <<<EOD
-     <table class="table">
-       <thead>
-	     <tr>
-		   <th>Car Name</th>
-		   <th>Plate Number</th>
-		   <th>Pickup Location</th>
-		   <th>Dropff Location</th>
-		   <th>Pickup Datetime</th>
-		   <th>Dropoff Datetime</th>
-		   <th>Amount</th>
-		   <th>Reserv Date</th>
-		   <th>Status</th>
-		   <th>Cancel</th>
-		 </tr>
-	   </thead>
-	   <tbody>
-	     <tr>
-		   <td>{$type_row['name']}</td>
-		   <td>{$plate_row['plate_number']}</td>
-		   <td>{$ploc_row['name']}</td>
-		   <td>{$loc_row['name']}</td>
-		   <td>{$pickup_datetime}</td>
-		   <td>{$dropoff_datetime}</td>
-		   <td>{$amount}</td>
-		   <td>{$reserv_date}</td>
-		   <td>{$status_id}</td>
-		   <td style="text-align:center;"><a href="cancel_reservation.php?car_id={$car_id}"><img src="images/other/delete.png" width="15" /></a></td>
-		 </tr>
-	   </tbody>
-     </table>
+	    <table class="table">
+          <thead>
+	        <tr>
+		      <th>Car Name</th>
+		      <th>Plate Number</th>
+		      <th>Pickup Location</th>
+		      <th>Dropff Location</th>
+		      <th>Pickup Datetime</th>
+		      <th>Dropoff Datetime</th>
+		      <th>Amount</th>
+		      <th>Reserv Date</th>
+		      <th>Status</th>
+		      <th>Cancel</th>
+		    </tr>
+	      </thead>
+	    <tbody>
+        <?php
 		
+		while($row = mysqli_fetch_array($result)){     // vgale ta records apo ton pinaka reservations
+            
+            $reserv_date = $row['reserv_date'];
+            $car_id = $row['car_id'];
+            $pickup_location_id = $row['pickup_location_id'];
+            $pickup_datetime = $row['pickup_datetime'];
+            $dropoff_location_id = $row['dropoff_location_id'];
+            $dropoff_datetime = $row['dropoff_datetime'];
+            $amount = $row['amount'];
+	        $status_id = $row['status_id'];
+	       
+		   if ($status_id == 0) {
+	          $status_id = 'Standby';
+	        } else if ($status_id == 1) {
+	          $status_id = 'Confirmed';
+	        } else if ($status_id == 2) {
+	          $status_id = 'Canceled';
+	        }
+	
+	        //evresi dropoff location
+	        $loc_query = "SELECT * FROM car_locations WHERE id='{$dropoff_location_id}'";
+	        $loc_result = mysqli_query($con, $loc_query);
+	        $loc_row = mysqli_fetch_array($loc_result);
+	
+	        //evresi pickup location
+	        $ploc_query = "SELECT * FROM car_locations WHERE id='{$pickup_location_id}'";
+	        $ploc_result = mysqli_query($con, $ploc_query);
+	        $ploc_row = mysqli_fetch_array($ploc_result);
+	
+	        //evresi plate number
+            $plate_query = "SELECT * FROM car_items WHERE id='{$car_id}'";
+	        $plate_result = mysqli_query($con, $plate_query);
+	        $plate_row = mysqli_fetch_array($plate_result);
+	        $car_type_id = $plate_row['car_type_id']; 
+	
+	        //evresi car type
+	        $type_query = "SELECT * FROM car_types WHERE id='{$car_type_id}'";
+	        $type_result = mysqli_query($con, $type_query);
+	        $type_row = mysqli_fetch_array($type_result);
+		
+		     echo <<<EOD
+              <tr>
+		        <td>{$type_row['name']}</td>
+		        <td>{$plate_row['plate_number']}</td>
+		        <td>{$ploc_row['name']}</td>
+		        <td>{$loc_row['name']}</td>
+		        <td>{$pickup_datetime}</td>
+		        <td>{$dropoff_datetime}</td>
+		        <td>{$amount}</td>
+		        <td>{$reserv_date}</td>
+		        <td>{$status_id}</td>
+		        <td style="text-align:center;"><a href="cancel_reservation.php?car_id={$car_id}"><img src="images/other/delete.png" width="15" /></a></td>
+		      </tr>
 EOD;
-
-  } //end while
-    } else if ($num_rows == 0) {
-      echo 'Den yparxoyn kratiseis gia to sygekrimeno logariasmo';
-    }
-	
-	
-	//gia epitixi akyrwsi kratisis
-	if(isset($_GET['success_message'])) {
-	  echo <<<EOD
-	  <script>
-	    alert('{$_GET['success_message']}');
-	  </script>
+	     } // end while	
+		
+		
+		if ($num_rows == 0) {
+              echo <<<EOD
+				<tr>
+				  <td colspan="10">Den yparxoun kratiseis gia to sygekrimeno logariasmo</td>
+				</tr>
 EOD;
-	}
-
-	
-  ?>
-	
+        }
+		
+	    //gia epitixi akyrwsi kratisis
+	    if(isset($_GET['success_message'])) {
+	      echo <<<EOD
+	        <script>
+	           alert('{$_GET['success_message']}');
+	       </script>
+EOD;
+	    }
+		
+		?>
+        </tbody>
+       </table>
 	  </div>
 	</div>
 	

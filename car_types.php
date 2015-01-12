@@ -240,6 +240,7 @@ EOD;
 
 <script>
 	function set_sorting() {
+		document.getElementById('pass_sel_page').value = 1;
 		document.getElementById('srt_frm').submit();
 	}
 	function set_page_cap(elem) {

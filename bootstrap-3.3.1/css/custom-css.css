@@ -420,6 +420,7 @@
     border:solid 1px #32373b;
     background:#003e55;
     box-shadow:inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .1);
+    cursor: default;
 }
 
 input[type=range] {

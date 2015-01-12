@@ -395,6 +395,8 @@ EOD;
   
   <script>
     function dateFields(){
+	  document.getElementById('pass_sel_page').value = 1;
+
 	  var pickUpDate = document.getElementById("datepicker1").value;
 	  var dropOffDate = document.getElementById("datepicker2").value;
 	  
@@ -434,13 +436,16 @@ EOD;
 
 <script>
 	function set_sorting(elem) {
+		document.getElementById('pass_sel_page').value = 1;
 		document.getElementById('hidden').value = elem.value;
 		document.getElementById('search_frm').submit();
 	}
 	function change_cap() {
+		document.getElementById('pass_sel_page').value = 1;
 		document.getElementById('search_frm').submit();
 	}
 	function set_page_cap(elem) {
+		document.getElementById('pass_sel_page').value = 1;
 		document.getElementById('show_cap').innerHTML = elem.value;
 		document.getElementById('pass_cap').value = elem.value;
 	}

@@ -107,8 +107,26 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
       </nav>
 	</div> <!-- /container -->	
 	
+	
+	
 	<div class="container"> 
 	  <div class="jumbotron">
+	  
+	  <div>
+	  <div><b>Last Name:</b> <?php echo $custom_rows['lastname']; ?></div>
+	  <div><b>Name:</b> <?php echo $custom_rows['name']; ?></div>
+	  <div><b>Email:</b> <?php echo $custom_rows['email']; ?></div>
+	  <div><b>Phone:</b> <?php echo $custom_rows['phone']; ?></div>
+	  </div>
+	  <div>
+	  <div><b>Address:</b> <?php echo $custom_rows['address']; ?></div>
+	  <div><b>Zipcode:</b> <?php echo $custom_rows['zipcode']; ?></div>
+	  <div><b>City:</b> <?php echo $custom_rows['city']; ?></div>
+	  <div><b>Birthdate:</b> <?php echo date("d-m-Y",strtotime($custom_rows['birthdate'])); ?></div>
+	  </div>
+	  
+	    <br>
+		<br>
 	    <table class="table">
           <thead>
 	        <tr>

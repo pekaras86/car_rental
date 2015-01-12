@@ -1,7 +1,8 @@
 <?php
 
-require_once ('../scripts/app_config.php');
+//require_once ('../scripts/app_config.php');
 require_once ('../scripts/database_connection.php');
+require_once ('../scripts/db_reservations.php');
 require_once ('admin_views.php');
 
 // Change status
@@ -81,8 +82,9 @@ display_navbar($tag);
                                 <tbody>
                                 <?php
                                 //evresi kratisis
-                                $reserv_query = "SELECT * FROM reservations LIMIT 20";
-                                $reserv_result = mysqli_query($con, $reserv_query);
+                                //$reserv_query = "SELECT * FROM reservations ORDER BY ID DESC LIMIT 20";
+                                //$reserv_result = mysqli_query($con, $reserv_query);
+                                $reserv_result = getLastReservations($con);
                                 //echo $reserv_row['pickup_datetime'];
 
                                 while($reserv_row = mysqli_fetch_array($reserv_result)) {

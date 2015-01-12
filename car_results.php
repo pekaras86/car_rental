@@ -57,6 +57,10 @@
 		<div class="container" style="margin-bottom:20px;">
 		<div class="row no-side-margins">
 
+
+		<table style="float: left; width:28%">
+		<tr>
+		<td>
 	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">
 		<form id="search_frm" role="form" action="car_results.php" method="POST">
 		   <input type="hidden" id="hidden" name="hidden" value=$srt>
@@ -131,7 +135,22 @@ EOD;
             <button type="submit" class="btn btn-default btn-info search-module" onClick="return dateFields();">SEARCH</button>
           </div>
 		</form>
-	  </div>
+	  </div> <!--calendar module-->
+	  </td>
+	  </tr>
+	  <tr>
+	  <td>
+
+	<div id="paging_selector" class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">
+	<label style="margin-right:8px;">cars per page:</label>
+	<label id="show_cap" style="color:blue;margin-right:12px;">$cars_per_page</label>
+	<input id="per_page" type="range" min="2" value=$cars_per_page max="5" onchange="set_page_cap(this)">
+	<label style="margin-bottom: 0px; margin-left:4px; cursor:pointer; color: blue;" onclick="change_cap()">ok</label>
+	</div>
+	</td>
+	</tr>
+	</table>
+
 EOD;
 
 
@@ -363,15 +382,7 @@ EOD;
 				  </style>';
 	  }
 
-	echo <<<EOD
-	<div id="paging_selector" class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">
-	<label style="margin-right:8px;">cars per page:</label>
-	<label id="show_cap" style="color:blue;margin-right:12px;">$cars_per_page</label>
-	<input id="per_page" type="range" min="2" value=$cars_per_page max="5" onchange="set_page_cap(this)">
-	<label style="margin-bottom: 0px; margin-left:4px; cursor:pointer; color: blue;" onclick="change_cap()">ok</label>
-	</div>
 
-EOD;
 	?>
 	</div>  <!-- / row -->
    </div> <!-- /container -->

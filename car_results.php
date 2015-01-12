@@ -169,7 +169,7 @@ EOD;
 		echo '<td align="left" valign="top" style="white-space:nowrap;">';
 
 	    if($num_rows==1) {
-			echo '<h4 id="results_count" style="color:blue;margin-left: 10px;">Results: 1 car found</h4>';
+			echo '<h4 id="results_count" style="color:blue;margin-left: 10px; font-weight:bold;">Results: 1 car found</h4>';
 			echo '</td>';
 			echo '<style type="text/css">
 					#paging_selector {
@@ -177,7 +177,7 @@ EOD;
 					}
 				  </style>';
 		} else {
-			echo '<h4 id="reults_count" style="color:blue;margin-left: 10px;margin-right:60px;">Results: ' . $num_rows . ' cars found</h4>';
+			echo '<h4 id="reults_count" style="color:blue;margin-left: 10px;margin-right:60px; font-weight:bold;">Results: ' . $num_rows . ' cars found</h4>';
 			echo '</td>';
 			echo '<td style="white-space:nowrap;">';
 			echo '<div class="page-div">';

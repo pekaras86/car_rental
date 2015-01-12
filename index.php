@@ -167,7 +167,7 @@ EOD;
 
                                         <div class="col-xs-12 col-md-7">
                                             <h3>Wide Selection</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
+                                            <p></p>
                                         </div><!-- /.col-md-7 -->
                                     </div><!-- /.row -->
                                 </div><!-- /.col-md-4 -->
@@ -190,7 +190,7 @@ EOD;
 
                                         <div class="col-xs-12 col-md-7">
                                             <h3>Great Prices</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
+                                            <p></p>
                                         </div><!-- /.col-md-7 -->
                                     </div><!-- /.row -->
                                 </div><!-- /.col-md-4 -->
@@ -213,7 +213,7 @@ EOD;
 
                                         <div class="col-xs-12 col-md-7">
                                             <h3>24/7 Hotline</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque dolor, placerat mattis justo id, convallis porta nulla</p>
+                                            <p></p>
                                         </div><!-- /.col-md-7 -->
                                     </div><!-- /.row -->
                                 </div><!-- /.col-md-4 -->

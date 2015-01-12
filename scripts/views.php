@@ -129,11 +129,8 @@ echo <<<EOD
 						<div class="teaser-item-wrapper">
 							<div class="teaser-item">
 							    <div class="title">
-							        <a href="car_types.php">Toyota Landcruiser</a>
+							        <a href="car_types.php">Toyota Highlander</a>
 							    </div><!-- /.title -->
-
-		    					<div class="subtitle">Windsor Locks, CT </div><!-- /.subtitle -->
-
 							    <div class="row">
 							        <div class="picture-wrapper col-lg-4 col-md-4 col-sm-4 col-xs-4">
 							            <div class="picture">
@@ -144,14 +141,14 @@ echo <<<EOD
 							                		</span><!-- /.hover-inner -->
 							                	</span><!-- /.hover -->
 
-							                    <img src="assets/img/content/toyota3.jpg" alt="#">
+							                    <img src="images/cars/1417695468-2014_toyota_highlander_hybrid-pic-985906573636546719.jpeg.jpg" alt="#">
 							                </a>
 							            </div><!-- /.picture -->
 							        </div><!-- /.picture-wrapper -->
 
 							        <div class="content-wrapper col-lg-8 col-md-8 col-sm-8 col-xs-8">
-							            <div class="price">$9,799</div>
-							            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu vulputate neque. Fusce hendrerit fermentum.</p>
+							            <div class="price">9,799 &euro;</div>
+							            <p>description description description description description description description description.</p>
 							        </div><!-- /.picture-content -->
 							    </div><!-- /.row -->
 							</div><!-- /.teaser-item -->
@@ -160,11 +157,8 @@ echo <<<EOD
 						<div class="teaser-item-wrapper">
 							<div class="teaser-item">
 							    <div class="title">
-							        <a href="car_types.php">Toyota Landcruiser</a>
+							        <a href="car_types.php">Suzuki Grand Vitara</a>
 							    </div><!-- /.title -->
-
-		    					<div class="subtitle">Windsor Locks, CT </div><!-- /.subtitle -->
-
 							    <div class="row">
 							        <div class="picture-wrapper col-lg-4 col-md-4 col-sm-4 col-xs-4">
 							            <div class="picture">
@@ -175,14 +169,14 @@ echo <<<EOD
 							                		</span><!-- /.hover-inner -->
 							                	</span><!-- /.hover -->
 
-							                    <img src="assets/img/content/toyota2.jpg" alt="#">
+							                    <img src="images/cars/Suzuki-Grand-Vitara.jpg" alt="#">
 							                </a>
 							            </div><!-- /.picture -->
 							        </div><!-- /.picture-wrapper -->
 
 							        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 content-wrapper">
-							            <div class="price">$9,799</div>
-							            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu vulputate neque. Fusce hendrerit fermentum.</p>
+							            <div class="price">9,799 &euro;</div>
+							            <p>description description description description description description description description.</p>
 							        </div><!-- /.content-wrapper -->
 							    </div><!-- /.row -->
 							</div><!-- /.teaser-item -->

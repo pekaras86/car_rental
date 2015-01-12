@@ -26,37 +26,42 @@
   // Requires the navbar
   $tag = "home";
   display_navbar($tag);
-  
-?>
 
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="container" style="margin-bottom:20px;"> 
-	  
-<!--	 <div class="jumbotron"> -->
+      if (!isset($_REQUEST['pass_sel_page'])) {
+	  $pagenum = 1;
+  } else {
+	  $pagenum = $_REQUEST['pass_sel_page'];
+  }
 
+  if (!empty($_REQUEST['hidden'])) {
+	  $srt = $_REQUEST['hidden'];
+  } else {
+	  $srt = "price ascending";
+  }
+
+  if($srt == 'price descending') {
+	  $order_by = "DESC";
+  } else {
+	  $order_by = "ASC";
+  }
+
+  if (!empty($_REQUEST['pass_cap'])) {
+	  $cars_per_page = $_REQUEST['pass_cap'];
+	  if ($cars_per_page < 2) {$cars_per_page = 2;} elseif ($cars_per_page > 5) {$cars_per_page = 5;}
+  } else {
+	  $cars_per_page = 5;
+  }
+
+	  echo <<<EOD
+		<!-- Main component for a primary marketing message or call to action -->
+		<div class="container" style="margin-bottom:20px;">
 		<div class="row no-side-margins">
 
-	  <?php  
-	 	  
-	  // pianei ta stoixeia apo ti forma	   
-	  $category = $_REQUEST['category'];
-	  $pickup_location = $_REQUEST['pickup_location'];
-	  $dropoff_location = $_REQUEST['dropoff_location'];
-	  $srt = $_REQUEST['hidden'];
-	  $pickup_date = $_REQUEST['pickup_date'];
-	  $dropoff_date = $_REQUEST['dropoff_date'];
-
-	  /* Metaferthikan pio panw
-	  setcookie('dropoff_location', $_REQUEST['dropoff_location']);
-	  setcookie('pickup_date', $_REQUEST['pickup_date']);
-	  setcookie('dropoff_date', $_REQUEST['dropoff_date']); */
-
-
-	 
-	  echo <<<EOD
 	  	<div class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5">
 		<form id="search_frm" role="form" action="car_results.php" method="POST">
-		   <input type="hidden" id="hidden" name="hidden" value="price ascending">
+		   <input type="hidden" id="hidden" name="hidden" value=$srt>
+		   <input type="hidden" id="pass_sel_page" name="pass_sel_page" value=$pagenum>
+		   <input type="hidden" id="pass_cap" name="pass_cap" value=$cars_per_page>
 		   <div class="form-group pickdrop_lock"> <!--start pickup location-->
 		     <label>Pickup Location</label>
 		     <select class="form-control" id="pickup_location" name="pickup_location">
@@ -129,20 +134,33 @@ EOD;
 	  </div>
 EOD;
 
-     // dimiourgia query anazitisis sti vasi
 
-		if($srt == 'price descending') {
-			//$select_query = $select_query . " DESC";
-			$order_by = "DESC";
-		} else {
-			$order_by = "ASC";
-		}
+	  // pianei ta stoixeia apo ti forma	   
+	  $category = $_REQUEST['category'];
+	  $pickup_location = $_REQUEST['pickup_location'];
+	  $dropoff_location = $_REQUEST['dropoff_location'];
+	  $pickup_date = $_REQUEST['pickup_date'];
+	  $dropoff_date = $_REQUEST['dropoff_date'];
+
+	  // dimiourgia query anazitisis sti vasi
+
 	   // run the query
-	  $result = getAvailableCarTypes($con, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by);
+  $result = getAvailableCarTypes($con, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by);
     	  
 	  //emfanise ola ta amaksia
 	  
-	  $num_rows = mysqli_num_rows($result);
+  $num_rows = mysqli_num_rows($result);
+
+  $last = ceil($num_rows/$cars_per_page); //# of the last page
+
+  if ($pagenum < 1) {
+	  $pagenum = 1; 
+  } elseif ($pagenum > $last) {
+	  $pagenum = $last; 
+  } 
+
+  $max = 'limit ' .($pagenum - 1) * $cars_per_page .',' .$cars_per_page;
+  $result = getAvailableCarTypes($con, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by, $max); // run the query again for pagination
 
 	  if($num_rows>0) {
 		echo '<div class="results-bar">';
@@ -163,11 +181,42 @@ EOD;
 			echo '</td>';
 			echo '<td style="white-space:nowrap;">';
 			echo '<div class="page-div">';
-			echo '<span class="page active">first</span>';
-			echo '<a href="#" class="page">2</a>';
-			echo '<a href="#" class="page">3</a>';
-			echo '<a href="#" class="page">4</a>';
-			echo '<a href="#" class="page">last</a>';
+
+			if($cars_per_page < $num_rows) {
+				if ($pagenum == 1) {
+					echo "<span class='page active'>first</span>";
+					for ($i = 2; $i <= min($last - 1, 4); $i++) {
+						echo "<span class='page' onclick='navigate($i)'>$i</span>";
+					}
+					echo "<span class='page' onclick='navigate($last)'>last</span>";
+				} elseif ($pagenum == $last) {
+					echo "<span class='page' onclick='navigate(1)'>first</span>";
+					for ($i = 2; $i <= min($last - 1, 4); $i++) {
+						echo "<span class='page' onclick='navigate($i)'>$i</span>";
+					}
+					echo "<span class='page active'>last</span>";
+				} else {
+					echo "<span class='page' onclick='navigate(1)'>first</span>";
+					if ($pagenum == 2) {
+						echo "<span class='page active'>2</span>";
+						for ($i = 3; $i <= min($last - 1, 4); $i++) {
+							echo "<span class='page' onclick='navigate($i)'>$i</span>";
+						}
+					} elseif ($pagenum == 3) {
+						echo "<span class='page' onclick='navigate(2)'>2</span>";
+						echo "<span class='page active'>3</span>";
+						if ($last == 5) {
+							echo "<span class='page' onclick='navigate(4)'>4</span>";
+						}
+					} elseif ($pagenum == 4) {
+						echo "<span class='page' onclick='navigate(2)'>2</span>";
+						echo "<span class='page' onclick='navigate(3)'>3</span>";
+						echo "<span class='page active'>4</span>";
+					}
+					echo "<span class='page' onclick='navigate($last)'>last</span>";
+				}
+			}
+
 			echo '</div>';
 			echo '</td>';
 			echo '<td align="right" width="99%">';
@@ -307,20 +356,18 @@ EOD;
 				  </style>';
 	  }
 
-	echo '<div id="paging_selector" class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">';
-	//echo '<center>';
-	echo '<label style="margin-right:8px;">cars per page:</label>';
-	echo '<label id="show_cap" style="color:blue;margin-right:12px;">20</label>';
-	echo '<input id="per_page" type="range" min="10" value="20" max="100" step="10" onchange="set_page_cap(this)">';
-	//echo '</center>';
-	echo '</div>';
+	echo <<<EOD
+	<div id="paging_selector" class="calendar-module-2 col-xs-12 col-s-12 col-md-5 col-lg-5" style="padding-top:12px;padding-bottom:10px;">
+	<label style="margin-right:8px;">cars per page:</label>
+	<label id="show_cap" style="color:blue;margin-right:12px;">$cars_per_page</label>
+	<input id="per_page" type="range" min="2" value=$cars_per_page max="5" onchange="set_page_cap(this)">
+	<label style="margin-bottom: 0px; cursor:pointer; color: blue;" onclick="change_cap()">ok</label>
+	</div>
+
+EOD;
 	?>
 	</div>  <!-- / row -->
-        
-	    
-		
-	
-    </div> <!-- /container -->
+   </div> <!-- /container -->
 
  <?php
   
@@ -390,7 +437,15 @@ EOD;
 		document.getElementById('hidden').value = elem.value;
 		document.getElementById('search_frm').submit();
 	}
+	function change_cap() {
+		document.getElementById('search_frm').submit();
+	}
 	function set_page_cap(elem) {
 		document.getElementById('show_cap').innerHTML = elem.value;
+		document.getElementById('pass_cap').value = elem.value;
+	}
+	function navigate(elem) {
+		document.getElementById('pass_sel_page').value = elem;
+		document.getElementById('search_frm').submit();
 	}
 </script>

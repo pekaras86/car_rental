@@ -7,7 +7,7 @@
  */
 
 
-function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by) {
+function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by, $limitation="") {
 
     $query = "SELECT car_types.*, car_categories.name as car_category,car_locations.name as car_location, count(car_items.id) as car_quantity " .
     "FROM car_types  " .
@@ -26,6 +26,8 @@ function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_d
     $query .= " ORDER BY price";
 
     if ($order_by == "DESC") {$query .= " " . $order_by;}
+
+    $query .= " " . $limitation;
 
     $result = mysqli_query($dbcon, $query);
     return $result;
@@ -80,7 +82,7 @@ function getAllCars($dbcon, $order_by, $limitation="") {
 
     if ($order_by == "DESC") {$query .= " " . $order_by;}
 
-	$query .= " " . $limitation;
+    $query .= " " . $limitation;
 
     $result = mysqli_query($dbcon, $query);
     return $result;

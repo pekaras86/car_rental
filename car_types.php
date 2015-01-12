@@ -32,7 +32,7 @@
 
   if (!empty($_REQUEST['pass_cap'])) {
 	  $cars_per_page = $_REQUEST['pass_cap'];
-	  if ($cars_per_page < 0) {$cars_per_page = 1;} elseif ($cars_per_page > 5) {$cars_per_page = 5;}
+	  if ($cars_per_page < 1) {$cars_per_page = 1;} elseif ($cars_per_page > 5) {$cars_per_page = 5;}
   } else {
 	  $cars_per_page = 5;
   }
@@ -247,6 +247,6 @@ EOD;
 	}
 	function navigate(elem) {
 		document.getElementById('pass_sel_page').value = elem;
-		document.getElementById('srt_frm').submit();	
+		document.getElementById('srt_frm').submit();
 	}
 </script>

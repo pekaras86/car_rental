@@ -327,7 +327,7 @@ EOD;
 					      </tr>
 					      <tr>
 					        <td>
-						      <input type="submit" value="Continue" class="btn btn-default btn-sm">
+						      <input type="submit" value="Continue" class="btn btn-default btn-info">
 						    </td>
 					      </tr>
 					    </tbody>

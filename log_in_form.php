@@ -106,11 +106,11 @@ if (!isset($_COOKIE['user_id'])) {
             setcookie('password', $password);
             setcookie('user', 'user');
 
-            if (isset($_POST['source']) && $_POST['source'] == "order") {
+           // if (isset($_POST['source']) && $_POST['source'] == "order") {
                 header("Location: confirm_order.php");
-            } else {
-                    header("Location: user_panel.php");
-            }
+           // } else {
+           //         header("Location: user_panel.php");
+           // }
 
         }
     }

@@ -151,7 +151,8 @@ EOD;
 				<tbody>
 				<?php
 				//evresi kratisis
-				 $reserv_query = "SELECT * FROM reservations LIMIT 20";
+				 //$reserv_query = "SELECT * FROM reservations LIMIT 10,20";
+				 $reserv_query = "SELECT * FROM reservations order by id desc LIMIT 20";
 	             $reserv_result = mysqli_query($con, $reserv_query);
 				 //echo $reserv_row['pickup_datetime'];
 				 

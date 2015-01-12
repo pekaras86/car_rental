@@ -75,7 +75,33 @@ if (!isset($_COOKIE['user_id'])) {
             mysqli_query($con, "INSERT INTO users(user_group_id, username, password) " .
                 "VALUES(2, '" . $username . "', " . $password . ");") or die(mysqli_error($con));
 
-            $user_id =  mysqli_query($con, "SELECT * FROM users WHERE id = LAST_INSERT_ID();");
+            //$user_id =  mysqli_query($con, "SELECT * FROM users WHERE id = LAST_INSERT_ID();");
+            // eisagwgi ston pinaka customers
+
+            $email ='a';
+            $phone = '';
+            $address = '';
+            $zipcode = '';
+            $city = '';
+            $birth = '';
+
+            $custom_sql = sprintf("INSERT INTO customers " .
+                "(user_id, name, lastname, email, phone, " .
+                "address, zipcode, city, birthdate) " .
+                "VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%d');",
+                mysqli_insert_id($con),
+                mysqli_real_escape_string($con, $first_name),
+                mysqli_real_escape_string($con, $last_name),
+                mysqli_real_escape_string($con, $email),
+                mysqli_real_escape_string($con, $phone),
+                mysqli_real_escape_string($con, $address),
+                mysqli_real_escape_string($con, $zipcode),
+                mysqli_real_escape_string($con, $city),
+                mysqli_real_escape_string($con, $birth));
+
+            //Insert the user into the database
+            mysqli_query($con, $custom_sql) or die(mysqli_error($con) . " " . $custom_sql);
+
 
         }
     }

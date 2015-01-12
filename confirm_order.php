@@ -221,121 +221,28 @@ EOD;
 		  
 		  
 		  
-		 
-		  <form method="post" action="send_order.php?car_id=<?php echo $car_id ?>&car_location=<?php echo $car_location ?>&total_cost=<?php echo $total_cost ?>" role="form" id="conorform">
-		  <div class="form-group">
-		    <table class="cnorderflds">
-			  <tbody>
-			    <tr>
-				  <td align="right">
-				    <span>
-                      <sup>*</sup>
-                    </span>
-                    <span>Name</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="fname">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-				    <span>
-                      <sup>*</sup>
-                    </span>
-                    <span>Last Name</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="lname">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-				    <span>
-                      <sup>*</sup>
-                    </span>
-                    <span>e-mail</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="email">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-                    <span>Phone</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="phone">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-                    <span>Address</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="address">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-                    <span>Zip Code</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="zipcode">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-                    <span>City</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="city">
-                  </td>
-				</tr>
-				<tr>
-				  <td align="right">
-                    <span>Date of Birth</span>
-                  </td>
-				  <td>
-                    <input class="confinput form-control" type="text" size="40" value="" name="birth">
-                  </td>
-				</tr>
-				<tr>
-				<td align="right" valign="top">
-				  <span>Notes</span>
-				</td>
-				<td align="right">
-				  <textarea class="form-control" name="message" rows="5" cols="40" style="box-shadow: 0 0 2px #cccccc inset;">
-				 </textarea>
-				 </td>
-				</tr> 
-			  </tbody>
-			</table>
-			<br>
-			<p class="paymethod">Payment Method</p>
-			 <ul style="list-style-type: none;">
-			  <li>
-				<input id="gpay1" type="radio" checked="checked" value="1" name="gpayid">
-				<label for="gpay1">Bank Transfer</label>
-			  </li>
-              <li>
-				<input id="gpay2" type="radio" value="2" name="gpayid">
-				<label for="gpay2">PayPal</label>
-              </li>
-              <li>
-				<input id="gpay5" type="radio" value="5" name="gpayid">
-				<label for="gpay5">Stripe - Credit Card</label>
-              </li>
-            </ul>
-			<br>
-			<input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">
-		 </div>
-		</form>
-		  
-		</div>
-	    
+		<?php
+		
+		if(isset($_COOKIE['user'])) {
+		  echo <<<EOD
+		  <form method="post" action="index.php" role="form" id="conorform">
+		    <input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">   
+		  </form>
+EOD;
+		} else {
+		  echo <<<EOD
+		  <form method="post" action="contact_us.php" role="form" id="conorform">
+		    <input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">   
+		  </form>
+EOD;
+		}
 
-      
-   </div> <!-- /container -->
+        ?>		
+		
+		
+		
+		</div>
+	  </div> <!-- /container -->
 
 
 <?php

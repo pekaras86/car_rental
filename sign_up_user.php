@@ -5,7 +5,9 @@ require_once ('scripts/db_cars.php');
 require_once ('scripts/views.php');
 
 $username = $_POST['username'];
+setcookie('username', $username);
 $password = $_POST['password'];
+setcookie('password', $password);
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
@@ -17,6 +19,8 @@ $city = $_POST['city'];
 $birth = $_POST['birth'];
 
 $user_group_id = 2;
+
+setcookie('user', 'user');
 
 //users query
 $insert_sql = sprintf("INSERT INTO users " .
@@ -34,7 +38,7 @@ mysqli_query($con, $insert_sql);
 $custom_sql = sprintf("INSERT INTO customers " .
 								"(user_id, name, lastname, email, phone, " .
 								"address, zipcode, city, birthdate) " .
-							"VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d');",
+							"VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%d');",
 							mysqli_insert_id($con),
 							mysql_real_escape_string($fname),
 							mysql_real_escape_string($lname),
@@ -49,5 +53,14 @@ $custom_sql = sprintf("INSERT INTO customers " .
 	
 	//Insert the user into the database
 	mysqli_query($con, $custom_sql);
+	
+	
+	
+	header("Location: user_panel.php");    
+	
+	
+	
+	//end of script
+	exit(); 
 
 ?>

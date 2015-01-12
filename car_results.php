@@ -361,7 +361,7 @@ EOD;
 	<label style="margin-right:8px;">cars per page:</label>
 	<label id="show_cap" style="color:blue;margin-right:12px;">$cars_per_page</label>
 	<input id="per_page" type="range" min="2" value=$cars_per_page max="5" onchange="set_page_cap(this)">
-	<label style="margin-bottom: 0px; cursor:pointer; color: blue;" onclick="change_cap()">ok</label>
+	<label style="margin-bottom: 0px; margin-left:4px; cursor:pointer; color: blue;" onclick="change_cap()">ok</label>
 	</div>
 
 EOD;

@@ -406,6 +406,7 @@
     font-size:.875em;
     font-weight: bold;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .page:hover {
@@ -425,7 +426,7 @@
 }
 
 input[type=range] {
-    width:58%;
+    width:45%;
     display:inline;
     vertical-align:middle;
     -webkit-appearance:none;

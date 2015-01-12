@@ -137,7 +137,7 @@ $type_row = mysqli_fetch_array($type_result);
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class=""><a href="log_in_form.php">Log in</a></li>
-              <li class=""><a href="sign_up_form.php">Sign up</a></li>
+              <!--<li class=""><a href="sign_up_form.php">Sign up</a></li> -->
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

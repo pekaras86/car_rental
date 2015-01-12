@@ -98,7 +98,7 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
                 echo "<li><a href='logout.php'>Log Out</a>";
               } else {
                 echo "<li class=''><a href='log_in_form.php'>Log In</a></li>";
-				echo "<li class=''><a href='sign_up_form.php'>Sign up</a></li>";
+				//echo "<li class=''><a href='sign_up_form.php'>Sign up</a></li>";
               }
 			?>
             </ul>

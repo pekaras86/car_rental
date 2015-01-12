@@ -231,7 +231,7 @@ EOD;
 EOD;
 		} else {
 		  echo <<<EOD
-		  <form method="post" action="contact_us.php" role="form" id="conorform">
+		  <form method="post" action="log_in_form.php?source=order" role="form" id="conorform">
 		    <input class="btn btn-info btn-block" type="submit" value="Confirm Order" name="saveorder" style="width:150px;">   
 		  </form>
 EOD;

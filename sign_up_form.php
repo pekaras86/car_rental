@@ -14,55 +14,162 @@
   
     <!-- Main component for a primary marketing message or call to action -->
 	<div class="container">
-        
-		<div class="row centered-form">
-            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">Please Register</h3>
-                    </div>
-                    <div class="panel-body">
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
-                            </div>
-
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <input type="submit" value="Register" class="btn btn-info btn-block">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-                        
+      <form method="post" action="sign_up_user.php" role="form" id="conorform">  
+		<div class="form-group">
+		    <table class="cnorderflds">
+			  <tbody>
+			    <tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>Username</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="username">
+                  </td>
+				  <tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>Password</span>
+                  </td>
+				  <td>
+                    <input style="width:200px; height:35px;" class="confinput form-control" type="password" size="40" value="" name="password">
+                  </td>
+				</tr>
+				<tr>
+				</tr>
+				<tr>
+			    <tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>Name</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="fname">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>Last Name</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="lname">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+				    <span>
+                      <sup>*</sup>
+                    </span>
+                    <span>e-mail</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="email">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Phone</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="phone">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Address</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="address">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Zip Code</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="zipcode">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>City</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="city">
+                  </td>
+				</tr>
+				<tr>
+				  <td align="right">
+                    <span>Date of Birth</span>
+                  </td>
+				  <td>
+                    <input class="confinput form-control" type="text" size="40" value="" name="birth">
+                  </td>
+				</tr>
+			  </tbody>
+			</table>
+			<br>
+			<br>
+			<input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">
+		 </div>
+       </form>  
     </div> <!-- /container -->
 
 
 <?php
+
+$jqScript = <<<EOD
+   <script>
+     $(function() {
   
+    // Setup form validation on the #register-form element
+    $("#conorform").validate({
+    
+        // Specify the validation rules
+        rules: {
+		    username: "required",
+			password: "required",
+            fname: "required",
+            lname: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            
+            agree: "required"
+        },
+        
+        // Specify the validation error messages
+        messages: {
+		    username: "Please enter your username",
+			password: "Please enter a password",
+            firstname: "Please enter your first name",
+            lastname: "Please enter your last name",
+            email: "Please enter a valid email address",
+            agree: ""
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });  
+   </script>
+  
+  
+EOD;
+
   // Requires the footer (JS declarations) part of the page 
-  display_footer();
+  display_footer($jqScript);
 
 ?>

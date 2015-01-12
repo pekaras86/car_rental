@@ -231,7 +231,7 @@ EOD;
 EOD;
 		} else {
 		  echo <<<EOD
-		  <form method="post" action="contact_us.php" role="form" id="conorform">
+		  <form method="post" action="" role="form" id="conorform">
 		    <input class="btn btn-info btn-block" type="submit" value="Confirm Order" name="saveorder" style="width:150px;">   
 		  </form>
 EOD;
@@ -247,45 +247,7 @@ EOD;
 
 <?php
 
-$jqScript = <<<EOD
-   <script>
-     $(function() {
-  
-    // Setup form validation on the #register-form element
-    $("#conorform").validate({
-    
-        // Specify the validation rules
-        rules: {
-            fname: "required",
-            lname: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            
-            agree: "required"
-        },
-        
-        // Specify the validation error messages
-        messages: {
-            firstname: "Please enter your first name",
-            lastname: "Please enter your last name",
-            email: "Please enter a valid email address",
-            agree: ""
-        },
-        
-        submitHandler: function(form) {
-            form.submit();
-        }
-    });
-
-  });  
-   </script>
-  
-  
-EOD;
-
   // Requires the footer (JS declarations) part of the page 
-  display_footer($jqScript);
+  display_footer();
 
 ?>

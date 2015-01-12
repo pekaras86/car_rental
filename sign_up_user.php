@@ -55,7 +55,15 @@ $custom_sql = sprintf("INSERT INTO customers " .
 	mysqli_query($con, $custom_sql);
 	
 	
+// eksagwgi id user apo ton pinaka users
+$user_query = "SELECT * FROM users WHERE username='{$username}' AND password='{$password}'";
+$user_result = mysqli_query($con, $user_query);
+$user_rows = mysqli_fetch_array($user_result);
+$user_id = $user_rows['id'];
+
+setcookie('user_id', $user_id);	
 	
+
 	header("Location: user_panel.php");    
 	
 	

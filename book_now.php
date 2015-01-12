@@ -1,9 +1,34 @@
 <?php
-  
-  require_once ('scripts/database_connection.php');
-  require_once ('scripts/db_cars.php');
-  require_once ('scripts/views.php');
-  
+
+//ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi
+//anakatefthine ton stin kentriki
+if (!isset($_REQUEST['car_id']))
+{
+	header("Location: index.php");
+	exit();
+}
+
+require_once ('scripts/database_connection.php');
+require_once ('scripts/db_cars.php');
+require_once ('scripts/views.php');
+
+
+//anazitisi amaksiou me to sygekrimeno id
+$car_type_id = $_REQUEST['car_id'];
+$pickup_location = $_REQUEST['pickup_location'];
+$dropoff_location = $_COOKIE['dropoff_location'];
+$pickup_date = $_COOKIE['pickup_date'];
+$dropoff_date = $_COOKIE['dropoff_date'];
+//$result = getCarByID($con, $car_id);
+
+$result = getFirstAvailableCarByTypeID($con, $pickup_location, $pickup_date, $dropoff_date, $car_type_id);
+$available_car = mysqli_fetch_array($result);
+$result = getCarByID($con, $available_car['id']);
+$car = mysqli_fetch_array($result);
+
+setcookie('car_id', $car['id']);
+
+
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
   
@@ -11,30 +36,7 @@
   $tag = "home";
   display_navbar($tag);
   
-  //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi 
-  //anakatefthine ton stin kentriki
-  if (!isset($_REQUEST['car_id']))
-  {
-    header("Location: index.php");
-    exit();
-  }
-  
-  //anazitisi amaksiou me to sygekrimeno id 
-  $car_type_id = $_REQUEST['car_id'];
-  $pickup_location = $_REQUEST['pickup_location'];
-  $dropoff_location = $_COOKIE['dropoff_location'];
-  $pickup_date = $_COOKIE['pickup_date'];
-  $dropoff_date = $_COOKIE['dropoff_date'];
 
-
-  //$result = getCarByID($con, $car_id);
-   $result = getFirstAvailableCarByTypeID($con, $pickup_location, $pickup_date, $dropoff_date, $car_type_id);
-
-  $available_car = mysqli_fetch_array($result);
-
-  $result = getCarByID($con, $available_car['id']);
-
-  $car = mysqli_fetch_array($result);
 
   $car_id		       = $car['id'];
   $car_name 	       = $car['name'];

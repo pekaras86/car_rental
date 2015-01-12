@@ -22,6 +22,7 @@
 	setcookie('dropoff_location', $_REQUEST['dropoff_location']);
 	setcookie('pickup_date', $_REQUEST['pickup_date']);
 	setcookie('dropoff_date', $_REQUEST['dropoff_date']);
+	setcookie('car_id', '', time()-(365*24*60*60));
   
   // Requires the navbar
   $tag = "home";

@@ -85,11 +85,13 @@ if (!isset($_COOKIE['user_id'])) {
             $city = '';
             $birth = '';
 
+            $user_id =  mysqli_insert_id($con);
+
             $custom_sql = sprintf("INSERT INTO customers " .
                 "(user_id, name, lastname, email, phone, " .
                 "address, zipcode, city, birthdate) " .
                 "VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%d');",
-                mysqli_insert_id($con),
+                $user_id,
                 mysqli_real_escape_string($con, $first_name),
                 mysqli_real_escape_string($con, $last_name),
                 mysqli_real_escape_string($con, $email),
@@ -102,6 +104,7 @@ if (!isset($_COOKIE['user_id'])) {
             //Insert the user into the database
             mysqli_query($con, $custom_sql) or die(mysqli_error($con) . " " . $custom_sql);
 
+            setcookie('user_id', $user_id);
             setcookie('username', $username);
             setcookie('password', $password);
             setcookie('user', 'user');

@@ -218,6 +218,10 @@ EOD;
 			  </tr>
 			</tbody>
 		  </table>
+		  
+		  
+		  
+		 
 		  <form method="post" action="send_order.php?car_id=<?php echo $car_id ?>&car_location=<?php echo $car_location ?>&total_cost=<?php echo $total_cost ?>" role="form" id="conorform">
 		  <div class="form-group">
 		    <table class="cnorderflds">

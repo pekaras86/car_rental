@@ -94,7 +94,7 @@ function display_navbar($tag = NULL)
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Thessaloniki Car Rental Administration</a>
+                    <a class="navbar-brand" href="../index.php">Thessaloniki Car Rental Administration</a>
                 </div>
                 <!-- /.navbar-header -->
 

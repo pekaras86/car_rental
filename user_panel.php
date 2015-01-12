@@ -3,6 +3,12 @@
 require_once 'scripts/app_config.php';
 require_once 'scripts/database_connection.php';
 
+if (!isset($_COOKIE['user'])) {
+  header("Location: index.php");
+  exit();
+}
+
+
 $name = "Giorgos";
 $lastname = "Kalimeris";
 $customer_id = 15128;
@@ -103,7 +109,7 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
 	
 	if ($num_rows == 1) {  //ean yparxoun 
   
-    $row = mysqli_fetch_array($result);    // vgale ta records apo ton pinaka reservations
+    while($row = mysqli_fetch_array($result)) {    // vgale ta records apo ton pinaka reservations
   
     $reserv_date = $row['reserv_date'];
     $car_id = $row['car_id'];
@@ -178,7 +184,7 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
 		
 EOD;
 
-  
+  } //end while
     } else if ($num_rows == 0) {
       echo 'Den yparxoyn kratiseis gia to sygekrimeno logariasmo';
     }

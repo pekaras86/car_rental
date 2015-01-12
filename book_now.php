@@ -185,7 +185,7 @@
 		   </table>
 	      </div> <!--end car option-->
 		  <div class="book-submit">
-		  <button type="submit" class="btn btn-default btn-lg btn-block">Book Now</button>
+		  <button type="submit" class="btn btn-info btn-block btn-lg btn-block" style="width:150px;">Book Now</button>
 		  </div>
 	   </div>
 	  </form>

@@ -225,7 +225,7 @@ EOD;
 		
 		if(isset($_COOKIE['user'])) {
 		  echo <<<EOD
-		  <form method="post" action="index.php" role="form" id="conorform">
+		  <form method="post" action="send_order.php?car_id={$car_id}&car_location={$car_location}&total_cost={$total_cost}" role="form" id="conorform">
 		    <input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">   
 		  </form>
 EOD;

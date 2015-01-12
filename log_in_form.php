@@ -66,7 +66,18 @@ if (!isset($_COOKIE['user_id'])) {
 
         }
     } else { //register was pressed
+        if (isset($_POST['first_name'])) { //elegxe an sumplirose
+            $first_name = $_POST['first_name'];
+            $last_name = $_POST['last_name'];
+            $username = $_POST['email'];
+            $password = $_POST['password'];
 
+            mysqli_query($con, "INSERT INTO users(user_group_id, username, password) " .
+                "VALUES(2, '" . $username . "', " . $password . ");") or die(mysqli_error($con));
+
+            $user_id =  mysqli_query($con, "SELECT * FROM users WHERE id = LAST_INSERT_ID();");
+
+        }
     }
     // Requires the navbar
     $tag = "logIn";

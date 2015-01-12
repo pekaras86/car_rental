@@ -71,7 +71,7 @@ if (!isset($_COOKIE['user_id'])) {
             }
 
         }
-    } /* else { //register was pressed
+    }  else { //register was pressed
         if (isset($_POST['first_name'])) { //elegxe an sumplirose
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
@@ -122,7 +122,7 @@ if (!isset($_COOKIE['user_id'])) {
            }
 
         }
-    } */
+    } 
 
     // Requires the navbar
     $tag = "logIn";
@@ -233,8 +233,8 @@ EOD;
 
         // Specify the validation rules
         rules: {
-            first-name: "required",
-            last-name: "required",
+            first_name: "required",
+            last_name: "required",
 			password: "required",
             email: {
                 required: true,
@@ -248,8 +248,8 @@ EOD;
         messages: {
 		    username: "Please enter your username",
 			password: "Please enter a password",
-            firstname: "Please enter your first name",
-            lastname: "Please enter your last name",
+            first_name: "Please enter your first name",
+            last_name: "Please enter your last name",
             email: "Please enter a valid email address",
             agree: ""
         },

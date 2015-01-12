@@ -33,10 +33,10 @@
 					<label for="phone">phone number:</label><br>
 					<input class="c-input form-control" name="phone" type="text" value="" size="30" /><br>
 				  </div>
-				  <div class="form-group">
+				  <div class="form-group" style="padding-left:15px;">
 					<label for="message">your message:</label><br>
 					<textarea class="c-input form-control" name="message" rows="10" cols="40"></textarea><br>
-					<input type="submit" value="Send email" class="btn btn-default">
+					<input type="submit" value="Send email" class="btn btn-info btn-block" style="width:40%;">
 				  </div>
 				</form>
 			</div>

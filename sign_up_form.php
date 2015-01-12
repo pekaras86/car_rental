@@ -119,7 +119,7 @@
 			</table>
 			<br>
 			<br>
-			<input class="btn btn-default" type="submit" value="Confirm Order" name="saveorder">
+			<input class="btn btn-info btn-block" type="submit" value="Confirm Order" name="saveorder" style="width:110px;">
 		 </div>
        </form>  
     </div> <!-- /container -->

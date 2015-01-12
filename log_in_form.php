@@ -141,8 +141,21 @@ EOD;
         }
         ?>
         <div class="row">
+            <div class="col-md-2">
+
+                </div>
+            <div class="col-md-8">
+                <h1 class="page-header" style="alignment: center"> Please Login or Register to continue</h1>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+        </div>
+
+        <div class="row">
+
             <div class="col-md-6">
-                <div class="login-card" style="box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px; margin-bottom:28px;">
+                <div class="login-card"> <!--style="box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px; margin-bottom:28px;" -->
                     <h1>Log-in</h1><br>
 
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
@@ -156,14 +169,14 @@ EOD;
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title text-center">Please Register</h3>
+                        <h3 class="panel-title text-center">Register</h3>
                     </div>
                     <div class="panel-body">
                         <!-- <form role="form" action="<?php /* echo $_SERVER['PHP_SELF']; */?>" method="POST"> -->
-                        <form role="form" action=<?php echo "sign_up_user.php?p={$saveorder}" ?> method="POST">
+                        <form role="form" action=<?php echo "sign_up_user.php?p={$saveorder}" ?> method="POST" id = "conorform">
                             <div class="form-group">
                                 <input type="text" name="first_name" id="first_name" class="form-control input-sm"
                                        placeholder="First Name">
@@ -172,6 +185,11 @@ EOD;
                             <div class="form-group">
                                 <input type="text" name="last_name" id="last_name" class="form-control input-sm"
                                        placeholder="Last Name">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="phone" id="phone" class="form-control input-sm"
+                                       placeholder="Phone">
                             </div>
 
                             <div class="form-group">
@@ -206,14 +224,52 @@ EOD;
 
     <?php
 
+    $jqScript = <<<EOD
+   <script>
+     $(function() {
+
+    // Setup form validation on the #register-form element
+    $("#conorform").validate({
+
+        // Specify the validation rules
+        rules: {
+            first-name: "required",
+            last-name: "required",
+			password: "required",
+            email: {
+                required: true,
+                email: true
+            },
+
+            agree: "required"
+        },
+
+        // Specify the validation error messages
+        messages: {
+		    username: "Please enter your username",
+			password: "Please enter a password",
+            firstname: "Please enter your first name",
+            lastname: "Please enter your last name",
+            email: "Please enter a valid email address",
+            agree: ""
+        },
+
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });
+   </script>
+
+
+EOD;
+
     // Requires the footer (JS declarations) part of the page
-    display_footer();
+    display_footer($jqScript);
 
 } else {
     //ean exei setaristei cookie anakatefthine ton sto index...apagorevete na mpei edw
     header("Location: index.php");
 }
 
-
-
-?>

@@ -14,7 +14,6 @@ $fname = $_POST['fname'];
 $lname = $_POST['lname'];
 $email = $_POST['email'];
 
-$phone = $_POST['phone'];
 $address = $_POST['address'];
 $zipcode = $_POST['zipcode'];
 $city = $_POST['city'];
@@ -22,10 +21,9 @@ $birth = $_POST['birth']; */
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
+$phone = $_POST['phone'];
 
-$email ='a';
-$phone = '';
-$phone = '';
+$email ='';
 $address = '';
 $zipcode = '';
 $city = '';
@@ -53,8 +51,8 @@ $custom_sql = sprintf("INSERT INTO customers " .
 								"address, zipcode, city, birthdate) " .
 							"VALUES ('%d', '%s', '%s', '%s', '%d', '%s', '%d', '%s', '%d');",
 							mysqli_insert_id($con),
-							mysql_real_escape_string($fname),
-							mysql_real_escape_string($lname),
+							mysql_real_escape_string($first_name),
+							mysql_real_escape_string($last_name),
 							mysql_real_escape_string($email),
 							mysql_real_escape_string($phone), 
 							mysql_real_escape_string($address),

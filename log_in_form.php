@@ -3,7 +3,7 @@
   require_once ('scripts/database_connection.php');
   require_once ('scripts/views.php');
   
-   session_start();
+   //session_start();
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
@@ -35,19 +35,21 @@
 
 	  $user_id = $result['id'];  //ean yparxei eksygage to user_id tou
 	  $username = $result['username'];  //kai to username tou
-	  $usergroup_id = $result['usergroup_id'];
+	  $usergroup_id = $result['usergroup_id'];  //kai ton typo toy user (admin or simple user)
 	  
 	  setcookie('user_id', $user_id);  // kai ftiakse cookie me to user_id tou
 	  setcookie('username', $username); // kai to username tou
 
+
         if ($usergroup_id == 1 ) { //einai administrator
-            setcookie('admin','admin');
+            setcookie('admin', 'admin');
             header("Location: admin_panel/admin.php");   // sti synexeia katefthine ton sti selida show_user kai pare mazi to cookie user_id
 
             exit();  //telos selidas
         }
-        else{ //einai pelatis
-            
+        else { //einai pelatis
+            setcookie('user', 'user');
+			header("Location: user_panel.php");
         }
 
 	

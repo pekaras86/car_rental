@@ -66,11 +66,11 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class=""><a href="index.php">Home</a></li>
-			  <li class=""><a href="">Our Fleet</a></li>
-			  <li class=""><a href="">Car Stations</a></li>
-			  <li class=""><a href="">Terms & Conditions</a></li>
-			  <li class=""><a href="">Contact us</a></li>
-			  <li class="active"><a href="">User Panel</a></li>
+			  <li class=""><a href="car_types.php">Our Fleet</a></li>
+			  <li class=""><a href="car_stations.php">Car Stations</a></li>
+			  <li class=""><a href="terms_conditions.php">Terms & Conditions</a></li>
+			  <li class=""><a href="contact_us.php">Contact us</a></li>
+			  <li class="active"><a href="#">User Panel</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 			<?php

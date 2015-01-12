@@ -721,6 +721,8 @@ echo <<<EOD
 EOD;
 			  if (isset($_COOKIE['admin'])) {
 			    echo "<li class=''><a href='admin_panel/admin.php'>Admin Panel</a></li>";
+			  } else if (isset($_COOKIE['user'])) {
+			    echo "<li class=''><a href='user_panel.php'>User Panel</a></li>";
 			  }
 echo <<<EOD
             </ul>

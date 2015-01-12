@@ -1,4 +1,15 @@
 <?php
+
+//ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi
+//anakatefthine ton stin kentriki
+if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
+{
+    header("Location: index.php");
+    exit();
+}
+
+//setcookie('car_id',$_REQUEST['car_id']);
+
   
   require_once ('scripts/database_connection.php');
   require_once ('scripts/db_cars.php');
@@ -11,17 +22,13 @@
   $tag = "home";
   display_navbar($tag);
   
-  //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi 
-  //anakatefthine ton stin kentriki
-  if (!isset($_REQUEST['car_id']))
-  {
-    header("Location: index.php");
-    exit();
-  }
+
   
   
   //eksagoume ta xaraktiristika tou sygekrienou amaksiou
-  $car_id = $_REQUEST['car_id'];
+  //$car_id = $_REQUEST['car_id'];
+  $car_id = $_COOKIE['car_id'];
+
 
   $result = getCarByID($con, $car_id);
 
@@ -232,7 +239,7 @@ EOD;
 		} else {
 		  $warning_message = 'You must log in to continue!';
 		  echo <<<EOD
-		  <form method="post" action="log_in_form.php?warning_message={$warning_message}" role="form" id="conorform">
+		  <form method="post" action="log_in_form.php?source=order" role="form" id="conorform">
 		    <input class="btn btn-info btn-block" type="submit" value="Confirm Order" name="saveorder" style="width:150px;">   
 		  </form>
 EOD;

@@ -1,9 +1,9 @@
 <?php
 
-require_once 'scripts/app_config.php';
-require_once 'scripts/database_connection.php';
+require_once '../scripts/app_config.php';
+require_once '../scripts/database_connection.php';
 
-$upload_dir = "images/cars/";
+$upload_dir = "../images/cars/";
 $image_fieldname = "cimg";
 
 // array me ta pithana lathi kata to anevasma tis picture
@@ -96,7 +96,7 @@ mysqli_query($con, $insert_car_characteristics);
 
 $success_message = "{$car_name} added successfully!";
 
-header("Location: newcar.php?" .
+header("Location: cartypes.php?" .
          "success_message={$success_message}");
 exit();
 

@@ -17,7 +17,7 @@ define("DATABASE_PASSWORD", "user");
 define("DATABASE_NAME", "thessaloniki_car_rental");
 
 // to SITE ROOT tis efarmogis
-define("SITE_ROOT", "/git_projects/car_rental/");
+define("SITE_ROOT", "/car_rental/");
 
 
 // anakatefthinsi sto error_page

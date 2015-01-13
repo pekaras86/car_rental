@@ -31,6 +31,8 @@ function display_head($page_title = ""){
             <!-- Custom CSS -->
             <link href="admin_components/sb-admin2/sb-admin-2.css" rel="stylesheet">
 
+            <link href="../bootstrap-3.3.1/css/custom-css.css" rel="stylesheet">
+
             <!-- Custom Fonts -->
             <link href="admin_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 

@@ -205,7 +205,7 @@ EOD;
 		if ($num_rows == 0) {
               echo <<<EOD
 				<tr>
-				  <td colspan="10">Den yparxoun kratiseis gia to sygekrimeno logariasmo</td>
+				  <td colspan="10">No Reservations so far</td>
 				</tr>
 EOD;
         }

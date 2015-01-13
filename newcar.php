@@ -93,7 +93,7 @@ if (isset($_REQUEST['success_message'])) {
 EOD;
 		  }
 		  ?>
-		  <form method="post" action="add_new_car.php" name="addcar" enctype="multipart/form-data">
+		  <form method="post" action="admin_panel/add_new_car.php" name="addcar" enctype="multipart/form-data">
 		   <div class="form-group">
 		    <table class="addcar">
 			  <tbody>

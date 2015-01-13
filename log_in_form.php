@@ -164,9 +164,9 @@ EOD;
                         <input type="submit" name="button" class="btn btn-info btn-block" value="LogIn">
                     </form>
 
-                    <div class="login-help">
+                    <!--<div class="login-help">
                         <a href="#">Forgot Password</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-md-4">

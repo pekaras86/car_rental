@@ -5,7 +5,7 @@
   require_once ('admin_panel/db.php');
 
 
-setcookie('dropoff_location', '', time()-(365*24*60*60));
+setcookie('pickup_date', '', time()-(365*24*60*60));
 setcookie('dropoff_date', '', time()-(365*24*60*60));
 setcookie('dropoff_location', '', time()-(365*24*60*60));
 setcookie('car_id', '', time()-(365*24*60*60));

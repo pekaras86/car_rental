@@ -6,6 +6,9 @@
  * Time: 2:59 μμ
  */
 
+function getAvailableCarTypesAPI($dbcon, $pickup_location, $pickup_date, $dropoff_date, $category){
+    return getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_date, $category, "", "");
+}
 
 function getAvailableCarTypes($dbcon, $pickup_location, $pickup_date, $dropoff_date, $category, $order_by, $limitation="") {
 

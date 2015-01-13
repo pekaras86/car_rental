@@ -76,7 +76,7 @@ display_navbar($tag);
                                     <th>Days</th>
                                     <th>Total</th>
                                     <th>Status</th>
-                                    <th>Delete</th>
+                                   <!-- <th>Delete</th> -->
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -135,7 +135,7 @@ display_navbar($tag);
 				  <td>{$total_days}</td>
 				  <td>{$reserv_row['amount']}</td>
 				  <td style="color:{$color};">{$status_txt}</td>
-				  <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td>
+				 <!-- <td style="text-align:center;"><img src="../images/other/delete.png" width="15" /></a></td> -->
 				 </tr>
 EOD;
                                 }
@@ -157,7 +157,9 @@ EOD;
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
     <script>
     $(document).ready( function () {
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+        "order": [[ 0, "desc" ]]
+    });
 
     });
     </script>

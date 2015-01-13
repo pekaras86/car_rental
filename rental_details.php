@@ -164,7 +164,7 @@ $type_row = mysqli_fetch_array($type_result);
 					  <span style="color:<?php echo $status_color; ?>"><?php echo $status_txt; ?></span>
 					  </div>
 					  <div class="statusbutton">
-					    <a href="admin_panel/admin.php?status=<?php echo $change_status_value; ?>&reserv_id=<?php echo $reserv_id; ?>"><button type="button" class="btn <?php echo $change_status_button; ?>"><?php echo $change_status; ?></button></a>
+					    <a href="admin_panel/last_reservations.php?status=<?php echo $change_status_value; ?>&reserv_id=<?php echo $reserv_id; ?>"><button type="button" class="btn <?php echo $change_status_button; ?>"><?php echo $change_status; ?></button></a>
 					  </div>
 					</td>
 				  </tr>
@@ -204,7 +204,7 @@ $type_row = mysqli_fetch_array($type_result);
 					 </div>
 					 <br>
 					 <p class="totaleur"><b>Total: EUR <?php echo $reserv_row['amount']; ?></b></p>
-					 <p><a href="admin_panel/admin.php"><img src="images/other/left_arrow.png" alt="" style="width:50px;"></a></p>
+					 <p><a href="admin_panel/last_reservations.php"><img src="images/other/left_arrow.png" alt="" style="width:50px;"></a></p>
 				   </td>
 				  </tr>
 				</tbody>

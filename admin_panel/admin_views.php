@@ -20,7 +20,7 @@ function display_head($page_title = ""){
             <meta name="description" content="">
             <meta name="author" content="">
 
-            <title>SB Admin 2 - Bootstrap Admin Theme</title>
+            <title>Thessaloniki Car Rental Administrator panel</title>
 
             <!-- Bootstrap Core CSS -->
             <link href="../bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet">

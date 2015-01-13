@@ -84,8 +84,8 @@ function getCarItems($dbcon){
 function getReservationsCountbyDate($dbcon, $date){
     $query = "select count(*) from reservations where date(reserv_date) ='" . $date . "'";
     $result = mysqli_query($dbcon, $query);
-
-    return mysqli_fetch_row($result)[0];
+    $row =  mysqli_fetch_row($result);
+    return $row[0];
 }
 
 function getMonthReservationsCountbyDate($dbcon, $date){
@@ -95,7 +95,8 @@ function getMonthReservationsCountbyDate($dbcon, $date){
 
     $query = "select count(*) from reservations where date(reserv_date) BETWEEN '" . $from . "' AND '" . $to . "'";
     $result = mysqli_query($dbcon, $query);
-    return mysqli_fetch_row($result)[0];
+    $row = mysqli_fetch_row($result);
+    return $row[0];
 }
 
 function getWeekReservationsCountbyDate($dbcon, $date){
@@ -105,7 +106,9 @@ function getWeekReservationsCountbyDate($dbcon, $date){
 
     $query = "select count(*) from reservations where date(reserv_date) BETWEEN '" . $from . "' AND '" . $to . "'";
     $result = mysqli_query($dbcon, $query);
-    return mysqli_fetch_row($result)[0];
+
+    $row = mysqli_fetch_row($result);
+    return $row[0];
 }
 
 

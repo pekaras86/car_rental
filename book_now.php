@@ -35,8 +35,6 @@ setcookie('car_id', $car['id']);
   // Requires the navbar
   $tag = "home";
   display_navbar($tag);
-  
-
 
   $car_id		       = $car['id'];
   $car_name 	       = $car['name'];

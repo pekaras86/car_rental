@@ -105,9 +105,7 @@ if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
     $fullOrStan = 0;
   }
   
-  //posa pliromis
-  $tax = 17.36;
-  $total_cost = $fullOrStan + $tax;
+
   
   
   // difference in days from american format to european format
@@ -130,6 +128,12 @@ if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
   
   $diff = dateDifference($pickup_date, $dropoff_date);
 
+//posa pliromis
+
+$tax = ($fullOrStan * $diff) * 0.23;
+$total_cost = $fullOrStan * $diff + $tax;
+
+
 ?>
 
     <!-- Main component for a primary marketing message or call to action -->
@@ -144,10 +148,10 @@ if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
             </p>
 		    <div class="vrcrentalfortwo">
 			  <p>
-                 <span class="vrcrentalfordate">From <span style="color:green;"><?php echo $pickup_date; ?> 00:00</span></span>
+                 <span class="vrcrentalfordate">From <span style="color:green;"><?php echo $pickup_date; ?></span></span>
 			  </p>
 			  <p>
-                 <span class="vrcrentalfordate">To <span style="color:green;"><?php echo $dropoff_date; ?> 00:00</span></span>
+                 <span class="vrcrentalfordate">To <span style="color:green;"><?php echo $dropoff_date; ?></span></span>
 			  </p>
 			</div>
 			<div class="vrclocsboxsum">

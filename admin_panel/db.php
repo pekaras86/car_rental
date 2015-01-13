@@ -66,7 +66,8 @@ function getCarTypesOptions($dbcon){
 
 
 function updateCarType($dbcon, $name, $description, $pic_path, $price, $id) {
-    return mysqli_query($dbcon, "UPDATE car_types SET name = '" . $name . "', description = '" . $description . "', pic_path = " . $pic_path . ", price=" . $price . " WHERE id = " . $id . ";");
+    $query = "UPDATE car_types SET name = '" . $name . "', description = '" . $description . "', pic_path = '" . $pic_path . "', price=" . $price . " WHERE id = " . $id . ";";
+    return mysqli_query($dbcon, $query ) or die(mysqli_error($dbcon));
 }
 
 function deleteCarType($dbcon, $id){

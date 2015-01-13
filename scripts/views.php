@@ -723,6 +723,7 @@ echo <<<EOD
             <ul class="nav navbar-nav navbar-right">
 EOD;
 		if (isset($_COOKIE['user_id'])) {
+		 echo "<li><a href=''>Welcome {$_COOKIE['username']}</a>";
          echo "<li><a href='logout.php'>Log Out</a>";
         } else {
          echo "<li class='{$logIn}'><a href='log_in_form.php'>Log In</a></li>";

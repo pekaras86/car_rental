@@ -2,7 +2,7 @@
   
   //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi 
   //anakatefthine ton stin kentriki
-  if (!isset($_REQUEST['category']))
+  if (!isset($_POST['category']))
   {
     header("Location: index.php");
     exit();
@@ -14,33 +14,29 @@
   require_once ('scripts/views.php');
 
 
-setcookie('pickup_date', '', time()-(365*24*60*60));
-setcookie('dropoff_date', '', time()-(365*24*60*60));
-setcookie('dropoff_location', '', time()-(365*24*60*60));
-
 
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");
 
   // ta setcookie ginontai nwris giati alliws emfanizei sfalma "Headers already sent"
-	setcookie('dropoff_location', $_REQUEST['dropoff_location']);
-	setcookie('pickup_date', $_REQUEST['pickup_date']);
-	setcookie('dropoff_date', $_REQUEST['dropoff_date']);
+	setcookie('dropoff_location', $_POST['dropoff_location']);
+	setcookie('pickup_date', $_POST['pickup_date']);
+	setcookie('dropoff_date', $_POST['dropoff_date']);
 	setcookie('car_id', '', time()-(365*24*60*60));
-  
+
   // Requires the navbar
   $tag = "home";
   display_navbar($tag);
 
-      if (!isset($_REQUEST['pass_sel_page'])) {
+      if (!isset($_POST['pass_sel_page'])) {
 	  $pagenum = 1;
   } else {
-	  $pagenum = $_REQUEST['pass_sel_page'];
+	  $pagenum = $_POST['pass_sel_page'];
   }
 
-  if (!empty($_REQUEST['hidden'])) {
-	  $srt = $_REQUEST['hidden'];
+  if (!empty($_POST['hidden'])) {
+	  $srt = $_POST['hidden'];
   } else {
 	  $srt = "price ascending";
   }
@@ -51,8 +47,8 @@ setcookie('dropoff_location', '', time()-(365*24*60*60));
 	  $order_by = "ASC";
   }
 
-  if (!empty($_REQUEST['pass_cap'])) {
-	  $cars_per_page = $_REQUEST['pass_cap'];
+  if (!empty($_POST['pass_cap'])) {
+	  $cars_per_page = $_POST['pass_cap'];
 	  if ($cars_per_page < 2) {$cars_per_page = 2;} elseif ($cars_per_page > 5) {$cars_per_page = 5;}
   } else {
 	  $cars_per_page = 5;
@@ -161,11 +157,11 @@ EOD;
 
 
 	  // pianei ta stoixeia apo ti forma	   
-	  $category = $_REQUEST['category'];
-	  $pickup_location = $_REQUEST['pickup_location'];
-	  $dropoff_location = $_REQUEST['dropoff_location'];
-	  $pickup_date = $_REQUEST['pickup_date'];
-	  $dropoff_date = $_REQUEST['dropoff_date'];
+	  $category = $_POST['category'];
+	  $pickup_location = $_POST['pickup_location'];
+	  $dropoff_location = $_POST['dropoff_location'];
+	  $pickup_date = $_POST['pickup_date'];
+	  $dropoff_date = $_POST['dropoff_date'];
 
 	  // dimiourgia query anazitisis sti vasi
 
@@ -448,14 +444,14 @@ EOD;
 ?>
 
 <script type="text/javascript">
-	document.getElementById('pickup_location').value = "<?php echo $_REQUEST['pickup_location'];?>";
-	document.getElementById('dropoff_location').value = "<?php echo $_REQUEST['dropoff_location'];?>";
-	document.getElementById('car-category').value = "<?php echo $_REQUEST['category'];?>";
-	document.getElementById('datepicker1').value = "<?php echo $_REQUEST['pickup_date'];?>";
-	document.getElementById('datepicker2').value = "<?php echo $_REQUEST['dropoff_date'];?>";
-	document.getElementById('timepicker1').value = "<?php echo $_REQUEST['pickup_time'];?>";
-	document.getElementById('timepicker2').value = "<?php echo $_REQUEST['dropoff_time'];?>";
-	document.getElementById('hidden').value = "<?php echo $_REQUEST['hidden'];?>";
+	document.getElementById('pickup_location').value = "<?php echo $_POST['pickup_location'];?>";
+	document.getElementById('dropoff_location').value = "<?php echo $_POST['dropoff_location'];?>";
+	document.getElementById('car-category').value = "<?php echo $_POST['category'];?>";
+	document.getElementById('datepicker1').value = "<?php echo $_POST['pickup_date'];?>";
+	document.getElementById('datepicker2').value = "<?php echo $_POST['dropoff_date'];?>";
+	document.getElementById('timepicker1').value = "<?php echo $_POST['pickup_time'];?>";
+	document.getElementById('timepicker2').value = "<?php echo $_POST['dropoff_time'];?>";
+	document.getElementById('hidden').value = "<?php echo $_POST['hidden'];?>";
 </script>
 
 <script>

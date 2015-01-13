@@ -71,7 +71,7 @@ if (!isset($_COOKIE['user_id'])) {
             }
 
         }
-    }  else { //register was pressed
+    } /* else { //register was pressed
         if (isset($_POST['first_name'])) { //elegxe an sumplirose
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
@@ -122,7 +122,7 @@ if (!isset($_COOKIE['user_id'])) {
            }
 
         }
-    } 
+    } */
 
     // Requires the navbar
     $tag = "logIn";

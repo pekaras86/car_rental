@@ -80,6 +80,11 @@ function display_navbar($tag = NULL)
             $carItems = "active";
             break;
     }
+
+    if (isset($_COOKIE['admin'])){
+        $username = $_COOKIE['username'];
+    }
+
     echo <<<EOD
         <body>
 
@@ -104,7 +109,7 @@ function display_navbar($tag = NULL)
                             <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                             <li><a href="#"><i class="fa fa-user fa-fw"></i> Hi, </a>
+                             <li><a href="#"><i class="fa fa-user fa-fw"></i> Hi, {$username}</a>
                             </li>
                             <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li> -->

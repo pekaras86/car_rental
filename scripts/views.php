@@ -1,8 +1,10 @@
-<?php 
+<?php
+
+
 
 // Requires the <HEAD></HEAD> part of a page
 function display_head($page_title = "") {
-  
+
   echo <<<EOD
   <!DOCTYPE html>
   <html lang="en">

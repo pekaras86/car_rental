@@ -230,10 +230,10 @@ EOD;
 			$('#carLocationsTableContainer').jtable({
 				title: 'Car Locations',
 				actions: {
-					listAction: 'carLocationsActions.php?action=list',
-					createAction: 'carLocationsActions.php?action=create',
-					updateAction: 'carLocationsActions.php?action=update',
-					deleteAction: 'carLocationsActions.php?action=delete'
+					listAction: 'carTypesActions.php?action=list',
+					createAction: 'carTypesActions.php?action=create',
+					updateAction: 'carTypesActions.php?action=update',
+					deleteAction: 'carTypesActions.php?action=delete'
 				},
 				fields: {
 					id: {

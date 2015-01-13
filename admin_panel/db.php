@@ -11,6 +11,10 @@ function getCarLocations($dbcon){
     return mysqli_query($dbcon, "SELECT * FROM car_locations;");
 }
 
+function getCarLocationsOptions($dbcon){
+    return mysqli_query($dbcon, "SELECT name as DisplayText, id as Value FROM car_locations;");
+}
+
 function insertCarLocations($dbcon, $name, $description, $lat, $long){
     return mysqli_query($dbcon, "INSERT INTO car_locations(name, description, lat, `long`) " .
                                  "VALUES('" . $name . "', '" . $description . "', " . $lat . ", " . $long . ");");
@@ -49,4 +53,21 @@ function updateCarCategory($dbcon, $name, $id) {
 function deleteCarCategory($dbcon, $id){
     return mysqli_query($dbcon, "DELETE FROM car_categories WHERE id = " . $id . ";");
 }
+
+/* =========== CarTypes ================== */
+function getCarTypes($dbcon){
+    return mysqli_query($dbcon, "SELECT * FROM car_types;");
+}
+
+function getCarTypesOptions($dbcon){
+    return mysqli_query($dbcon, "SELECT name as DisplayText, id as Value FROM car_types;");
+}
+
+
+
+/* =========== CarItems ================== */
+function getCarItems($dbcon){
+    return mysqli_query($dbcon, "SELECT * FROM car_items limit 100;");
+}
+
 

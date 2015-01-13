@@ -6,7 +6,7 @@ require_once ('admin_views.php');
 display_head("Thessaloniki Car Rentals Administration");
 
 // Requires the navbar
-$tag = "carLocations";
+$tag = "caTypes";
 display_navbar($tag);
 
 ?>
@@ -16,20 +16,20 @@ display_navbar($tag);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="carLocationsTableContainer" style="width: 600px; margin-top: 10px"></div>
+                    <div id="carItemsTableContainer" style="margin-top: 10px"></div>
 
                             <script type="text/javascript">
 
                                 $(document).ready(function () {
 
                                     //Prepare jTable
-                                    $('#carLocationsTableContainer').jtable({
-                                        title: 'Car Locations',
+                                    $('#carItemsTableContainer').jtable({
+                                        title: 'Car Items',
                                         actions: {
-                                            listAction: 'ajax_scripts/carLocationsActions.php?action=list',
-                                            createAction: 'ajax_scripts/carLocationsActions.php?action=create',
-                                            updateAction: 'ajax_scripts/carLocationsActions.php?action=update',
-                                            deleteAction: 'ajax_scripts/carTypesActions.php?action=delete'
+                                            listAction: 'ajax_scripts/carItemsActions.php?action=list',
+                                            createAction: 'ajax_scripts/carItemsActions.php?action=create',
+                                            updateAction: 'ajax_scripts/carItemsActions.php?action=update',
+                                            deleteAction: 'ajax_scripts/carItemsActions.php?action=delete'
                                         },
                                         fields: {
                                             id: {
@@ -38,31 +38,27 @@ display_navbar($tag);
                                                 edit: false,
                                                 list: false
                                             },
-                                            name: {
-                                                title: 'Location Name',
-                                                width: '30%'
+                                            plate_number: {
+                                                title: 'Plate Number',
+                                                width: '10%'
                                             },
-                                            description: {
-                                                title: 'Description',
+                                            car_type_id: {
+                                                title: 'Car Type',
                                                 width: '30%',
-                                                defaultValue: null // defaultvalue: null simainei oti to pedio den einai ypoxrewtiko
+                                                options: 'ajax_scripts/carItemsActions.php?action=getCarTypes'
                                             },
-                                            lat: {
-                                                title: 'Latitude',
-                                                width: '20%',
-                                                defaultValue: 0
-
-                                            },
-                                            long: {
-                                                title: 'Longitude',
-                                                width: '20%',
-                                                defaultValue: 0
+                                            location_ID: {
+                                                title: 'Car Location',
+                                                width: '30%',
+                                                options: 'ajax_scripts/carItemsActions.php?action=getCarLocations'
                                             }
+
+
                                         }
                                     });
 
                                     //Load person list from server
-                                    $('#carLocationsTableContainer').jtable('load');
+                                    $('#carItemsTableContainer').jtable('load');
 
                                 });
 

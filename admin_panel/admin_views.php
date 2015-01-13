@@ -1,8 +1,13 @@
 <?php
 
 // Requires the <HEAD></HEAD> part of a page
-function display_head($page_title = "")
-{
+function display_head($page_title = ""){
+
+    if (!isset($_COOKIE['user_id'])){ //an den exei kanei login tote pigaine sto index.php
+        header("Location: ../index.php");
+        exit;
+    }
+
     echo <<<EOD
         <!DOCTYPE html>
         <html lang="en">
@@ -59,6 +64,7 @@ function display_navbar($tag = NULL)
     $lastReservations = NULL;
     $carTypes = NULL;
     $carItems = NULL;
+    $newcar = NULL;
 
     switch($tag) {
         case "dashboard":
@@ -76,13 +82,20 @@ function display_navbar($tag = NULL)
         case "carTypes":
             $carTypes = "active";
             break;
+        case "newcar":
+            $newcar = "active";
+            break;
         case "carItems":
             $carItems = "active";
             break;
     }
 
-    if (isset($_COOKIE['admin'])){
+    if (isset($_COOKIE['admin'])) {
         $username = $_COOKIE['username'];
+    }
+    else
+    {
+        $username = '';
     }
 
     echo <<<EOD
@@ -136,10 +149,13 @@ function display_navbar($tag = NULL)
                                 <a href="#"><i class="fa fa-table fa-fw"></i> Cars<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li class="<?php {$carTypes} ?>">
-                                        <a href="car_types.php">Car Types</a>
+                                        <a href="cartypes.php">Car Types</a>
+                                    </li>
+                                    <li class="<?php {$newcar} ?>">
+                                        <a href="newcar_type.php">New Car Type</a>
                                     </li>
                                     <li class="<?php {$carItems} ?>">
-                                        <a href="car_items.php">Car Items</a>
+                                        <a href="carItems.php">Car Items</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
@@ -151,7 +167,7 @@ function display_navbar($tag = NULL)
                                         <a href="carlocations.php">Car Locations</a>
                                     </li>
                                     <li class="<?php {$carCategories} ?>">
-                                        <a href="car_categories.php">Car Categories</a>
+                                        <a href="carcategories.php">Car Categories</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

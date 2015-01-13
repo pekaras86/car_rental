@@ -6,7 +6,7 @@ require_once ('admin_views.php');
 display_head("Thessaloniki Car Rentals Administration");
 
 // Requires the navbar
-$tag = "carLocations";
+$tag = "caTypes";
 display_navbar($tag);
 
 ?>
@@ -16,19 +16,19 @@ display_navbar($tag);
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="carLocationsTableContainer" style="width: 600px; margin-top: 10px"></div>
+                    <div id="carTypesTableContainer" style="margin-top: 10px"></div>
 
                             <script type="text/javascript">
 
                                 $(document).ready(function () {
 
                                     //Prepare jTable
-                                    $('#carLocationsTableContainer').jtable({
-                                        title: 'Car Locations',
+                                    $('#carTypesTableContainer').jtable({
+                                        title: 'Car Types',
                                         actions: {
-                                            listAction: 'ajax_scripts/carLocationsActions.php?action=list',
-                                            createAction: 'ajax_scripts/carLocationsActions.php?action=create',
-                                            updateAction: 'ajax_scripts/carLocationsActions.php?action=update',
+                                            listAction: 'ajax_scripts/carTypesActions.php?action=list',
+                                            //createAction: 'ajax_scripts/carTypesActions.php?action=create',
+                                            updateAction: 'ajax_scripts/carTypesActions.php?action=update',
                                             deleteAction: 'ajax_scripts/carTypesActions.php?action=delete'
                                         },
                                         fields: {
@@ -39,30 +39,30 @@ display_navbar($tag);
                                                 list: false
                                             },
                                             name: {
-                                                title: 'Location Name',
+                                                title: 'Car Type Name',
                                                 width: '30%'
+                                            },
+                                            pic_path: {
+                                                title: 'pic_path',
+                                                width: '20%'
                                             },
                                             description: {
                                                 title: 'Description',
                                                 width: '30%',
                                                 defaultValue: null // defaultvalue: null simainei oti to pedio den einai ypoxrewtiko
                                             },
-                                            lat: {
-                                                title: 'Latitude',
+                                            price: {
+                                                title: 'Price',
                                                 width: '20%',
                                                 defaultValue: 0
 
-                                            },
-                                            long: {
-                                                title: 'Longitude',
-                                                width: '20%',
-                                                defaultValue: 0
                                             }
+
                                         }
                                     });
 
                                     //Load person list from server
-                                    $('#carLocationsTableContainer').jtable('load');
+                                    $('#carTypesTableContainer').jtable('load');
 
                                 });
 

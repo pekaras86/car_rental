@@ -1,7 +1,7 @@
 <?php
 
-require_once('../scripts/database_connection.php');
-require_once('db.php');
+require_once('../../scripts/database_connection.php');
+require_once('../db.php');
 
 try
 {
@@ -10,7 +10,7 @@ try
 	if($_GET["action"] == "list")
 	{
 		//Get records from database
-		$result = getCarLocations($con);
+		$result = getCarItems($con);
 		
 		//Add all records to an array
 		$rows = array();
@@ -62,6 +62,42 @@ try
 		//Return result to jTable
 		$jTableResult = array();
 		$jTableResult['Result'] = "OK";
+		print json_encode($jTableResult);
+	}
+	else if($_GET["action"] == "getCarTypes")
+	{
+		//Get records from database
+		$result = getCarTypesOptions($con);
+
+		//Add all records to an array
+		$rows = array();
+		while($row = mysqli_fetch_array($result))
+		{
+			$rows[] = $row;
+		}
+
+		//Return result to jTable
+		$jTableResult = array();
+		$jTableResult['Result'] = "OK";
+		$jTableResult['Options'] = $rows;
+		print json_encode($jTableResult);
+	}
+	else if($_GET["action"] == "getCarLocations")
+	{
+		//Get records from database
+		$result = getCarLocationsOptions($con);
+
+		//Add all records to an array
+		$rows = array();
+		while($row = mysqli_fetch_array($result))
+		{
+			$rows[] = $row;
+		}
+
+		//Return result to jTable
+		$jTableResult = array();
+		$jTableResult['Result'] = "OK";
+		$jTableResult['Options'] = $rows;
 		print json_encode($jTableResult);
 	}
 

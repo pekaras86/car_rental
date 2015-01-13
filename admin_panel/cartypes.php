@@ -44,11 +44,13 @@ display_navbar($tag);
                                             },
                                             pic_path: {
                                                 title: 'pic_path',
+                                                type: 'textarea',
                                                 width: '20%'
                                             },
                                             description: {
                                                 title: 'Description',
                                                 width: '30%',
+                                                type: 'textarea',
                                                 defaultValue: null // defaultvalue: null simainei oti to pedio den einai ypoxrewtiko
                                             },
                                             price: {

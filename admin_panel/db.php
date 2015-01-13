@@ -71,3 +71,58 @@ function getCarItems($dbcon){
 }
 
 
+/* ================ Reservations count ============================== */
+function getReservationsCountbyDate($dbcon, $date){
+    $query = "select count(*) from reservations where date(reserv_date) ='" . $date . "'";
+    $result = mysqli_query($dbcon, $query);
+
+    return mysqli_fetch_row($result)[0];
+}
+
+function getMonthReservationsCountbyDate($dbcon, $date){
+
+    $from = date('Y-m-01', strtotime($date));
+    $to = date('Y-m-t', strtotime($date));
+
+    $query = "select count(*) from reservations where date(reserv_date) BETWEEN '" . $from . "' AND '" . $to . "'";
+    $result = mysqli_query($dbcon, $query);
+    return mysqli_fetch_row($result)[0];
+}
+
+function getWeekReservationsCountbyDate($dbcon, $date){
+
+    $from = getWeekDates(getYearOfDate($date), getWeekIndexByDate($date));
+    $to = getWeekDates(getYearOfDate($date), getWeekIndexByDate($date),false);
+
+    $query = "select count(*) from reservations where date(reserv_date) BETWEEN '" . $from . "' AND '" . $to . "'";
+    $result = mysqli_query($dbcon, $query);
+    return mysqli_fetch_row($result)[0];
+}
+
+
+/* ===================== date functions =============================== */
+function getWeekIndexByDate($date){
+    $week =  date('W', strtotime($date));
+    return $week;
+}
+function getYearOfDate($date){
+    $year =  date('Y', strtotime($date));
+    return $year;
+}
+
+function getWeekDates($year, $week, $start=true, $format=1){
+    if ($format == 1) {
+        $from = date("Y-m-d", strtotime("{$year}-W{$week}-1")); //Returns the date of monday in week
+        $to = date("Y-m-d", strtotime("{$year}-W{$week}-7"));   //Returns the date of sunday in week
+    }else{
+        $from = date("d/m/Y", strtotime("{$year}-W{$week}-1")); //Returns the date of monday in week
+        $to = date("d/m/Y", strtotime("{$year}-W{$week}-7"));   //Returns the date of sunday in week
+    }
+    if($start) {
+        return $from;
+    } else {
+        return $to;
+    }
+    //return "Week {$week} in {$year} is from {$from} to {$to}.";
+}
+

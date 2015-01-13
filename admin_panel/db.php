@@ -59,11 +59,19 @@ function getCarTypes($dbcon){
     return mysqli_query($dbcon, "SELECT * FROM car_types;");
 }
 
+
 function getCarTypesOptions($dbcon){
     return mysqli_query($dbcon, "SELECT name as DisplayText, id as Value FROM car_types;");
 }
 
 
+function updateCarType($dbcon, $name, $description, $pic_path, $price, $id) {
+    return mysqli_query($dbcon, "UPDATE car_types SET name = '" . $name . "', description = '" . $description . "', pic_path = " . $pic_path . ", price=" . $price . " WHERE id = " . $id . ";");
+}
+
+function deleteCarType($dbcon, $id){
+    return mysqli_query($dbcon, "DELETE FROM car_types WHERE id = " . $id . ";");
+}
 
 /* =========== CarItems ================== */
 function getCarItems($dbcon){

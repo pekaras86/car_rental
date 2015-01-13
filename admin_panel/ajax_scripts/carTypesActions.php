@@ -46,7 +46,7 @@ try
 	else if($_GET["action"] == "update")
 	{
 		//Update record in database
-		$result = updateCarLocation($con, $_POST["name"], $_POST["description"], $_POST["lat"], $_POST["long"], $_POST["id"]);
+		$result = updateCarType($con, $_POST["name"], $_POST["description"], $_POST["pic_path"], $_POST["price"], $_POST["id"]);
 
 		//Return result to jTable
 		$jTableResult = array();
@@ -57,7 +57,7 @@ try
 	else if($_GET["action"] == "delete")
 	{
 		//Delete from database
-		$result = deleteCarLocation($con, $_POST["id"]);
+		$result = deleteCarType($con, $_POST["id"]);
 
 		//Return result to jTable
 		$jTableResult = array();

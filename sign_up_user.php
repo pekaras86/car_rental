@@ -8,7 +8,7 @@ require_once ('scripts/views.php');
 $username = $_POST['email'];
 setcookie('username', $username);
 $password = $_POST['password'];
-//setcookie('password', $password);
+setcookie('password', $password);
 /*
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];

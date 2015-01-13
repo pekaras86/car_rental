@@ -12,7 +12,6 @@
   require_once ('admin_panel/db.php');
   require_once ('scripts/db_cars.php');
   require_once ('scripts/views.php');
-  
 
   
   // Requires the <HEAD></HEAD> part of the page

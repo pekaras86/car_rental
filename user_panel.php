@@ -115,7 +115,7 @@ $num_rows = mysqli_num_rows($result);  // elegkse ean yparxoun kataxwriseis
 	  <div>
 	  <div><b>Last Name:</b> <?php echo $custom_rows['lastname']; ?></div>
 	  <div><b>Name:</b> <?php echo $custom_rows['name']; ?></div>
-	  <!--<div><b>Email:</b> <?php /*echo $custom_rows['email']; */?></div> -->
+	  <b>Email:</b> <?php echo $custom_rows['email']; ?></div>
 	  <div><b>Phone:</b> <?php echo $custom_rows['phone']; ?></div>
 	  </div>
 	  <div>

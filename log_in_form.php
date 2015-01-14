@@ -26,8 +26,8 @@ if (!isset($_COOKIE['user_id'])) {
         //elegkse ean o user symplirose ti forma
         if (isset($_POST['user'])) {
 
-            $username = mysqli_real_escape_string($con, trim($_REQUEST['user']));
-            $password = mysqli_real_escape_string($con, trim($_REQUEST['pass']));
+            $username = mysqli_real_escape_string($con, trim($_POST['user']));
+            $password = mysqli_real_escape_string($con, trim($_POST['pass']));
 
             //psakse ton user ston pinaka admins
             $query = sprintf("SELECT users.id, username, usergroups.id as usergroup_id FROM users " .
@@ -133,9 +133,9 @@ if (!isset($_COOKIE['user_id'])) {
     <div class="container" style="margin-bottom:20px;">
 
         <?php
-        if (isset($_REQUEST['error_message'])) {
+        if (isset($_POST['error_message'])) {
             echo <<<EOD
-                     <span class="error_message"><b>{$_REQUEST['error_message']}</b></span>
+                     <span class="error_message"><b>{$_POST['error_message']}</b></span>
                      <p></p>
 EOD;
         }

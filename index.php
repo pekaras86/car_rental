@@ -127,7 +127,7 @@ EOD;
 				<a href="#" title="SUZUKI Grand Vitara"><img src="data1/tooltips/suzukigrandvitara.jpg" alt="SUZUKI Grand Vitara"/>3</a>
 				<a href="#" title="SKODA Fabia"><img src="data1/tooltips/skodafabia.jpg" alt="SKODA Fabia"/>4</a>
 				<a href="#" title="CHEVROLET Cruze"><img src="data1/tooltips/14176953892014chevroletcruzemodeloverviewecocntwell1648x31602.jpg" alt="CHEVROLET Cruze"/>5</a>
-			</div></div><span class="wsl"><a href="http://wowslider.com/vu">image carousel</a> by WOWSlider.com v7.4</span>
+			</div></div>
 			<div class="ws_shadow"></div>
 		</div>	
 

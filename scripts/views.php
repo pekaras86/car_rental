@@ -149,8 +149,8 @@ echo <<<EOD
 							        </div><!-- /.picture-wrapper -->
 
 							        <div class="content-wrapper col-lg-8 col-md-8 col-sm-8 col-xs-8">
-							            <div class="price">9,799 &euro;</div>
-							            <p>description description description description description description description description.</p>
+							            <div class="price">From 80 &euro; / day</div>
+							            <p>The Toyota Highlander is a midsize crossover SUV produced by Toyota.</p>
 							        </div><!-- /.picture-content -->
 							    </div><!-- /.row -->
 							</div><!-- /.teaser-item -->
@@ -177,8 +177,8 @@ echo <<<EOD
 							        </div><!-- /.picture-wrapper -->
 
 							        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 content-wrapper">
-							            <div class="price">9,799 &euro;</div>
-							            <p>description description description description description description description description.</p>
+							            <div class="price">From 100 &euro; / day</div>
+							            <p>The Suzuki Vitara is a compact sport utility and off-road vehicle produced by Suzuki since 1988. A larger mid-size version is also made, known as the Suzuki Grand Vitara.</p>
 							        </div><!-- /.content-wrapper -->
 							    </div><!-- /.row -->
 							</div><!-- /.teaser-item -->

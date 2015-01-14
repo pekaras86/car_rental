@@ -67,7 +67,7 @@ if (!isset($_COOKIE['user_id'])) {
                 //ean den yparxei ston pinaka kane anakatefthinsi edw me error message
 
                 $error_message = "Your username/password combination was invalid.";
-                header("Location: log_in_form.php?error_message={$error_message}");
+                header("Location: log_in_form.php?error_message={$error_message}" . $query);
             }
 
         }

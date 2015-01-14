@@ -2,7 +2,7 @@
 
 //ean mpei o xristis se afti ti selida xwris na exei epileksei amaksi
 //anakatefthine ton stin kentriki
-if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
+if (!isset($_POST['car_id']) && !isset($_COOKIE['car_id']))
 {
     header("Location: index.php");
     exit();
@@ -14,17 +14,8 @@ if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
   require_once ('scripts/database_connection.php');
   require_once ('scripts/db_cars.php');
   require_once ('scripts/views.php');
-  
-  // Requires the <HEAD></HEAD> part of the page
-  display_head("Thessaloniki Car Rentals");
-  
-  // Requires the navbar
-  $tag = "home";
-  display_navbar($tag);
-  
 
-  
-  
+
   //eksagoume ta xaraktiristika tou sygekrienou amaksiou
   //$car_id = $_REQUEST['car_id'];
   $car_id = $_COOKIE['car_id'];
@@ -68,41 +59,45 @@ if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
   $result = mysqli_query($con, $select_query);
   $r = mysqli_fetch_array($result);
   
-  
-  
-  
-  
-  
+
   //oi epipleon ypiresies
-  if(isset($_REQUEST['gps'])) {
-    $gps_choice = $_REQUEST['gps'];
+  if(isset($_POST['gps'])) {
+    $gps_choice = $_POST['gps'];
   } else {
     $gps_choice = 0;
   }
   
-  if(isset($_REQUEST['baby_seat'])) {
-    $baby_seat_choice = $_REQUEST['baby_seat'];
+  if(isset($_POST['baby_seat'])) {
+    $baby_seat_choice = $_POST['baby_seat'];
   } else {
     $baby_seat_choice = 0;
   }
   
-  if(isset($_REQUEST['snow_chains'])) {
-    $snow_chains_choice = $_REQUEST['snow_chains'];
+  if(isset($_POST['snow_chains'])) {
+    $snow_chains_choice = $_POST['snow_chains'];
   } else {
     $snow_chains_choice = 0;
   }
   
-  if(isset($_REQUEST['car_roof'])) {
-    $car_roof_choice = $_REQUEST['car_roof'];
+  if(isset($_POST['car_roof'])) {
+    $car_roof_choice = $_POST['car_roof'];
   } else {
     $car_roof_choice = 0;
   }
   
  //Standard or Full Insurance
-  if(isset($_REQUEST['priceid'])) {
-    $fullOrStan = $_REQUEST['priceid'];
-  } else {
-    $fullOrStan = 0;
+  if((isset($_POST['priceid']) && !isset($_COOKIE['priceid'])) or (isset($_POST['priceid']) && isset($_COOKIE['priceid']))) {
+    setcookie('priceid',$_POST['priceid']);
+    $fullOrStan = $_POST['priceid'];
+
+  } elseif (isset($_COOKIE['priceid'])) {
+
+    $fullOrStan = $_COOKIE['priceid'];
+
+  }else{
+
+      $fullOrStan = 0;
+
   }
   
 
@@ -133,6 +128,13 @@ if (!isset($_REQUEST['car_id']) && !isset($_COOKIE['car_id']))
 $tax = ($fullOrStan * $diff) * 0.23;
 $total_cost = $fullOrStan * $diff + $tax;
 
+
+// Requires the <HEAD></HEAD> part of the page
+display_head("Thessaloniki Car Rentals");
+
+// Requires the navbar
+$tag = "home";
+display_navbar($tag);
 
 ?>
 

@@ -9,6 +9,8 @@ setcookie('pickup_date', '', time()-(365*24*60*60));
 setcookie('dropoff_date', '', time()-(365*24*60*60));
 setcookie('dropoff_location', '', time()-(365*24*60*60));
 setcookie('car_id', '', time()-(365*24*60*60));
+setcookie('priceid', '', time()-(365*24*60*60));
+
   
   // Requires the <HEAD></HEAD> part of the page
   display_head("Thessaloniki Car Rentals");

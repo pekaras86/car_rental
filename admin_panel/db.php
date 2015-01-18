@@ -76,8 +76,18 @@ function deleteCarType($dbcon, $id){
 
 /* =========== CarItems ================== */
 function getCarItems($dbcon){
-    return mysqli_query($dbcon, "SELECT * FROM car_items limit 100;");
+    return mysqli_query($dbcon, "SELECT * FROM car_items limit 100;");	
 }
+ 
+function insertCarItems($dbcon, $plate_number, $car_type_id, $location_ID){
+    return mysqli_query($dbcon, "INSERT INTO car_items(plate_number, car_type_id, location_ID) " .
+                                 "VALUES('" . $plate_number . "', " . $car_type_id . ", " . $location_ID . ");");
+}
+
+function getLastInsertedCarItem($dbcon){
+    return mysqli_query($dbcon, "SELECT * FROM car_items WHERE id = LAST_INSERT_ID();");
+}
+
 
 
 /* ================ Reservations count ============================== */

@@ -29,10 +29,10 @@ try
 	else if($_GET["action"] == "create")
 	{
 		//Insert record into database
-		$result =  insertCarLocations($con, $_POST["name"], $_POST["description"], $_POST["lat"], $_POST["long"]);
+		$result =  insertCarItems($con, $_POST["plate_number"], $_POST["car_type_id"], $_POST["location_ID"]);
 
 		//Get last inserted record (to return to jTable)
-		$result = getLastInsertedCarLocation($con);
+		$result = getLastInsertedCarItem($con);
 
 		$row = mysqli_fetch_array($result);
 

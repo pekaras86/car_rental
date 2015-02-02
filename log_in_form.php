@@ -158,7 +158,7 @@ EOD;
                 <div class="login-card"> <!--style="box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px; margin-bottom:28px;" -->
                     <h1>Log-in</h1><br>
 
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="loginform">
                         <input type="text" name="user" placeholder="Username">
                         <input type="password" name="pass" placeholder="Password">
                         <input type="submit" name="button" class="btn btn-info btn-block" value="LogIn">
